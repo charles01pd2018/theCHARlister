@@ -1,1 +1,2 @@
-export * from './project-icons-nav';
+export * from './footer';
+export * from './sidebar';
