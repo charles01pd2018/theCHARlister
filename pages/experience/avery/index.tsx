@@ -3,6 +3,7 @@ import Head from 'next/head';
 // types
 import type { GetStaticProps } from 'next';
 
+
 interface Content {
     pageTitle: string;
 }

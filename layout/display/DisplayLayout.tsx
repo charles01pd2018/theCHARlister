@@ -1,5 +1,7 @@
 // dependencies
 import { ReactNode } from 'react';
+// components
+import { ContactFooter, IconsNavFooter, IconsNavSidebar } from 'components/layout';
 
 
 /* TYPES */

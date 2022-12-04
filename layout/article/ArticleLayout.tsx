@@ -1,3 +1,5 @@
+// elements
+import { Breadcrumbs } from 'elements/breadcrumbs';
 // types
 import type { ReactNode } from 'react';
 
