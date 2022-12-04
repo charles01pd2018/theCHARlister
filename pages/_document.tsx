@@ -7,8 +7,10 @@ class MyDocument extends Document {
         <Head >
           {/* Site Logo */}
           <link rel="icon" href="/favicon.ico" />
-          {/* Imported Fonts -- MIGHT NOT NEED PRELOAD WITH NEXT.JS 10.2 */}
-          <link rel="preload" href="/static/fonts/{PUT_YOUR_FONT_HERE}" as="font" crossOrigin="" /> 
+          {/* Imported Fonts */}
+          <link rel="preload" href="/static/fonts/paytone-one/PaytoneOne-Regular.ttf" as="font" crossOrigin="" />
+          <link rel="preload" href="/static/fonts/valera-round/VarelaRound-Regular.ttf" as="font" crossOrigin="" />
+          <link rel="preload" href="/static/fonts/questrial/Questrial-Regular.ttf" as="font" crossOrigin="" /> 
         </Head>
         <body className='loading'>
           <Main />

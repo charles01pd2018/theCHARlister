@@ -2,6 +2,29 @@
 @use 'sass:list';
 @use 'sass:math';
 
+/*--------------------------------------------------------------
+# Font Family
+--------------------------------------------------------------*/
+@font-face {
+    font-family: "PaytoneOne";
+    src: url("/static/fonts/paytone-one/PaytoneOne-Regular.ttf");
+    font-style: normal;
+    font-display: swap;
+}
+  
+@font-face {
+    font-family: "VarelaRound";
+    src: url("/static/fonts/valera-round/VarelaRound-Regular.ttf");
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Questrial";
+    src: url("/static/fonts/questrial/Questrial-Regular.ttf");
+    font-style: normal;
+    font-display: swap;
+}
 
 /*--------------------------------------------------------------
 # Variables
@@ -10,7 +33,7 @@ $h1-size: ( 2.6em, 3.3vw, 3.3em );
 $header-tags: ( 'h1', 'h2', 'h3', 'h4', 'h5', 'h6' );
 $header-scale: 0.95; // how much each subsequent header will decrease in size
 
-$paragraph-size: ( 0.97em, 1.13vw, 1.05em );
+$paragraph-size: ( 1em, 1.18vw, 1.2em );
 $text-classnames: ( 'text--xlg', 'text--lg', 'text--norm', 'text--sm', 'text--xs', 'text--xxs', 'text--xxxs' );
 $text-scale: 0.95; // how much each subsequent text classname will decrease in size
 
@@ -27,6 +50,7 @@ $header-size: $h1-size;
     $font-size: clamp( $min, $default, $max );
     #{$header-tag} {
         font-size: $font-size;
+        font-family: Questrial;
         line-height: 120%;
         margin-block: 3rem;
     }
@@ -75,6 +99,6 @@ $text-size: (
 /*--------------------------------------------------------------
 # Helper
 --------------------------------------------------------------*/
-.weak-heading {
-    font-weight: normal;
+.project-heading {
+    font-family: PaytoneOne;
 }
