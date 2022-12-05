@@ -3,3 +3,4 @@ export * from './breadcrumbs';
 export * from './icons';
 export * from './image';
 export * from './switch';
+export * from './tooltip';

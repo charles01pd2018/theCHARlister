@@ -5,6 +5,7 @@ import { DisplayLayout } from 'layout';
 // types
 import type { GetStaticProps } from 'next';
 
+import { BlobIcon } from 'elements';
 
 /* TYPES */
 interface Content {
@@ -27,6 +28,7 @@ const Home = ( {
         <title>{pageTitle}</title>
       </Head>
       <DisplayLayout>
+        <BlobIcon />
       </DisplayLayout>
     </>
   
