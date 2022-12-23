@@ -1,3 +1,100 @@
-.icon-nav-footer {
+// utils
+@use '../../utils/color/getBackgroundColors' as *;
+
+
+.icons-nav-footer {
+    $size: 3rem;
+    $transition-duration: 0.22s;
+
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+
+    .toggle-button {
+        @include getBackgroundColors();
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        box-shadow: 0.1px 0px 1.4px rgba(0, 0, 0, 0.028),
+                    0.3px 0px 3.8px rgba(0, 0, 0, 0.04),
+                    0.6px 0px 9px rgba(0, 0, 0, 0.052),
+                    2px 0px 30px rgba(0, 0, 0, 0.08);
+                
+        transition: transform $transition-duration ease-in-out;
+
+        &.active {
+            transform: scale( 0.8 );
+
+            .ref-icon {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        &.not-active {
+            .x-icon {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .x-icon,
+        .ref-icon {
+            position: absolute;
+            
+            transition: opacity $transition-duration ease,
+                        visibility $transition-duration ease;
+        }
+    }
     
+    .popout-link-wrapper {
+        $transition-delay: 0.05s;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: $size;
+        height: $size;
+
+        transition: opacity $transition-duration ease,
+                    visibility $transition-duration ease,
+                    transform $transition-duration ease-in-out;
+
+        &.active {
+            &:nth-child( 1 ) {
+                transform: translate( -3.7rem, 0.5rem );
+            }
+    
+            &:nth-child( 2 ) {
+                transition-delay: $transition-delay;
+                transform: translate( -2.5rem, -2.8rem );
+            }
+    
+            &:nth-child( 3 ) {
+                transition-delay: $transition-delay * 2;
+                transform: translate( 0.8rem, -4rem );
+
+            }
+        }
+
+        &.not-active {
+            opacity: 0;
+            visibility: hidden;
+
+            &:nth-child( 1 ) {
+                transition-delay: $transition-delay * 2;
+            }
+    
+            &:nth-child( 2 ) {
+                transition-delay: $transition-delay;
+            }
+        }
+    }
 }

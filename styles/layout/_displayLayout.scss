@@ -1,5 +1,18 @@
-.display-layout {
-    .paragraphs-container {
-        margin-top: 1rem;
+// constants
+@use '../constants/breakpoints' as *;
+
+.display-layout-wrapper {
+    .icons-nav-footer {
+        display: none;
+    }
+
+    @media ( max-width: $breakpoint--medium ) {
+        .icons-nav-sidebar {
+            display: none;
+        }
+
+        .icons-nav-footer {
+            display: block;
+        }
     }
 }

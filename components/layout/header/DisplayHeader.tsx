@@ -1,7 +1,10 @@
 // dependencies
 import classNames from 'classnames';
+// elements
+import { IconLogo, Switch } from 'elements';
 
 
+/* TYPES */
 export interface Props {
     className?: string;
 }
@@ -17,6 +20,7 @@ const DisplayHeader = ( {
 
     return (
         <header className={displayHeaderClasses}>
+            <IconLogo />
 
         </header>
     )

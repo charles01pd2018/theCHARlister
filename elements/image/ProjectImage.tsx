@@ -2,7 +2,7 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 
-
+/* TYPES */
 export interface Props {
     className?: string;
 }

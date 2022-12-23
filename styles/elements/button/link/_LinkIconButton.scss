@@ -1,0 +1,34 @@
+// utils
+@use '../../../utils/color/getBackgroundColors' as *;
+
+
+.link-icon-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+
+    &.background {
+        $size: 3rem;
+
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+    }
+
+    &.fill {
+        $size: 2.5rem;
+        $transition: 0.21s ease;
+
+        width: $size;
+        height: $size;
+        
+        transition: background-color $transition,
+                    border-radius $transition;
+
+        &.active {
+            @include getBackgroundColors();
+            border-radius: 50%;
+        }
+    }
+}

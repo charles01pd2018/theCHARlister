@@ -1,9 +1,12 @@
 // dependencies
 import classNames from 'classnames';
+import Link from 'next/link';
+// types
+import type { LinkData } from 'types';
 
 
 export interface Content {
-    path: string[];
+    links: LinkData[];
 }
 
 export interface Props {
@@ -13,10 +16,10 @@ export interface Props {
 
 const Breadcrumbs = ( {
     className='',
-    content
+    content,
 }: Props ) => {
     /* CONTENT */
-    const { path } = content;
+    const { links } = content;
     
     /* CLASSNAMES */
     const breadcrumbsClasses = classNames(
@@ -25,9 +28,26 @@ const Breadcrumbs = ( {
     );
 
     return (
-        <div className={breadcrumbsClasses}>
-
-        </div>
+        <ul className={breadcrumbsClasses}>
+            {
+                links.map(( { text, href }, index ) => {
+                    return (
+                        <li className='link-wrapper'>
+                            <Link className='link' href={href}>
+                                {text}
+                            </Link>
+                            {
+                                index !== links.length - 1 ? (
+                                    <span className='seperator'>
+                                        /
+                                    </span>
+                                ) : ''
+                            }
+                        </li>
+                    )
+                } )
+            }
+        </ul>
     )
 }
 

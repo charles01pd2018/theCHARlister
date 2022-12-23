@@ -1,7 +1,8 @@
 // dependencies
 import { ReactNode } from 'react';
 // components
-import { ContactFooter, IconsNavFooter, IconsNavSidebar } from 'components/layout';
+import { DisplayHeader, ContactFooter, 
+    IconsNavFooter, IconsNavSidebar } from 'components/layout';
 
 
 /* TYPES */
@@ -14,9 +15,15 @@ const DisplayLayout = ( {
 }: Props ) => {
 
     return (
-        <main className='display-layout'>
-            {children}
-        </main>
+        <div className='display-layout-wrapper'>
+            <DisplayHeader />
+            <main className='display-layout'>
+                {children}
+            </main>
+            <IconsNavSidebar activeItemIndex={0} />
+            <IconsNavFooter activeItemIndex={0} />
+            <ContactFooter />
+        </div>
     );
 }
 
