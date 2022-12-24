@@ -1,7 +1,7 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { LinkIconButton } from 'elements';
+import { LinkIconButton, Tooltip } from 'elements';
 // constants
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types

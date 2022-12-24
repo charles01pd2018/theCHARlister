@@ -1,42 +1,53 @@
 // lib
 import { PROJECT_ENDPOINT, EXPERIENCE_ENDPOINT } from '@lib/constants';
 // types
-import type { ContactFooterContent } from 'components/types';
+import type { DisplayFooterContent } from 'components/types';
 
 
-export const CONTACT_FOOTER_CONTENT: ContactFooterContent = {
-    email: 'theCHARlsiter@gmail.com',
+export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
+    email: 'theCHARlister@gmail.com',
     textLinks: [
         {
             href: PROJECT_ENDPOINT,
             text: 'Projects',
         },
         {
-            href: PROJECT_ENDPOINT,
+            href: EXPERIENCE_ENDPOINT,
             text: 'Experience',
         },
     ],
     iconLinks: [
         {
             icon: {
-                data: '',
-                alt: 'github',
+                data: 'static/icons/github-logo.svg',
+                alt: 'Github logo icon',
             },
-            href: '',
+            title: 'Github',
+            href: 'https://github.com/charles01pd2018',
         },
         {
             icon: {
-                data: '',
-                alt: 'npm',
+                data: 'static/icons/twitter-logo.svg',
+                alt: 'Twitter logo icon',
             },
-            href: '',
+            title: 'Twitter',
+            href: 'https://twitter.com/theCHARlister',
         },
         {
             icon: {
-                data: '',
-                alt: 'twitter',
+                data: 'static/icons/linkedin-logo.svg',
+                alt: 'LinkedIn logo icon',
             },
-            href: '',
+            title: 'LinkedIn',
+            href: 'https://www.linkedin.com/in/charleslu2021/',
+        },
+        {
+            icon: {
+                data: 'static/icons/npm-logo.svg',
+                alt: 'npm logo icon',
+            },
+            title: 'npm',
+            href: 'https://www.npmjs.com/~charles01pd2018',
         },
     ],
 }

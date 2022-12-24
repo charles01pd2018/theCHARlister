@@ -1,7 +1,6 @@
 // exported
-import type { Props as IconsNavFooterProps } from './IconsNavFooter';
-import type { Props as ContactFooterProps,
-    Content as ContactFooterContent } from './ContactFooter';
+import type { Props as DisplayFooterProps,
+    Content as DisplayFooterContent } from './DisplayFooter';
 // used
 import { LinkIconButtonContent } from 'elements/types';
 import type { Size } from 'types';
@@ -23,7 +22,6 @@ export interface IconsNavProps {
 }
 
 export type {
-    IconsNavFooterProps,
-    ContactFooterProps,
-    ContactFooterContent,
+    DisplayFooterProps,
+    DisplayFooterContent,
 }

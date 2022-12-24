@@ -4,14 +4,13 @@ import Link from 'next/link';
 // elements
 import { SVG } from 'elements';
 // types
-import type { Size, Colors, IconData } from 'types';
+import type { Size, Colors, IconLink } from 'types';
 
 
 /* TYPES */
-export interface Content {
-    icon: IconData;
-    href: string;
-    color: Colors;
+export interface Content extends IconLink {
+    title?: string
+    color?: Colors;
 }
 
 export interface Props {
@@ -19,7 +18,8 @@ export interface Props {
     content: Content;
     iconSize?: Size;
     onClick?: () => void;
-    type: 'background' | 'fill';
+    type: 'background' | 'fill' | 'pop-out';
+    target?: '_blank' | '_self';
     // only applies when type is specified as 'active'
     isActive?: boolean;
 }
@@ -29,11 +29,12 @@ const LinkIconButton = ( {
     content,
     iconSize=[ 30, 30 ],
     onClick,
+    target,
     type,
     isActive,
 }: Props ) => {
     /* CONTENT */
-    const { href, color, icon } = content;
+    const { href, color, icon, title } = content;
     const { data, alt } = icon;
     const [ width, height ] = iconSize;
 
@@ -47,14 +48,11 @@ const LinkIconButton = ( {
     );
 
     return (
-        // TODO - look into passing classNames
-        // would prefer to just pass className into <Link>
-        <div className={linkIconButtonClasses}>
-            <Link href={href} onClick={onClick}>
-                <SVG data={data} alt={alt}
-                    width={width} height={height} />
-            </Link>
-        </div>
+        <Link className={linkIconButtonClasses} href={href} onClick={onClick}
+            title={title} aria-label={title} target={target}>
+            <SVG data={data} alt={alt}
+                width={width} height={height} />
+        </Link>
     );
 }
 

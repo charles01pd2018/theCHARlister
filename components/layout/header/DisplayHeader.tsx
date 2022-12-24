@@ -1,7 +1,9 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { IconLogo, Switch } from 'elements';
+import { Switch, IconLogoLink } from 'elements';
+// lib
+import { useScroll } from 'lib';
 
 
 /* TYPES */
@@ -12,16 +14,19 @@ export interface Props {
 const DisplayHeader = ( {
     className='',
 }: Props ) => {
+    /* HOOKS */
+    const scrollDirection = useScroll();
+
     /* CLASSNAMES */
     const displayHeaderClasses = classNames(
         'display-header',
+        `${scrollDirection === 'down' ? 'hide' : ''}`,
         className,
     );
 
     return (
         <header className={displayHeaderClasses}>
-            <IconLogo />
-
+            <IconLogoLink />
         </header>
     )
 }

@@ -1,9 +1,8 @@
 // dependencies
 import classNames from 'classnames';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 // elements
-import { LinkIconButton, ToggleButton, SVG, XIcon,
-    Tooltip } from 'elements';
+import { LinkIconButton, ToggleButton, SVG, XIcon } from 'elements';
 // constants
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types
@@ -27,8 +26,6 @@ const IconsNavFooter = ( {
     const [ width, height ] = iconSize;
 
     /* HOOKS */
-    const toggleRef = useRef<HTMLDivElement>( null );
-    const toggleTooltipRef = useRef<HTMLDivElement>( null );
     const [ isOpen, setIsOpen ] = useState<boolean>( false );
 
     /* FUNCTIONS */
@@ -60,16 +57,14 @@ const IconsNavFooter = ( {
 
     return (
         <footer className={iconsNavFooterClasses}>
-            <div ref={toggleRef}>
-                <ToggleButton className={toggleButtonClasses}
-                    onClick={toggleIsOpen} ariaControls={ARIA_CONTROLS}
-                    aria-label={`${isOpen ? 'Close' : 'Open'} Navigation`}>
-                    <XIcon />
-                    <SVG className='ref-icon'
-                        data={data} alt={alt}
-                        width={width} height={height} />
-                </ToggleButton>
-            </div>
+            <ToggleButton className={toggleButtonClasses}
+                onClick={toggleIsOpen} ariaControls={ARIA_CONTROLS}
+                aria-label={`${isOpen ? 'Close' : 'Open'} Navigation`}>
+                <XIcon />
+                <SVG className='ref-icon'
+                    data={data} alt={alt}
+                    width={width} height={height} />
+            </ToggleButton>
             <ul id={ARIA_CONTROLS} className='nav-icons-wrapper'>
                 {
                     items.map( ( content ) => {

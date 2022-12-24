@@ -1,7 +1,7 @@
 import IconsNavFooter from './IconsNavFooter';
-import ContactFooter from './ContactFooter';
+import DisplayFooter from './DisplayFooter';
 
 export {
     IconsNavFooter,
-    ContactFooter,
+    DisplayFooter,
 }

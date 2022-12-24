@@ -26,7 +26,7 @@ export interface Props {
 
 const Technologies = ( {
     className='',
-    content,
+    content=TECHNOLOGIES_CONTENT,
 }: Props ) => {
     /* CONTENT */
     const { mainIcons, subIcons } = content;
@@ -39,7 +39,28 @@ const Technologies = ( {
 
     return (
         <section className={technologiesClasses}>
-
+            <ul className='main-icons-wrapper'>
+                {
+                    mainIcons.map( ( content ) => {
+                        return (
+                            <li className='icon-wrapper' key={content.icon.alt}>
+                                <TooltipIcon content={content} />
+                            </li>
+                        )
+                    })
+                }
+            </ul>
+            <ul className='sub-icons-wrapper'>
+                {
+                    subIcons.map( ( content ) => {
+                        return (
+                            <li className='icon-wrapper' key={content.icon.alt}>
+                                <TooltipIcon content={content} />
+                            </li>
+                        )
+                    })
+                }
+            </ul>
         </section>
     )
 }

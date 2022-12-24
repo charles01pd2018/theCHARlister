@@ -1,7 +1,7 @@
 // dependencies
 import { ReactNode } from 'react';
 // components
-import { DisplayHeader, ContactFooter, 
+import { DisplayHeader, DisplayFooter, 
     IconsNavFooter, IconsNavSidebar } from 'components/layout';
 
 
@@ -22,7 +22,7 @@ const DisplayLayout = ( {
             </main>
             <IconsNavSidebar activeItemIndex={0} />
             <IconsNavFooter activeItemIndex={0} />
-            <ContactFooter />
+            <DisplayFooter />
         </div>
     );
 }

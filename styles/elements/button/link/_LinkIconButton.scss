@@ -1,5 +1,6 @@
 // utils
 @use '../../../utils/color/getBackgroundColors' as *;
+@use '../../../utils/selectors/tap' as *;
 
 
 .link-icon-button {
@@ -11,6 +12,7 @@
     &.background {
         $size: 3rem;
 
+        @include getBackgroundColors();
         width: $size;
         height: $size;
         border-radius: 50%;
@@ -29,6 +31,14 @@
         &.active {
             @include getBackgroundColors();
             border-radius: 50%;
+        }
+    }
+
+    &.pop-out {
+        transition: transform 0.19s ease;
+
+        @include tap {
+            transform: translate( 1px, 1px );
         }
     }
 }
