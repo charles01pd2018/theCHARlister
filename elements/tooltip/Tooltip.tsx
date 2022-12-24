@@ -2,6 +2,8 @@
 import { ReactNode, useEffect, forwardRef, useState,
     useCallback, RefObject, useRef } from 'react';
 import classNames from 'classnames';
+// types
+import type { Colors } from 'types';
 
 
 /* TYPES */
@@ -11,8 +13,11 @@ export interface Props {
     children: ReactNode;
     id: string;
     className?: string;
+    initialActive?: boolean;
     position?: TooltipPositions
-    includeArrow?: boolean;
+    includePointer?: boolean;
+    tooltipPadding?: number;
+    color?: Colors,
 }
 
 interface Styles {
@@ -22,43 +27,41 @@ interface Styles {
     right?: string;
 }
 
-/* CONSTANTS */
-const TOOLTIP_PADDING = 10;
-
 /* FUNCTIONS */
 interface GetTooltipStylesInput {
     ref:  RefObject<HTMLElement>;
     tooltipRef: RefObject<HTMLDivElement>;
     position: TooltipPositions;
+    tooltipPadding: number;
 }
 const getTooltipStyles = ( input: GetTooltipStylesInput ) => {
-    const { ref, tooltipRef, position } = input;
+    const { ref, tooltipRef, position, tooltipPadding } = input;
     const tooltipRect = tooltipRef.current?.getBoundingClientRect();
     const refRect = ref.current?.getBoundingClientRect();
 
     if ( tooltipRect && refRect ) {
         if ( position === 'top' ) {
             return {
-                left: '50%',
-                bottom: `${refRect.height - tooltipRect.height + TOOLTIP_PADDING}px`
+                left: `${refRect.width / 2 - tooltipRect.width / 2}px`,
+                bottom: `${refRect.height + tooltipPadding}px`,
             }
         }
         else if ( position === 'bottom' ) {
             return {
-                left: `50%`,
-                top: `${refRect.height + tooltipRect.height - TOOLTIP_PADDING}px`
+                left: `${refRect.width / 2 - tooltipRect.width / 2}px`,
+                top: `${refRect.height + tooltipPadding}px`,
             }
         }
         else if ( position === 'left' ) {
             return {
-                top: '50%',
-                right: `${refRect.width - TOOLTIP_PADDING}px`,
+                top: `${refRect.height / 2 - tooltipRect.height / 2}px`,
+                right: `${refRect.width + tooltipPadding}px`,
             }
         }
         else if ( position === 'right' ) {
             return {
-                top: '50%',
-                left: `${refRect.width + TOOLTIP_PADDING}px`,
+                top: `${refRect.height / 2 - tooltipRect.height / 2}px`,
+                left: `${refRect.width + tooltipPadding}px`,
             }
         }
     }
@@ -71,12 +74,15 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
     children,
     id,
     className='',
-    position='top',
-    includeArrow=true,
+    initialActive=false,
+    position='left',
+    includePointer=true,
+    tooltipPadding=7,
+    color,
 }, ref ) => {
     /* HOOKS */
     const tooltipRef = useRef<HTMLDivElement>( null );
-    const [ isActive, setIsActive ] = useState<boolean>( true );
+    const [ isActive, setIsActive ] = useState<boolean>( initialActive );
     const [ tooltipStyles, setTooltipStyles ] = useState<Styles>( {} );
 
     /* FUNCTIONS */
@@ -94,11 +100,13 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
         isActive ? 'active' : 'not-active',
         position,
         className,
+        color,
     );
     
     const pointerClasses = classNames(
         'pointer',
         position,
+        color,
     );
 
     useEffect( () => {
@@ -113,6 +121,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
                 ref,
                 tooltipRef,
                 position,
+                tooltipPadding,
             } ) );
 
             return () => {
@@ -120,7 +129,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
                 ref.current?.removeEventListener( 'pointerleave', handlePointeLeave );
             }
         }
-    }, [] );
+    }, [ position, ref, tooltipPadding ] );
 
     return (
         <div id={id} ref={tooltipRef} className={tooltipWrapperClasses} 
@@ -128,7 +137,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
             <span className='tooltip'>
                 {children}
                 {
-                    includeArrow ? (
+                    includePointer ? (
                         <span className={pointerClasses}
                             aria-hidden={true} />
                     ) : ''

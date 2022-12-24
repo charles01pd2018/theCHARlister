@@ -15,7 +15,12 @@
         padding-right: 2vw;
 
         .link-wrapper {
+            position: relative;
             margin-block: 2rem;
+
+            .tooltip {
+                white-space: nowrap;
+            }
         }
     }
 }

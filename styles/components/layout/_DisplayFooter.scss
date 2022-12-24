@@ -8,7 +8,7 @@
 .display-footer {
     padding-block: 2rem 1rem;
     padding-inline: 2vw;
-    background: map.get( $colors, 'green', 1 );
+    background: map.get( $backgrounds, 'mint-cream' );
 
     .main-links-wrapper {
         display: flex;

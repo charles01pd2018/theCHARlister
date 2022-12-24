@@ -69,7 +69,7 @@ const IconsNavFooter = ( {
                 {
                     items.map( ( content ) => {
                         return (
-                            <li className={popoutLinkWrapperClasses}>
+                            <li className={popoutLinkWrapperClasses} key={`footer:${content.href}`}>
                                 <LinkIconButton onClick={close}
                                     content={content} type='background' />
                             </li>

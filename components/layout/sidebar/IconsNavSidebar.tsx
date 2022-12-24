@@ -1,5 +1,6 @@
 // dependencies
 import classNames from 'classnames';
+import { useRef } from 'react';
 // elements
 import { LinkIconButton, Tooltip } from 'elements';
 // constants
@@ -28,11 +29,23 @@ const IconsNavSidebar = ( {
             <ul className='nav-links-wrapper'>
                 {
                     items.map( ( content, index ) => {
+                        /* HOOKS */
+                        const ref = useRef<HTMLLIElement>( null );
+
+                        /* CONTENT */
+                        const { tooltip, ...restContent } = content;
+                        const key = `sidebar:${content.href}`;
+                        const tooltipId = `${key}-tooltip`;
+
                         return (
-                            <li className='link-wrapper'>
+                            <li className='link-wrapper' ref={ref} key={key}>
                                 <LinkIconButton isActive={activeItemIndex === index} 
-                                    content={content} iconSize={iconSize}
-                                    type='fill' />
+                                    content={restContent} iconSize={iconSize}
+                                    type='fill' aria-labelledby={tooltipId} />
+                                <Tooltip id={tooltipId} className='text--xxxs'
+                                    ref={ref} position='left' color={restContent.color}>
+                                    {tooltip}
+                                </Tooltip>
                             </li>
                         )
                     })
