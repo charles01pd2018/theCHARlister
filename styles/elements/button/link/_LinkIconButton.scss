@@ -1,3 +1,8 @@
+// dependencies
+@use 'sass:map';
+@use 'sass:color';
+// constants 
+@use '../../../constants/colors' as *;
 // utils
 @use '../../../utils/color/getBackgroundColors' as *;
 @use '../../../utils/selectors/tap' as *;
@@ -8,6 +13,7 @@
     justify-content: center;
     align-items: center;
     padding: 0.5rem;
+    border-radius: 30%;
 
     &.background {
         $size: 3rem;
@@ -31,6 +37,19 @@
         &.active {
             @include getBackgroundColors();
             border-radius: 50%;
+        }
+
+        &:hover {
+            &.not-active {
+                border-radius: 50%;
+    
+                @each $color, $color-map in $colors {
+                    &.#{$color} {
+                        background: color.adjust( map.get( $color-map, 1 ), $alpha: -0.3 );
+                        mix-blend-mode: multiply;
+                    }
+                }
+            }
         }
     }
 
