@@ -2,12 +2,12 @@
 @use 'sass:map';
 // constants 
 @use '../constants/colors' as *;
+@use '../constants/breakpoints' as *;
 // utils
 @use '../utils/color/getBackgroundColors' as *;
 
 
 .tooltip-wrapper {
-    $transition: 0.21s ease;
     $background: #fff;
 
     @include getBackgroundColors();
@@ -21,9 +21,26 @@
                 0px 0px 9px rgba(0, 0, 0, 0.033),
                 0px 0px 30px rgba(0, 0, 0, 0.05);
 
-    transition: opacity $transition,
-                visibility $transition,
-                transform $transition;
+    /* ANIMATIONS */
+    &.slide {
+        $transition: 0.21s ease;
+
+        transition: opacity $transition,
+                    visibility $transition,
+                    transform $transition;
+    }
+
+    &.pop {
+        $transition: 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+        &.active {
+            transition-delay: 0.15s;
+        }
+
+        transition: opacity $transition,
+                    visibility $transition,
+                    transform $transition;
+    }
 
     &.not-active {
         opacity: 0;
@@ -127,15 +144,35 @@
     &.bottom,
     &.bottom-left,
     &.bottom-right {
-        &.not-active {
-            transform: scaleY( 0.8 );
+        &.slide {
+            &.not-active {
+                transform: scaleY( 0.8 );
+            }
+        }
+
+        &.pop {
+            &.not-active {
+                transform: translateY( -5% ) scale( 0.95 );
+            }
         }
     }
 
     &.right,
     &.left {
-        &.not-active {
-            transform: scaleX( 0.8 );
+        &.slide {
+            &.not-active {
+                transform: scaleX( 0.8 );
+            }
         }
+
+        &.pop {
+            &.not-active {
+                transform: translateY( 5% ) scale( 0.95 );
+            }
+        }
+    }
+
+    @media ( max-width: $breakpoint--small ) {
+        display: none;
     }
 }

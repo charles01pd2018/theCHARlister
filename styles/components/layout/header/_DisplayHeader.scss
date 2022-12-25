@@ -18,7 +18,7 @@
             transition: opacity $transition,
                         visibility $transition,
                         transform $transition,
-                        text-shadow 0.18s ease;
+                        text-shadow 0.18s ease 0.1s;
 
             &.not-checked {
                 text-shadow: #c3c2f0 0 0 15px;

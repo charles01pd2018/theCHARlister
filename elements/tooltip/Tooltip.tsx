@@ -13,6 +13,7 @@ export interface Props {
     children: ReactNode;
     id: string;
     className?: string;
+    animateType?: 'slide' | 'pop';
     initialActive?: boolean;
     position?: TooltipPositions
     includePointer?: boolean;
@@ -86,6 +87,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
     children,
     id,
     className='',
+    animateType='slide',
     initialActive=false,
     position='left',
     includePointer=true,
@@ -110,6 +112,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
     const tooltipWrapperClasses = classNames(
         'tooltip-wrapper',
         isActive ? 'active' : 'not-active',
+        animateType,
         position,
         className,
         color,

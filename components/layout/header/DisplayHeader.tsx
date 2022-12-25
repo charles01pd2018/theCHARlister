@@ -63,7 +63,7 @@ const DisplayHeader = ( {
                     {...switchProps} />
                 {/** TODO - animate the width of this when checked status changes */}
                 <Tooltip id={TOOLTIP_ID} ref={toggleRef}
-                    className={tooltipClasses}
+                    className={tooltipClasses} animateType='pop'
                     position='bottom-left' includePointer={false}>
                     {switchProps.checked ? 'Turn Off Animation' : 'Animate'}
                 </Tooltip>
