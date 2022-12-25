@@ -43,7 +43,7 @@ const DisplayFooter = ( {
                             textLinks.map( ( linkContent ) => {
                                 return (
                                     <li className='link-wrapper text--norm' key={linkContent.href}>
-                                        <NavLink content={linkContent} />
+                                        <NavLink type='lift-underline' content={linkContent} />
                                     </li>
                                 )
                             } )
@@ -52,7 +52,7 @@ const DisplayFooter = ( {
                 </nav>
                 <div className='contact-wrapper'>
                     <address className='email-wrapper'>
-                        <NavLink content={{
+                        <NavLink type='lift-underline' content={{
                             text: email,
                             href: `mailto:${email}` }} />
                     </address>

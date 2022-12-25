@@ -1,5 +1,5 @@
 // lib
-import { PROJECT_ENDPOINT, EXPERIENCE_ENDPOINT } from '@lib/constants';
+import { PROJECT_ENDPOINT, EXPERIENCE_ENDPOINT, REFERENCES_ENDPOINT } from '@lib/constants';
 // types
 import type { DisplayFooterContent } from 'components/types';
 
@@ -14,6 +14,10 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
         {
             href: EXPERIENCE_ENDPOINT,
             text: 'Experience',
+        },
+        {
+            href: REFERENCES_ENDPOINT,
+            text: 'References',
         },
     ],
     iconLinks: [

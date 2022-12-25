@@ -12,7 +12,7 @@ interface Props {
     content: Content;
 }
 
-const AboutMe = ( {
+const References = ( {
     content,
 }: Props ) => {
     /* CONTENT */
@@ -27,7 +27,7 @@ const AboutMe = ( {
     );
 }
 
-export default AboutMe;
+export default References;
 
 export const getStaticProps: GetStaticProps = () => {
     return {

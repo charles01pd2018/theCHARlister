@@ -9,11 +9,13 @@ import type { LinkData } from 'types';
 export interface Props {
     className?: string;
     content: LinkData;
+    type: 'lift-underline' | 'arrow';
 }
 
 const NavLink = ( {
     className='',
     content,
+    type,
 }: Props ) => {
     /* CONTENT */
     const { href, text } = content;
@@ -21,6 +23,7 @@ const NavLink = ( {
     /* CLASSNAMES */
     const navLinkClasses = classNames(
         'nav-link',
+        type,
         className,
     );
 
