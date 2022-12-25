@@ -34,3 +34,4 @@ export const ICONS_NAV_CONTENT: IconsNavContent = {
 }
 
 export * from './footer/content';
+export * from './header/content';
