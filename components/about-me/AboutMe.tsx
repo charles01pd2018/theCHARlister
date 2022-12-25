@@ -5,7 +5,7 @@
  */
 // dependencies
 import classNames from 'classnames';
-// constants
+// content
 import { ABOUT_ME_CONTENT } from 'components/content';
 // types
 import type { LinkData } from 'types';

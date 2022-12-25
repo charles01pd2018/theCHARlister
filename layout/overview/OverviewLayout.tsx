@@ -1,7 +1,7 @@
 // dependencies
 import { ReactNode } from 'react';
 // components
-import { DisplayHeader, DisplayFooter } from 'components/layout';
+import { OverviewHeader, DisplayFooter } from 'components/layout';
 
 
 /* TYPES */
@@ -14,7 +14,7 @@ const DisplayLayout = ( {
 }: Props ) => {
     return (
         <>
-            <DisplayHeader />
+            <OverviewHeader />
             <main className='overview-layout'>
                 {children}
             </main>

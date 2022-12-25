@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useRef } from 'react';
 // elements
 import { LinkIconButton, Tooltip } from 'elements';
-// constants
+// content
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types
 import type { IconsNavProps } from 'components/types';

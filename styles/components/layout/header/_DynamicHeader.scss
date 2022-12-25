@@ -1,10 +1,8 @@
-.display-header {
+.dynamic-header {
     $border-radius: 0.5rem;
+    $height: 5rem;
 
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     width: 100%;
     top: 0;
     background: white;
@@ -23,7 +21,7 @@
         transform: translateY( -100% );
     }
 
-    .switch-wrapper {
-        margin-right: 3vw;
+    + * {
+        margin-top: $height;
     }
 }

@@ -1,12 +1,12 @@
 // dependencies
 import classNames from 'classnames';
 import { useRef } from 'react';
+// components
+import DynamicHeader from './DynamicHeader';
 // elements
 import { Switch, IconLogoLink, Tooltip } from 'elements';
-// consants
-import { DISPLAY_HEADER_CONTENT } from 'components/content'
-// lib
-import { useScroll } from 'lib';
+// content
+import { DISPLAY_HEADER_CONTENT } from 'components/content';
 // types
 import type { SwitchContent } from 'elements/types';
 
@@ -24,7 +24,7 @@ export interface Content {
 export interface Props {
     className?: string;
     content?: Content;
-    switchProps?: SwitchProps;
+    switchProps: SwitchProps;
 }
 
 const DisplayHeader = ( {
@@ -36,26 +36,23 @@ const DisplayHeader = ( {
     const { switchContent } = content;
 
     /* HOOKS */
-    const scrollDirection = useScroll();
+    const toggleRef = useRef<HTMLDivElement>( null );
 
     /* CLASSNAMES */
     const displayHeaderClasses = classNames(
         'display-header',
-        `${scrollDirection === 'down' ? 'hide' : ''}`,
         className,
     );
 
     return (
-        <header className={displayHeaderClasses}>
+        <DynamicHeader className={displayHeaderClasses}>
             <IconLogoLink />
-            {
-                switchProps ? (
-                    <Switch id='animate-toggle' name='animate-toggle'
-                        type='doggo' content={switchContent} 
-                        hideLabel={true} {...switchProps} />
-                ) : ''
-            }
-        </header>
+            <div ref={toggleRef} className='toggle-wrapper'>
+                <Switch id='animate-toggle' name='animate-toggle'
+                    type='doggo' content={switchContent}
+                    hideLabel={true} {...switchProps} />
+            </div>
+        </DynamicHeader>
     )
 }
 

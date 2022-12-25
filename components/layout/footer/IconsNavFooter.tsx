@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useState } from 'react';
 // elements
 import { LinkIconButton, ToggleButton, SVG, XIcon } from 'elements';
-// constants
+// content
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types
 import type { IconsNavProps } from 'components/types';

@@ -1,0 +1,11 @@
+.display-header {
+    $border-radius: 0.5rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .switch-wrapper {
+        margin-right: 3vw;
+    }
+}

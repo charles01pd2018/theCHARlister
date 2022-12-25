@@ -2,10 +2,10 @@
 import classNames from 'classnames';
 // elements
 import { NavLink, LinkIconButton, IconLogoLink } from 'elements';
-// constants
+// content
 import { DISPLAY_FOOTER_CONTENT } from 'components/content';
 // types
-import type { LinkData, IconLink } from 'types';
+import type { LinkData } from 'types';
 import type { LinkIconButtonContent } from 'elements/types';
 
 
