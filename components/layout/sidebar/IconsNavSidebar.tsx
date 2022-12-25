@@ -43,7 +43,7 @@ const IconsNavSidebar = ( {
                                     content={restContent} iconSize={iconSize}
                                     type='fill' aria-labelledby={tooltipId} />
                                 <Tooltip id={tooltipId} className='text--xxxs'
-                                    ref={ref} position='left' color={restContent.color}>
+                                    ref={ref} position='bottom' color={restContent.color}>
                                     {tooltip}
                                 </Tooltip>
                             </li>

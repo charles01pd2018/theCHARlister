@@ -3,13 +3,15 @@ import classNames from 'classnames';
 // elements
 import { SVG } from 'elements';
 // types
-import type { IconData } from 'types';
+import type { IconData, LinkData } from 'types';
 
 
 /* TYPES */
 export interface Content {
     logo: IconData;
     company: string;
+    role: string;
+    link: LinkData;
     bullets: string[];
 }
 
@@ -23,7 +25,7 @@ const Experience = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { logo, company, bullets } = content;
+    const { logo, company, role, bullets } = content;
     const { data, alt } = logo;
 
     /* CLASSNAMES */
@@ -34,10 +36,13 @@ const Experience = ( {
 
     return (
         <div className={experienceClasses}>
-            <SVG className='company-logo'
-                data={data} alt={alt}
-                width={50} height={50} />
-            <h3 className='company'>{company}</h3>
+            <div className='title-wrapper'>
+                <h3 className='company'>{company}</h3>
+                <SVG className='company-logo'
+                    data={data} alt={alt}
+                    width={100} height={100} />
+            </div>
+            <p className='text--lg'>{role}</p>
             <ul className='bullets'>
                 {
                     bullets.map(( point ) => {

@@ -7,7 +7,7 @@ import type { Colors } from 'types';
 
 
 /* TYPES */
-export type TooltipPositions = 'top' | 'bottom' | 'right' | 'left';
+export type TooltipPositions = 'top' | 'bottom' | 'right' | 'left' | 'bottom-left' | 'bottom-right';
 
 export interface Props {
     children: ReactNode;
@@ -62,6 +62,18 @@ const getTooltipStyles = ( input: GetTooltipStylesInput ) => {
             return {
                 top: `${refRect.height / 2 - tooltipRect.height / 2}px`,
                 left: `${refRect.width + tooltipPadding}px`,
+            }
+        }
+        else if ( position === 'bottom-left' ) {
+            return {
+                left: `${refRect.width / 2 - tooltipRect.width}px`,
+                top: `${refRect.height + tooltipPadding}px`,
+            }
+        }
+        else if ( position === 'bottom-right' ) {
+            return {
+                left: `${refRect.width / 2}px`,
+                top: `${refRect.height + tooltipPadding}px`,
             }
         }
     }
@@ -129,7 +141,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
                 ref.current?.removeEventListener( 'pointerleave', handlePointeLeave );
             }
         }
-    }, [ position, ref, tooltipPadding ] );
+    }, [ position, ref, tooltipPadding, children ] );
 
     return (
         <div id={id} ref={tooltipRef} className={tooltipWrapperClasses} 

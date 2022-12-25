@@ -11,6 +11,10 @@ import { DISPLAY_HEADER_CONTENT } from 'components/content';
 import type { SwitchContent } from 'elements/types';
 
 
+/* CONSTANTS */
+const SWITCH_ID = 'animate-toggle';
+const TOOLTIP_ID = `${SWITCH_ID}-tooltip`;
+
 /* TYPES */
 export interface SwitchProps {
     onChange: () => void;
@@ -44,13 +48,25 @@ const DisplayHeader = ( {
         className,
     );
 
+    const tooltipClasses = classNames(
+        'text--xxs',
+        !switchProps.checked && 'not-checked',
+    );
+
     return (
         <DynamicHeader className={displayHeaderClasses}>
             <IconLogoLink />
             <div ref={toggleRef} className='toggle-wrapper'>
-                <Switch id='animate-toggle' name='animate-toggle'
+                <Switch id={SWITCH_ID} name={SWITCH_ID}
                     type='doggo' content={switchContent}
-                    hideLabel={true} {...switchProps} />
+                    hideLabel={true} aria-labelledby={TOOLTIP_ID} 
+                    {...switchProps} />
+                {/** TODO - animate the width of this when checked status changes */}
+                <Tooltip id={TOOLTIP_ID} ref={toggleRef}
+                    className={tooltipClasses}
+                    position='bottom-left' includePointer={false}>
+                    {switchProps.checked ? 'Turn Off Animation' : 'Animate'}
+                </Tooltip>
             </div>
         </DynamicHeader>
     )

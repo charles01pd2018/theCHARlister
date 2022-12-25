@@ -3,6 +3,9 @@
     $height: 5rem;
 
     position: fixed;
+    display: flex;
+    align-items: center;
+    height: $height;
     width: 100%;
     top: 0;
     background: white;
@@ -22,6 +25,6 @@
     }
 
     + * {
-        margin-top: $height;
+        margin-top: $height + 1rem;
     }
 }

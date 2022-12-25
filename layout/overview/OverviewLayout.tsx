@@ -15,7 +15,7 @@ const DisplayLayout = ( {
     return (
         <>
             <OverviewHeader />
-            <main className='overview-layout'>
+            <main className='overview-layout container'>
                 {children}
             </main>
             <DisplayFooter />

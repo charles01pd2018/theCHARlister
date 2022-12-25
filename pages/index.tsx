@@ -48,13 +48,13 @@ const Home = ( {
   );
 }
 
-const HomeContent: Content = {
+const content: Content = {
   pageTitle: 'theCHARlister',
 };
 
 export const getStaticProps: GetStaticProps = () => {
   const props: Props = {
-    content: HomeContent,
+    content,
   }
 
   return {

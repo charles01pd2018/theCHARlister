@@ -1,7 +1,20 @@
+// constants
+@use '../constants/breakpoints' as *;
+
+
 /*--------------------------------------------------------------
 # Styling
 --------------------------------------------------------------*/
-.container {
+.container--wide {
     padding: clamp( 1.5rem, 4.5vh, 3rem ) 
             clamp( 0.8rem, 2vw, 2rem );
+}
+
+.container {
+    padding: clamp( 1.5rem, 4.5vh, 3rem ) 
+        clamp( 2rem, 15vw, 30rem );
+
+    @media( max-width: $breakpoint--small ) {
+        padding-inline: 1.3rem;
+    }
 }
