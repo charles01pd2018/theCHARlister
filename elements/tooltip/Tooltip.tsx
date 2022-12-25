@@ -7,7 +7,9 @@ import type { Colors } from 'types';
 
 
 /* TYPES */
-export type TooltipPositions = 'top' | 'bottom' | 'right' | 'left' | 'bottom-left' | 'bottom-right';
+export type TooltipPositions = 'top' | 'bottom' | 'right' | 'left' | 
+                                'bottom-left' | 'bottom-right' | 
+                                'top-left' | 'top-right';
 
 export interface Props {
     children: ReactNode;
@@ -41,6 +43,7 @@ const getTooltipStyles = ( input: GetTooltipStylesInput ) => {
     const refRect = ref.current?.getBoundingClientRect();
 
     if ( tooltipRect && refRect ) {
+        // TODO - simplify this
         if ( position === 'top' ) {
             return {
                 left: `${refRect.width / 2 - tooltipRect.width / 2}px`,
@@ -75,6 +78,18 @@ const getTooltipStyles = ( input: GetTooltipStylesInput ) => {
             return {
                 left: `${refRect.width / 2}px`,
                 top: `${refRect.height + tooltipPadding}px`,
+            }
+        }
+        else if ( position === 'top-left' ) {
+            return {
+                right: `${refRect.width / 2}px`,
+                bottom: `${refRect.height + tooltipPadding}px`,
+            }
+        }
+        else if ( position === 'top-right' ) {
+            return {
+                left: `${refRect.width / 2}px`,
+                bottom: `${refRect.height + tooltipPadding}px`,
             }
         }
     }

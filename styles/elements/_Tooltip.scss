@@ -57,7 +57,9 @@
             position: absolute;
             transform: translate( -50%, -50% );
 
-            &.top {
+            &.top,
+            &.top-left,
+            &.top-right {
                 left: 50%;
                 top: calc( 100% + $pointer-size );
 
@@ -118,11 +120,25 @@
                     }
                 }
             }
+
+            $pointer-shift: $pointer-size * 0.5;
+            &.bottom-left,
+            &.top-left {
+                left: calc( 100% - $pointer-shift );
+            }
+
+            &.top-right,
+            &.bottom-right {
+                left: $pointer-shift;
+            }
+
         }
     }
 
     /* POSITION */
-    &.top {
+    &.top,
+    &.top-left,
+    &.top-right {
         transform-origin: bottom;
     }
 
@@ -143,7 +159,9 @@
     &.top,
     &.bottom,
     &.bottom-left,
-    &.bottom-right {
+    &.bottom-right,
+    &.top-left,
+    &.top-right {
         &.slide {
             &.not-active {
                 transform: scaleY( 0.8 );
