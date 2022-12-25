@@ -14,9 +14,14 @@ import type { TooltipIconContent } from 'elements/types';
 
 
 /* TYPES */
+interface Item extends TooltipIconContent {
+    type: string;
+    tooltip: string;
+}
+
 export interface Content {
-    mainIcons: TooltipIconContent[];
-    subIcons: TooltipIconContent[];
+    mainIcons: Item[];
+    subIcons: Item[];
 }
 
 export interface Props {
@@ -37,28 +42,36 @@ const Technologies = ( {
         className,
     );
 
+    const Icon = ( { content }: { content: Item } ) => {
+        const { type, tooltip, ...restContent } = content;
+
+        return (
+            <li className='icon-wrapper' key={type}>
+                <TooltipIcon id={type} content={restContent}>
+                    {tooltip}
+                </TooltipIcon>
+            </li>
+        );
+    }
+
     return (
         <section className={technologiesClasses}>
             <ul className='main-icons-wrapper'>
                 {
                     mainIcons.map( ( content ) => {
                         return (
-                            <li className='icon-wrapper' key={content.icon.alt}>
-                                <TooltipIcon content={content} />
-                            </li>
-                        )
-                    })
+                            <Icon content={content} />
+                        );
+                    } )
                 }
             </ul>
             <ul className='sub-icons-wrapper'>
                 {
                     subIcons.map( ( content ) => {
                         return (
-                            <li className='icon-wrapper' key={content.icon.alt}>
-                                <TooltipIcon content={content} />
-                            </li>
-                        )
-                    })
+                            <Icon content={content} />
+                        );
+                    } )
                 }
             </ul>
         </section>

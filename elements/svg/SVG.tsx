@@ -1,9 +1,10 @@
 // dependencies
 import classNames from 'classnames';
+import { HTMLAttributes } from 'react';
 
 
 /* TYPES */
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLObjectElement> {
     className?: string;
     data: string;
     alt: string;
@@ -19,6 +20,7 @@ const SVG = ( {
     width,
     height,
     type='image/svg+xml',
+    ...rest
 }: Props ) => {
     /* CLASSNAMES */
     const svgClasses = classNames(
@@ -29,7 +31,7 @@ const SVG = ( {
     return (
         <object className={svgClasses}
             width={width} height={height}
-            data={data} type={type}>
+            data={data} type={type} {...rest}>
             {alt}
         </object>
     );
