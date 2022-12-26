@@ -9,7 +9,7 @@ import type { LinkData } from 'types';
 export interface Props {
     className?: string;
     content: LinkData;
-    type: 'lift-underline' | 'arrow';
+    type: 'lift-underline' | 'arrow' | 'blue-background' | null;
 }
 
 const NavLink = ( {

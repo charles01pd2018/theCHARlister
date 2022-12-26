@@ -1,5 +1,5 @@
 // lib
-import { PROJECT_ENDPOINT, EXPERIENCE_ENDPOINT, REFERENCES_ENDPOINT } from '@lib/constants';
+import { PROJECTS_ENDPOINT, EXPERIENCE_ENDPOINT, REFERENCES_ENDPOINT } from '@lib/constants';
 // types
 import type { DisplayFooterContent } from 'components/types';
 
@@ -8,7 +8,7 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
     email: 'theCHARlister@gmail.com',
     textLinks: [
         {
-            href: PROJECT_ENDPOINT,
+            href: PROJECTS_ENDPOINT,
             text: 'Projects',
         },
         {
@@ -23,7 +23,7 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
     iconLinks: [
         {
             icon: {
-                data: 'static/icons/github-logo.svg',
+                data: '/static/icons/github-logo.svg',
                 alt: 'Github logo icon',
             },
             title: 'Github',
@@ -31,7 +31,7 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
         },
         {
             icon: {
-                data: 'static/icons/twitter-logo.svg',
+                data: '/static/icons/twitter-logo.svg',
                 alt: 'Twitter logo icon',
             },
             title: 'Twitter',
@@ -39,7 +39,7 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
         },
         {
             icon: {
-                data: 'static/icons/linkedin-logo.svg',
+                data: '/static/icons/linkedin-logo.svg',
                 alt: 'LinkedIn logo icon',
             },
             title: 'LinkedIn',
@@ -47,7 +47,7 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
         },
         {
             icon: {
-                data: 'static/icons/npm-logo.svg',
+                data: '/static/icons/npm-logo.svg',
                 alt: 'npm logo icon',
             },
             title: 'npm',

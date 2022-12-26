@@ -29,7 +29,7 @@ const IconLogo = ( {
 
     return (
         <SVG className={iconLogoClasses}
-            data={`static/icons/${type === 'backgrond' ? 'background-' : ''}logo.svg`}
+            data={`/static/icons/${type === 'backgrond' ? 'background-' : ''}logo.svg`}
             alt='theCHARlister pofo logo'
             width={width} height={height} />
     );

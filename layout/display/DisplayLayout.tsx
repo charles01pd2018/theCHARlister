@@ -2,7 +2,7 @@
 import { ReactNode } from 'react';
 // components
 import { DisplayHeader, DisplayFooter, 
-    IconsNavFooter, IconsNavSidebar } from 'components/layout';
+    IconsNavFooter, IconsNavSidebar } from 'components';
 // types
 import type { DisplayHeaderSwitchProps } from 'components/types';
 

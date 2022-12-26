@@ -21,7 +21,7 @@ const XIcon = ( {
 
     return (
         <SVG className={xIconClasses}
-            data='static/icons/x.svg' alt='X icon'
+            data='/static/icons/x.svg' alt='X icon'
             width={width} height={height} />
     )
 }

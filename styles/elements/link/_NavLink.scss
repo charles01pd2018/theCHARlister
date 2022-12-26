@@ -1,3 +1,7 @@
+// dependencies
+@use 'sass:map';
+// colors
+@use '../../constants/colors' as *;
 // utils
 @use '../../utils/selectors/tap' as *;
 
@@ -40,5 +44,20 @@
 
     &.arrow {
         
+    }
+
+    &.blue-background {
+        $transition: 0.21s ease;
+
+        mix-blend-mode: multiply;
+        border-radius: 5px;
+        padding: 2px 3px;
+        transition: background-color $transition,
+                    color $transition;
+
+        @include tap {
+            background: map.get( $colors, 'blue', 1 );
+            color: map.get( $colors, 'blue', 4 );
+        }
     }
 }

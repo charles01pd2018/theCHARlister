@@ -1,6 +1,8 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
+// elements
+import { NavLink } from 'elements';
 // types
 import type { LinkData } from 'types';
 
@@ -30,14 +32,16 @@ const Breadcrumbs = ( {
     return (
         <ul className={breadcrumbsClasses}>
             {
-                links.map(( { text, href }, index ) => {
+                links.map(( linkContent, index ) => {
+                    const isLastLink = index === links.length - 1;
+
                     return (
                         <li className='link-wrapper'>
-                            <Link className='link' href={href}>
-                                {text}
-                            </Link>
+                            <NavLink className={isLastLink ? 'text--sm' : ''}
+                                type={!isLastLink ? 'blue-background' : null} 
+                                content={linkContent} />
                             {
-                                index !== links.length - 1 ? (
+                                !isLastLink ? (
                                     <span className='seperator'>
                                         /
                                     </span>

@@ -4,7 +4,7 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
     items: [
         {
             logo: {
-                data: 'static/icons/knowt-logo.svg',
+                data: '/static/icons/knowt-logo.svg',
                 alt: 'Knowt Logo',
             },
             company: 'Knowt',
@@ -21,7 +21,7 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
         },
         {
             logo: {
-                data: 'static/icons/avery-logo.svg',
+                data: '/static/icons/avery-logo.svg',
                 alt: 'Avery Logo',
             },
             company: 'Avery',

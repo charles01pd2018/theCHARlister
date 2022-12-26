@@ -1,7 +1,7 @@
 // dependencies
 import { ReactNode } from 'react';
 // components
-import { OverviewHeader, DisplayFooter } from 'components/layout';
+import { OverviewHeader, DisplayFooter } from 'components';
 
 
 /* TYPES */

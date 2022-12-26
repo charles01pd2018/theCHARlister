@@ -1,27 +1,36 @@
+// components
+import { OverviewHeader, DisplayFooter, Parallax } from 'components';
 // elements
 import { Breadcrumbs } from 'elements/breadcrumbs';
 // types
-import type { ReactNode } from 'react';
+import type { ParallaxContent } from 'components/types';
+import type { BreadcrumbsContent } from 'elements/types';
 
 
 export interface Content {
-
+    parallaxContent: ParallaxContent;
+    breadcrumbsContent: BreadcrumbsContent;
 }
 
 export interface Props {
-    children: ReactNode;
     content: Content;
 }
 
 const ArticleLayout = ( {
-    children,
     content,
 }: Props ) => {
+    /* CONTENT */
+    const { parallaxContent, breadcrumbsContent } = content;
+
     return (
         <>
+            <OverviewHeader />
             <main className='article-layout'>
-                {children}
+                <Breadcrumbs className='container--wide'
+                    content={breadcrumbsContent} />
+                <Parallax content={parallaxContent} />
             </main>
+            <DisplayFooter />
         </>
     )
 }

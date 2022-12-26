@@ -5,7 +5,7 @@ export const ICONS_NAV_CONTENT: IconsNavContent = {
     items: [
         {
             icon: {
-                data: 'static/icons/about-me.svg',
+                data: '/static/icons/about-me.svg',
                 alt: 'Person Icon',
             },
             href: '#About-Me',
@@ -14,7 +14,7 @@ export const ICONS_NAV_CONTENT: IconsNavContent = {
         },
         {
             icon: {
-                data: 'static/icons/projects.svg',
+                data: '/static/icons/projects.svg',
                 alt: 'Paper Icon',
             },
             href: '#Projects',
@@ -23,7 +23,7 @@ export const ICONS_NAV_CONTENT: IconsNavContent = {
         },
         {
             icon: {
-                data: 'static/icons/contact.svg',
+                data: '/static/icons/contact.svg',
                 alt: 'Phone Icon',
             },
             href: '#Contact',

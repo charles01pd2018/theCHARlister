@@ -20,14 +20,14 @@ const OverviewHeader = ( {
     const scrollDirection = useScroll();
 
     /* CLASSNAMES */
-    const OverviewHeaderClasses = classNames(
+    const overviewHeaderClasses = classNames(
         'overview-header',
         `${scrollDirection === 'down' ? 'hide' : ''}`,
         className,
     );
 
     return (
-        <DynamicHeader className={OverviewHeaderClasses}>
+        <DynamicHeader className={overviewHeaderClasses}>
             <IconLogoLink />
         </DynamicHeader>
     )

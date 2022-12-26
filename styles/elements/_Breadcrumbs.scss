@@ -1,3 +1,18 @@
 .breadcrumbs {
-    
+    display: flex;
+    align-items: center;
+
+    .link-wrapper {
+        .nav-link {
+            margin-inline: 0.4rem;
+
+            &:last-child {
+                font-weight: bold;
+            }
+        }
+
+        .seperator {
+            opacity: 0.6;
+        }
+    }
 }
