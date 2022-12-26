@@ -4,11 +4,17 @@ import classNames from 'classnames';
 import { Text } from 'elements';
 // types
 import type { TextContent } from 'elements/types';
+import type { Media } from 'types';
 
 
 /* TYPES */
-export interface Content {
+interface Item {
     texts: TextContent[];
+    media?: Media;
+}
+
+export interface Content {
+    items: Item[];
 }
 
 export interface Props {
@@ -21,7 +27,7 @@ const Article = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { texts } = content;
+    const { items } = content;
 
     /* CLASSNAMES */
     const articleClasses = classNames(
@@ -32,10 +38,16 @@ const Article = ( {
     return (
         <article className={articleClasses}>
             {
-                texts.map( ( textContent, index ) => {
+                items.map( ( { texts, media }, index ) => {
                     return (
-                        <Text key={index}
-                            content={textContent} />
+                        <div className='text-wrapper' key={index}>
+                            {
+                                texts.map( ( textContent, innerIndex ) => (
+                                    <Text key={`text:${innerIndex}`}
+                                        content={textContent} />
+                                ) )
+                            }
+                        </div>
                     )
                 } )
             }

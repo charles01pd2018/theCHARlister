@@ -56,30 +56,40 @@ const content: Content = {
                 },
             ],
         },
-        parallaxContent: {
+        articleContent: {
             items: [
                 {
-                    articleContent: {
-                        texts: [
-                            {
-                                text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                            },
-                            {
-                                text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                            },
-                            {
-                                text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                            },
-                            {
-                                text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                            },
-                        ],
-                    },
-                    icon: {
+                    texts: [
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                        {
+                            text: 'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        },
+                    ],
+                    media: {
                         data: '/static/icons/contact.svg',
                         alt: '',
-                    }
-                }
+                    },
+                },
             ],
         },
     },

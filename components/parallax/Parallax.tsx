@@ -1,33 +1,30 @@
+/**
+ * Have unique box-shadow color depending on project?
+ */
+
 // dependencies
 import classNames from 'classnames';
 import { useState } from 'react';
-// components
-import { Article } from 'components';
 // elements
-import { SVG } from 'elements';
+import { SVG, Text } from 'elements';
 // types
 import type { ArticleContent } from 'components/types';
-import type { IconData } from 'types';
 
 
 /* TYPES */
-interface Item {
-    articleContent: ArticleContent;
-    icon: IconData;
-}
-
-export interface Content {
-    items: Item[];
+export interface Content extends ArticleContent {
 }
 
 export interface Props {
     className?: string;
     content: Content;
+    WrapperTag?: 'article' | 'div';
 }
 
 const Technologies = ( {
     className='',
     content,
+    WrapperTag='article',
 }: Props ) => {
     /* CONTENT */
     const { items } = content;
@@ -37,26 +34,34 @@ const Technologies = ( {
 
     /* CLASSNAMES */
     const parallaxClasses = classNames(
-        'parallax-wrapper',
+        'parallax-container',
         className,
     );
 
     return (
         <section className={parallaxClasses}>
-            <ul className='parallax'>
-                {
-                    items.map( ( { articleContent, icon } ) => {
-                        // TODO - use in view
-                        return (
-                            <li className='item'>
-                                <Article content={articleContent} />
-                                <SVG {...icon}
-                                    width={100} height={100} />
-                            </li>
-                        )
-                    })
-                }
-            </ul>
+            <div className='parallax-wrapper'>
+                <div className='media-wrapper'>
+                    <SVG {...items[activeArticleIndex].media}
+                        width={150} height={150} />
+                </div>
+                <WrapperTag className='text-container'>
+                    {
+                        items.map( ( { texts }, index ) => {
+                            return (
+                                <div className='text-wrapper' key={index}>
+                                    {
+                                        texts.map( ( textContent, innerIndex ) => (
+                                            <Text key={`text:${innerIndex}`}
+                                                content={textContent} />
+                                        ) )
+                                    }
+                                </div>
+                            )
+                        } )
+                    }
+                </WrapperTag>
+            </div>
         </section>
     )
 }

@@ -11,3 +11,4 @@ export * from './logo/types';
 export * from './text/types';
 export * from './button/types';
 export * from './link/types';
+export * from './video/types';

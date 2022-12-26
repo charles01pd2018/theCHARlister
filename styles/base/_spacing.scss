@@ -18,3 +18,11 @@
         padding-inline: 1.3rem;
     }
 }
+
+.spacing--v {
+    margin-bottom: 3rem;
+}
+
+.spacing--hWide {
+    margin-inline: clamp( 1.5rem, 4.5vh, 3rem );
+}

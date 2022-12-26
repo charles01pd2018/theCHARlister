@@ -1,0 +1,25 @@
+// constants
+@use '../constants/breakpoints' as *;
+
+
+.article-layout {
+    .breadcrumbs {
+        padding-top: 1.5rem;
+    }
+
+    .article {
+        display: none;
+        border-top: 2px solid gray;
+        padding-top: 1rem;
+    }
+
+    @media ( max-width: $breakpoint--medium ) {
+        .parallax-container {
+            display: none;
+        }
+
+        .article {
+            display: block;
+        }
+    }
+}
