@@ -10,8 +10,11 @@ import classNames from 'classnames';
 import { NavLink, Palette } from 'elements';
 // content
 import { ABOUT_ME_CONTENT } from 'components/content';
+// lib
+import { useClientWidth, BREAKPOINT_MEDIUM } from 'lib';
 // types
 import type { LinkData } from 'types';
+import type { PaletteContent } from 'elements/types';
 
 
 /* TYPES */
@@ -19,6 +22,7 @@ export interface Content {
     title: string;
     description: string;
     link: LinkData;
+    paletteContent: PaletteContent;
 }
 
 export interface Props {
@@ -31,7 +35,10 @@ const AboutMe = ( {
     content=ABOUT_ME_CONTENT,
 }: Props ) => {
     /* CONTENT */
-    const { title, description, link } = content;
+    const { title, description, link, paletteContent } = content;
+
+    /* HOOKS */
+    const width = useClientWidth();
 
     /* CLASSNAMES */
     const aboutMeClasses = classNames(
@@ -46,7 +53,8 @@ const AboutMe = ( {
                 <p className='description text--lg'>{description}</p>
                 <NavLink className='text--norm' content={link} type='arrow' />
             </div>
-            <Palette />
+            <Palette content={paletteContent} 
+                iconSize={width < BREAKPOINT_MEDIUM ? [ 70, 70 ] : undefined} />
         </section>
     )
 }

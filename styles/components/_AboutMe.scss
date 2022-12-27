@@ -2,6 +2,7 @@
 @use 'sass:map';
 // constants
 @use '../constants/colors' as *;
+@use '../constants/breakpoints' as *;
 
 
 .about-me {
@@ -34,5 +35,30 @@
 
     .palette {
         width: 100vw - $text-width;
+    }
+
+    @media ( max-width: $breakpoint--extra-large ) {
+        flex-flow: row wrap;
+
+        .text-wrapper {
+            width: 100vw;
+            text-align: center;
+
+            .title {
+                margin-inline: auto;
+            }
+        }
+
+        .palette {
+            margin-top: 10rem;
+            margin-inline: auto;
+            width: 80vw;
+        }
+    }
+
+    @media ( max-width: $breakpoint--medium ) {
+        .palette {
+            margin-top: 4rem;
+        }
     }
 }
