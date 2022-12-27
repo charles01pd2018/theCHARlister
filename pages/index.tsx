@@ -1,6 +1,8 @@
 // dependencies
 import Head from 'next/head';
 import { useState } from 'react';
+// components
+import { AboutMe } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
 // types
@@ -41,6 +43,7 @@ const Home = ( {
         checked: shouldAnimate,
         onChange: toggleShouldAnimate,
       }}>
+        <AboutMe className='container--wide' />
         <BlobIcon />
       </DisplayLayout>
     </>

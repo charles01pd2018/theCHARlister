@@ -2,9 +2,12 @@
  * 1. Codepen Portal: https://codepen.io/jasesmith/pen/qqgvZe
  * 2. Heading Gradient: https://colorffy.com/text-gradient-generator
  * 3. Slanted Background + Pick color for that backgrond
+ * 4. Sub out for code icons - https://codepen.io/ykadosh/pen/PoBPKvJ
  */
 // dependencies
 import classNames from 'classnames';
+// elements
+import { NavLink, Palette } from 'elements';
 // content
 import { ABOUT_ME_CONTENT } from 'components/content';
 // types
@@ -38,7 +41,12 @@ const AboutMe = ( {
 
     return (
         <section className={aboutMeClasses}>
-
+            <div className='text-wrapper'>
+                <h2 className='title big-heading'>{title}</h2>
+                <p className='description text--lg'>{description}</p>
+                <NavLink className='text--norm' content={link} type='arrow' />
+            </div>
+            <Palette />
         </section>
     )
 }

@@ -1,0 +1,126 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../constants/colors' as *;
+
+
+.palette {
+    // Read more about this function here: https://yoavik.com/snippets/3d-text
+    @function extrude($layers, $color1, $color2) {
+        $spread: 0.05rem;
+        $scatter: 0.01;
+        $gap: 0.02;
+        $value: 0 0 $spread $color1;
+
+        @for $i from 1 through $layers {
+            $value: #{$value}, #{($i * -2 - 1) * $gap - $scatter}rem #{($i * 2 - 1) * $gap - $scatter}rem $spread #{$color1};
+            $value: #{$value}, #{$i * -2 * $gap + $scatter}rem #{$i * 2 * $gap + $scatter}rem $spread #{$color2};
+        }
+
+        @return $value;
+    }
+
+    $transition: 0.2s ease;
+  
+    display: flex;
+    padding: 2rem;
+    overflow: hidden;
+    border-radius: 4rem;
+    transform: rotateX(50deg) rotateZ(-45deg);
+  
+    @each $color, $color-map in $colors {
+        &.#{$color} {
+            background: map.get( $color-map, 1 );
+            box-shadow: -0.1rem 0.1rem 0.05rem rgb(255 255 255 / 20%),
+                        extrude(20, map.get( $color-map, 3 ), hsl(284 8% 12%)),
+                        -0.9rem 0.9rem 0.5rem rgba(0, 0, 0, 0.5);
+        }
+    }
+
+    .tools-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .icon-wrapper {
+            --dx: -0.4rem;
+            --dy: 0.5rem;
+
+            transition: transform 0.2s ease;
+            transform: translate(0.5rem, -0.5rem);
+          
+            &:hover {
+              --dx: -0.7rem;
+              --dy: 0.8rem;
+              transform: translate(0.8rem, -0.8rem);
+            }
+          
+            .svg {
+              fill: hsl(274 20% 48%);
+              font-size: 5rem;
+              transition: all 0.2s ease;
+              filter:
+                drop-shadow(0 0 0.03rem hsl(284deg, 22%, 47%))
+                drop-shadow(-0.05rem 0.07rem 0 rgb(255 255 255 / 70%))
+                drop-shadow(-0.1rem 0.15rem 0 hsl(284deg, 22%, 17%))
+                drop-shadow(-0.1rem 0.15rem 0 hsl(284deg, 22%, 17%))
+                drop-shadow(-0.1rem 0.15rem 0 hsl(284deg, 22%, 17%))
+                drop-shadow(-0.1rem 0.15rem 0 hsl(284deg, 22%, 17%))
+                drop-shadow(-0.1rem 0.15rem 0 hsl(284deg, 22%, 17%))
+                drop-shadow(-0.1rem 0.15rem 0 hsl(284deg, 22%, 17%))
+                drop-shadow(var(--dx) var(--dy) 0.2rem hsl(0deg 0% 0% / 90%))
+                drop-shadow(-0.2rem 0.3rem 0.2rem hsl(284deg 52% 77% / 50%));
+            }
+        }
+    }
+
+    .icons-wrapper {
+        width: 75%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+
+        .svg {
+            margin: 10%;
+            position: relative;
+          
+            .icon-inner {
+                --d: 1.3rem;
+
+                width: 100%;
+                height: 100%;
+                border-radius: 10rem;
+                transition: all 0.2s ease;
+                transform: translate(0.5rem, -0.5rem);
+                background-image: radial-gradient(
+                    at 0% 100%,
+                    hsl(var(--h), var(--s), var(--l)) 50%,
+                    hsl(calc(var(--h) + 5), calc(var(--s) - 10%), calc(var(--l) - 20%))
+                  );
+                box-shadow: -0.1rem 0.1rem 0.05rem rgb(255 255 255 / 50%),
+                  extrude(15, hsl(var(--h), calc(var(--s) - 10%), calc(var(--l) - 20%)), hsl(var(--h), var(--s), var(--l))),
+                  calc(var(--d) * -1) var(--d) 0.4rem rgba(0, 0, 0, 0.7),
+                  calc(var(--d) * -1 - 0.3rem) calc(var(--d) + 0.3rem) 1rem hsl(var(--h) var(--s) var(--l) / 50%);
+
+                &:hover {
+                    --d: 1.6rem;
+                    transform: translate(0.8rem, -0.8rem);
+                }
+            }
+        }
+    }
+
+
+    @media screen and (max-width: 900px) {
+        :root {
+            font-size: 12px;
+        }
+    }
+    
+    @media screen and (max-width: 700px) {
+        :root {
+            font-size: 8px;
+        }
+    }
+}

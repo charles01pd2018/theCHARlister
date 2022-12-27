@@ -1,3 +1,9 @@
+/**
+ * 3D Hoverable: https://codepen.io/joshsalazar/details/GROEmRj
+ * https://codepen.io/simeydotme/details/PrQKgo
+ * Text appear hover: https://codepen.io/simeydotme/pen/abqYGWa
+ */
+
 // dependencies
 import classNames from 'classnames';
 import Image from 'next/image';

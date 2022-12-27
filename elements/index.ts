@@ -11,3 +11,4 @@ export * from './text';
 export * from './button';
 export * from './link';
 export * from './video';
+export * from './palette';

@@ -11,12 +11,19 @@
     padding-inline: 1.5rem;
 
     .nav-links-wrapper {
+        background: white;
+        border-radius: 18px;
         margin-bottom: 11vh;
-        padding-right: 2vw;
+        margin-right: 1.5vw;
+        padding-inline: 0.3rem;
+        box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.021),
+                    0px 0px 3.1px rgba(0, 0, 0, 0.03),
+                    0px 0px 7.5px rgba(0, 0, 0, 0.039),
+                    0px 0px 25px rgba(0, 0, 0, 0.06);
 
         .link-wrapper {
             position: relative;
-            margin-block: 2rem;
+            margin-block: 1.5rem;
 
             .tooltip {
                 white-space: nowrap;

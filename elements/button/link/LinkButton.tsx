@@ -6,25 +6,27 @@ import Link from 'next/link';
 /* TYPES */
 export interface Content {
     text: string;
+    href: string;
 }
 
 export interface Props {
     className?: string;
     content: Content;
-    href: string;
+    type: 'arrow';
 }
 
 const LinkButton = ( {
     className='',
     content,
-    href,
+    type,
 }: Props ) => {
     /* CONTENT */
-    const { text } = content;
+    const { text, href } = content;
 
     /* CLASSNAMES */
     const linkButtonClasses = classNames(
         'link-button',
+        type,
         className,
     );
 
