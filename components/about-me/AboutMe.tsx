@@ -1,7 +1,6 @@
 /**
- * 1. Codepen Portal: https://codepen.io/jasesmith/pen/qqgvZe
  * 2. Heading Gradient: https://colorffy.com/text-gradient-generator
- * 3. Slanted Background + Pick color for that backgrond
+ * 3. shadows.brumm
  * 4. Sub out for code icons - https://codepen.io/ykadosh/pen/PoBPKvJ
  */
 // dependencies

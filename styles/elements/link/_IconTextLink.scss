@@ -1,0 +1,40 @@
+// utils
+@use '../../utils/color/getBackgroundColors' as *;
+@use '../../utils/selectors/activeTap' as *;
+
+
+.icon-text-link {
+    $transition: 0.21s ease;
+
+    display: flex;
+    align-items: center;
+    padding: 5px 7px;
+    border-radius: 5px;
+
+    transition: background-color $transition;
+
+    .icon-wrapper {
+        display: flex;
+        opacity: 0.8;
+        padding: 5px;
+        border-radius: 50%;
+
+        transition: background-color $transition;
+    }
+
+    .text {
+        margin-left: 0.3rem;
+    }
+
+    @include activeTap {
+        @include getBackgroundColors();
+
+        .icon-wrapper {
+            @include getBackgroundColors( 2 );
+        }
+
+        .text {
+            font-weight: bold;
+        }
+    }
+}

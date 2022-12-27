@@ -5,11 +5,11 @@ import { HTMLAttributes } from 'react';
 // elements
 import { SVG } from 'elements';
 // types
-import type { Size, Colors, IconLink } from 'types';
+import type { Size, Colors, IconLinkData } from 'types';
 
 
 /* TYPES */
-export interface Content extends IconLink {
+export interface Content extends IconLinkData {
     title?: string
     color?: Colors;
 }
@@ -25,7 +25,7 @@ export interface Props extends HTMLAttributes<HTMLAnchorElement> {
     isActive?: boolean;
 }
 
-const LinkIconButton = ( {
+const IconLink = ( {
     className='',
     content,
     iconSize=[ 30, 30 ],
@@ -41,8 +41,8 @@ const LinkIconButton = ( {
     const [ width, height ] = iconSize;
 
     /* CLASSNAMES */
-    const linkIconButtonClasses = classNames(
-        'link-icon-button',
+    const iconLinkClasses = classNames(
+        'icon-link',
         type,
         color,
         isActive ? 'active' : 'not-active',
@@ -50,7 +50,7 @@ const LinkIconButton = ( {
     );
 
     return (
-        <Link className={linkIconButtonClasses} href={href} onClick={onClick}
+        <Link className={iconLinkClasses} href={href} onClick={onClick}
             title={title} aria-label={title} target={target} {...rest}>
             <SVG data={data} alt={alt}
                 width={width} height={height} />
@@ -58,4 +58,4 @@ const LinkIconButton = ( {
     );
 }
 
-export default LinkIconButton;
+export default IconLink;

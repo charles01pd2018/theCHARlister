@@ -1,7 +1,10 @@
 // dependencies
 import Head from 'next/head';
+// layout
+import { OverviewLayout } from 'layout';
 // types
 import type { GetStaticProps } from 'next';
+
 
 interface Content {
     pageTitle: string;
@@ -22,14 +25,23 @@ const Projects = ( {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
+            <OverviewLayout activePage='Projects'>
+
+            </OverviewLayout>
         </>
     );
 }
 
 export default Projects;
 
+const content: Content = {
+    pageTitle: 'Projects - theCHARlister',
+}
+
 export const getStaticProps: GetStaticProps = () => {
     return {
-        props: {}
+        props: {
+            content,
+        }
     }
 }

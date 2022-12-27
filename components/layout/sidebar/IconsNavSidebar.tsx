@@ -2,7 +2,7 @@
 import classNames from 'classnames';
 import { useRef } from 'react';
 // elements
-import { LinkIconButton, Tooltip } from 'elements';
+import { IconLink, Tooltip } from 'elements';
 // content
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types
@@ -39,7 +39,7 @@ const IconsNavSidebar = ( {
 
                         return (
                             <li className='link-wrapper' ref={ref} key={key}>
-                                <LinkIconButton isActive={activeItemIndex === index} 
+                                <IconLink isActive={activeItemIndex === index} 
                                     content={restContent} iconSize={iconSize}
                                     type='fill' aria-labelledby={tooltipId} />
                                 <Tooltip id={tooltipId} className='text--xxxs'

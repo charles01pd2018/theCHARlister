@@ -10,12 +10,14 @@ export interface Props {
     className?: string;
     content: LinkData;
     type: 'lift-underline' | 'arrow' | 'blue-background' | null;
+    isActive?: boolean;
 }
 
 const NavLink = ( {
     className='',
     content,
     type,
+    isActive,
 }: Props ) => {
     /* CONTENT */
     const { href, text } = content;
@@ -24,6 +26,7 @@ const NavLink = ( {
     const navLinkClasses = classNames(
         'nav-link',
         type,
+        isActive && 'active',
         className,
     );
 

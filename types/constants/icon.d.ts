@@ -3,7 +3,12 @@ export interface IconData {
     alt: string;
 }
 
-export interface IconLink {
+export interface IconLinkData {
     icon: IconData;
     href: string;
+    isActive?: boolean;
+}
+
+export interface IconTextLinkData extends IconLinkData {
+    text: string;
 }

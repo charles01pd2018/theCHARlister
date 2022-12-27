@@ -1,35 +1,56 @@
 // dependencies
 import classNames from 'classnames';
-// components
-import DynamicHeader from './DynamicHeader';
 // elements
-import { IconLogoLink } from 'elements';
-// lib
-import { useScroll } from 'lib';
+import { IconLogoLink, IconTextLink } from 'elements';
+// content
+import { OVERVIEW_HEADER_CONTENT } from 'components/content';
+// types
+import type { ActivePage } from 'components/types';
+import type { IconTextLinkContent } from 'elements/types';
 
 
 /* TYPES */
+export interface Content {
+    links: IconTextLinkContent[];
+}
+
 export interface Props {
     className?: string;
+    content?: Content;
+    activePage?: ActivePage;
 }
 
 const OverviewHeader = ( {
     className='',
+    content=OVERVIEW_HEADER_CONTENT,
+    activePage,
 }: Props ) => {
-    /* HOOKS */
-    const scrollDirection = useScroll();
+    /* CONTENT */
+    const { links } = content;
 
     /* CLASSNAMES */
     const overviewHeaderClasses = classNames(
+        'header',
         'overview-header',
-        `${scrollDirection === 'down' ? 'hide' : ''}`,
         className,
     );
 
     return (
-        <DynamicHeader className={overviewHeaderClasses}>
+        <header className={overviewHeaderClasses}>
             <IconLogoLink />
-        </DynamicHeader>
+            <nav className='nav'>
+                <ul className='links'>
+                    {
+                        links.map( ( linkContent ) => (
+                            <li className='link-wrapper'>
+                                <IconTextLink key={linkContent.href} content={linkContent}
+                                    isActive={activePage === linkContent.text} />
+                            </li>
+                        ) )
+                    }
+                </ul>
+            </nav>
+        </header>
     )
 }
 

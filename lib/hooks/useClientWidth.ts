@@ -17,6 +17,7 @@ const useClientWidth = ( debounceTime: number=100 ) => {
     }, debounceTime );
 
     useEffect( () => {
+        setWidth( window.innerWidth );
         window.addEventListener( 'resize', handleWindowResize );
 
         return () => {

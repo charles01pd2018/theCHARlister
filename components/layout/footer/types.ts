@@ -2,11 +2,11 @@
 import type { Props as DisplayFooterProps,
     Content as DisplayFooterContent } from './DisplayFooter';
 // used
-import { LinkIconButtonContent } from 'elements/types';
+import { IconLinkContent } from 'elements/types';
 import type { Size } from 'types';
 
 
-export interface IconsNavItem extends LinkIconButtonContent {
+export interface IconsNavItem extends IconLinkContent {
     tooltip: string;
 }
 

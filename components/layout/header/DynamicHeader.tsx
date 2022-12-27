@@ -20,6 +20,7 @@ const DynamicHeader = ( {
 
     /* CLASSNAMES */
     const dynamicHeaderClasses = classNames(
+        'header',
         'dynamic-header',
         `${scrollDirection === 'down' ? 'hide' : ''}`,
         className,

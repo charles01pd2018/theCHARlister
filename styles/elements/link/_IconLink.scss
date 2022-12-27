@@ -2,13 +2,13 @@
 @use 'sass:map';
 @use 'sass:color';
 // constants 
-@use '../../../constants/colors' as *;
+@use '../../constants/colors' as *;
 // utils
-@use '../../../utils/color/getBackgroundColors' as *;
-@use '../../../utils/selectors/tap' as *;
+@use '../../utils/color/getBackgroundColors' as *;
+@use '../../utils/selectors/tap' as *;
 
 
-.link-icon-button {
+.icon-link {
     display: flex;
     justify-content: center;
     align-items: center;

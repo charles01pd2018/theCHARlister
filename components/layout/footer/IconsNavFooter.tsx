@@ -2,7 +2,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 // elements
-import { LinkIconButton, ToggleButton, SVG, XIcon } from 'elements';
+import { IconLink, ToggleButton, SVG, XIcon } from 'elements';
 // content
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types
@@ -70,7 +70,7 @@ const IconsNavFooter = ( {
                     items.map( ( content ) => {
                         return (
                             <li className={popoutLinkWrapperClasses} key={`footer:${content.href}`}>
-                                <LinkIconButton onClick={close}
+                                <IconLink onClick={close}
                                     content={content} type='background' />
                             </li>
                         )

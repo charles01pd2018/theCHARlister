@@ -1,29 +1,32 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { NavLink, LinkIconButton, IconLogoLink } from 'elements';
+import { NavLink, IconLink, IconLogoLink } from 'elements';
 // content
 import { DISPLAY_FOOTER_CONTENT } from 'components/content';
 // types
 import type { LinkData } from 'types';
-import type { LinkIconButtonContent } from 'elements/types';
+import type { IconLinkContent } from 'elements/types';
+import type { ActivePage } from 'components/types';
 
 
 /* TYPES */
 export interface Content {
     email: string;
     textLinks: LinkData[];
-    iconLinks: LinkIconButtonContent[];
+    iconLinks: IconLinkContent[];
 }
 
 export interface Props {
     className?: string;
     content?: Content;
+    activePage?: ActivePage;
 }
 
 const DisplayFooter = ( {
     className='',
     content=DISPLAY_FOOTER_CONTENT,
+    activePage,
 }: Props ) => {
     /* CONTENT */
     const { email, textLinks, iconLinks } = content;
@@ -43,7 +46,8 @@ const DisplayFooter = ( {
                             textLinks.map( ( linkContent ) => {
                                 return (
                                     <li className='link-wrapper text--norm' key={linkContent.href}>
-                                        <NavLink type='lift-underline' content={linkContent} />
+                                        <NavLink type='lift-underline' content={linkContent}
+                                            isActive={activePage === linkContent.text} />
                                     </li>
                                 )
                             } )
@@ -62,7 +66,7 @@ const DisplayFooter = ( {
                                 iconLinks.map( ( linkContent ) => {
                                     return (
                                         <li className='icon-wrapper' key={linkContent.href}>
-                                            <LinkIconButton content={linkContent}
+                                            <IconLink content={linkContent}
                                                 type='pop-out' target='_blank' />
                                         </li>
                                     )
