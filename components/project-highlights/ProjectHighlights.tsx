@@ -21,7 +21,7 @@ export interface Props {
     id?: string;
     className?: string;
     content?: Content;
-    shouldAnimate?: boolean;
+    animate?: boolean;
     setActiveIndex: SetState<number>;
 }
 
@@ -29,7 +29,7 @@ const ProjectHighlights = ( {
     id='Projects',
     className='',
     content=PROJECT_HIGHLIGHTS_CONTENT,
-    shouldAnimate,
+    animate,
     setActiveIndex,
 }: Props ) => {
     /* CONTENT */
@@ -54,22 +54,25 @@ const ProjectHighlights = ( {
                     return (
                         <div className={projectClasses} key={projectId}>
                             <div className='container--wide'>
+                                <div className='blob-wrapper'>
+                                    <BlobIcon />
+                                </div>
+                                <div className='text-wrapper'>
+                                    <h3 className='h1 project-heading'>{title}</h3>
+                                    <p className='description text--lg'>{description}</p>
+                                </div>
+                                <AnimatedCurveArrowIcon animate={animate}
+                                    direction='bl-tr' color='blue' />
                                 <ProjectPreview size={[ 400, 300 ]} {...rest}>
                                     <h4>{navText}</h4>
                                 </ProjectPreview>
-                                {/* <div className='blob-wrapper'> */}
-                                    <BlobIcon />
-                                {/* </div> */}
-                                <div className='text-wrapper'>
-                                    <h3 className='project-heading'>{title}</h3>
-                                </div>
                             </div>
                         </div>
-                    )
+                    );
                 } )
             }
         </section>
-    )
+    );
 }
 
 export default ProjectHighlights;

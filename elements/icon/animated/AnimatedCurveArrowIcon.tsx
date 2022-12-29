@@ -4,18 +4,21 @@ import classNames from 'classnames';
 
 export interface Props {
     className?: string;
+    animate?: boolean;
     direction: 'bl-tr';
     color: string;
 }
 
 const AnimatedCurveArrowIcon = ( {
     className='',
+    animate,
     direction,
     color
 }: Props ) => {
     /* CLASSNAMES */
     const animatedCurveArrowIconClasses = classNames(
         'animated-curve-arrow-icon',
+        animate && 'animate',
         direction,
         className,
     );

@@ -8,8 +8,36 @@
     .project-wrapper {
         position: relative;
         height: 100vh;
+        border: 5px solid black;
+        overflow: hidden;
 
+        .blob-wrapper {
+            position: absolute;
+            top: 100%;
+            left: 30%;
+
+            transform: translate( -50%, -50% );
+        }
+
+        .text-wrapper {
+            position: absolute;
+            bottom: 30%;
+            color: white;
+
+            ::selection {
+                background: black;
+            }
+        }
+
+        .animated-curve-arrow-icon {
+            position: absolute;
+            bottom: 0;
+        }
+        
         .project-preview {
+            position: absolute;
+            right: 15%;
+
             .overlay {
                 .text-wrapper {
                     padding-bottom: 1rem;
@@ -19,11 +47,6 @@
                     transition-delay: 0.5s !important;
                 }
             }
-        }
-
-        .blob-icon {
-            position: absolute;
-            left: 50%;
         }
 
         &.beemy {

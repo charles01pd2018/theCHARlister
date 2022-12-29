@@ -26,7 +26,7 @@ const Home = ( {
   const { pageTitle } = content;
 
   /* HOOKS */
-  const [ shouldAnimate, setShouldAnimate ] = useState<boolean>( true );
+  const [ animate, setAnimate ] = useState<boolean>( true );
   const [ activeIndex, setActiveIndex ] = useState<number>( 0 );
 
   /* FUNCTIONS */
@@ -36,8 +36,8 @@ const Home = ( {
     }
   }
 
-  const toggleShouldAnimate = () => {
-      setShouldAnimate( state => !state );
+  const toggleAnimate = () => {
+      setAnimate( state => !state );
   }
 
   return (
@@ -47,14 +47,15 @@ const Home = ( {
       </Head>
       <DisplayLayout activeIndex={activeIndex} 
         displayHeaderSwitchProps={{
-          checked: shouldAnimate,
-          onChange: toggleShouldAnimate,
+          checked: animate,
+          onChange: toggleAnimate,
         }}>
         <InView onChange={(inView) => handleInView( inView, 0 )} threshold={0.8}>
           <AboutMe className='container--wide' />
         </InView>
         <InView onChange={(inView) => handleInView( inView, 1 )} threshold={0.2}>
-          <ProjectHighlights setActiveIndex={setActiveIndex} />
+          <ProjectHighlights animate={animate}
+            setActiveIndex={setActiveIndex} />
         </InView>
       </DisplayLayout>
     </>
