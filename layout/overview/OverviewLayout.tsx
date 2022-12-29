@@ -26,7 +26,7 @@ const DisplayLayout = ( {
 
     return (
         <>
-            <OverviewHeader />
+            <OverviewHeader activePage={activePage} />
             <main className='overview-layout container'>
                 {children}
             </main>

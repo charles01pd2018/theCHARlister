@@ -1,5 +1,5 @@
-import ProjectPreviewList from './ProjectList';
+import ProjectList from './ProjectList';
 
 export {
-    ProjectPreviewList,
+    ProjectList,
 }

@@ -1,0 +1,10 @@
+$staggered-text-transition: 0.75s ease;
+
+.staggered-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY( 13px );
+
+    transition: opacity $staggered-text-transition,
+                transform $staggered-text-transition;
+}

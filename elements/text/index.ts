@@ -1,6 +1,7 @@
-import Text from './Text';
+import StyledText from './StyledText';
+import StaggeredText from './StaggeredText';
 
 export {
-    Text,
-    
+    StyledText,
+    StaggeredText,
 }

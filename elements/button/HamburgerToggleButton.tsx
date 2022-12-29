@@ -1,0 +1,3 @@
+
+/* TYPES */
+export const word = '';

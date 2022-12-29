@@ -12,7 +12,7 @@ export interface Props {
     content: Content;
 }
 
-const Text = ( {
+const StyledText = ( {
     className='',
     content,
 }: Props ) => {
@@ -20,15 +20,15 @@ const Text = ( {
     const { text } = content;
 
     /* CLASSNAMES */
-    const textClasses = classNames(
-        'text',
+    const styledTextClasses = classNames(
+        'styled-text',
         className,
     );
 
     return (
-        <p className={textClasses}
+        <p className={styledTextClasses}
             dangerouslySetInnerHTML={{ __html: text }} />
     );
 }
 
-export default Text;
+export default StyledText;

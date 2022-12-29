@@ -2,6 +2,8 @@
 import Head from 'next/head';
 // layout
 import { OverviewLayout } from 'layout';
+// components
+import { ProjectList } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 
@@ -26,7 +28,7 @@ const Projects = ( {
                 <title>{pageTitle}</title>
             </Head>
             <OverviewLayout activePage='Projects'>
-
+                <ProjectList />
             </OverviewLayout>
         </>
     );

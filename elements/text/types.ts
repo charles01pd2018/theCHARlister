@@ -1,7 +1,9 @@
-import type { Props as TextProps,
-    Content as TextContent } from './Text';
+import type { Props as StyledTextProps,
+    Content as StyledTextContent } from './StyledText';
+import type { Props as StaggeredTextProps } from './StaggeredText';
 
 export type {
-    TextContent,
-    TextProps,
+    StyledTextContent,
+    StyledTextProps,
+    StaggeredTextProps,
 }

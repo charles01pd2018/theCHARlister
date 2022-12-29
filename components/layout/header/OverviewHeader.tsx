@@ -42,8 +42,8 @@ const OverviewHeader = ( {
                 <ul className='links'>
                     {
                         links.map( ( linkContent ) => (
-                            <li className='link-wrapper'>
-                                <IconTextLink key={linkContent.href} content={linkContent}
+                            <li key={linkContent.href} className='link-wrapper' >
+                                <IconTextLink content={linkContent}
                                     isActive={activePage === linkContent.text} />
                             </li>
                         ) )

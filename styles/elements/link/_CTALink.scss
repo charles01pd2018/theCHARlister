@@ -1,0 +1,73 @@
+// dependencies
+@use 'sass:math';
+@use 'sass:map';
+// constants
+@use '../../constants/colors' as *;
+// utils
+@use '../../utils/position/centerAbsolute' as *;
+@use '../../utils/selectors/activeTap' as *;
+
+
+.cta-link {
+    &.rainbow-shadow {
+        $border-radius: 4px;
+        $padding-block: 0.6rem;
+        $padding-inline: 0.5rem;
+
+        position: relative;
+        font-weight: bold;
+        background: #fff;
+        padding: $padding-block $padding-inline;
+        border-radius: $border-radius;
+        border: 1px solid #6A6A6A;
+
+        $half-padding-inline: math.div( $padding-inline, 2 );
+        $half-padding-block: math.div( $padding-block, 2 );
+
+        $bg-width: calc( 100% - $half-padding-inline );
+        $bg-height: calc( 100% - $half-padding-block );
+
+        &:before, 
+        &:after {
+            content:'';
+            @include center-absolute;
+
+            border-radius: $border-radius;
+            width: $bg-width;
+            height: $bg-height;
+            z-index: -1;
+            background: linear-gradient(
+              45deg, 
+              #fb0094, 
+              #0000ff, 
+              #00ff00, 
+              #ffff00, 
+              #ff0000, 
+              #fb0094, 
+              #0000ff, 
+              #00ff00, 
+              #ffff00, 
+              #ff0000
+            );
+        }
+          
+        &:after {
+            $transition: 0.19s ease;
+
+            width: $bg-width;
+            height: $bg-height;    
+            filter: blur( 9px );
+            opacity: 0.4;
+
+            transition: filter $transition,
+                        opacity $transition;
+        }
+
+        @include activeTap {
+            &:after {
+                filter: blur( 14px );
+                opacity: 0.5;
+            }
+        }
+    }
+}

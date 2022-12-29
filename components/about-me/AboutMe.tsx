@@ -6,7 +6,7 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { NavLink, Palette } from 'elements';
+import { CTALink, Palette } from 'elements';
 // content
 import { ABOUT_ME_CONTENT } from 'components/content';
 // lib
@@ -50,7 +50,7 @@ const AboutMe = ( {
             <div className='text-wrapper'>
                 <h2 className='title big-heading'>{title}</h2>
                 <p className='description text--lg'>{description}</p>
-                <NavLink className='text--norm' content={link} type='arrow' />
+                <CTALink className='text--norm' content={link} type='rainbow-shadow' />
             </div>
             <Palette content={paletteContent} 
                 iconSize={width < BREAKPOINT_MEDIUM ? [ 70, 70 ] : undefined} />

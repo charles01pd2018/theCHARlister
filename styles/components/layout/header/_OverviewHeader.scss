@@ -17,6 +17,7 @@
     }
 
     @media ( max-width: $breakpoint--small ) {
-        border: 1px solid red;
+        .nav {
+        }
     }
 }
