@@ -1,6 +1,7 @@
 html,
 body {
-  scroll-behavior: smooth;
+  // idk why i need !important here
+  scroll-behavior: smooth !important;
   margin: 0;
   font-family: VarelaRound, Verdana;
 }

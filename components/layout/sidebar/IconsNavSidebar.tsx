@@ -12,7 +12,7 @@ import type { IconsNavProps } from 'components/types';
 const IconsNavSidebar = ( {
     className='',
     content=ICONS_NAV_CONTENT,
-    activeItemIndex,
+    activeIndex,
     iconSize=[ 25, 25 ],
 }: IconsNavProps ) => {
     /* CONTENT */
@@ -39,7 +39,7 @@ const IconsNavSidebar = ( {
 
                         return (
                             <li className='link-wrapper' ref={ref} key={key}>
-                                <IconLink isActive={activeItemIndex === index} 
+                                <IconLink isActive={activeIndex === index} 
                                     content={restContent} iconSize={iconSize}
                                     type='fill' aria-labelledby={tooltipId} />
                                 <Tooltip id={tooltipId} className='text--xxxs'

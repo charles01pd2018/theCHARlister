@@ -10,16 +10,19 @@
 
 .cta-link {
     &.rainbow-shadow {
+        $transition: 0.19s ease;
         $border-radius: 4px;
         $padding-block: 0.6rem;
         $padding-inline: 0.5rem;
 
         position: relative;
-        font-weight: bold;
         background: #fff;
         padding: $padding-block $padding-inline;
         border-radius: $border-radius;
-        border: 1px solid #6A6A6A;
+        border: 1px solid map.get( $colors, 'blue', 1 );
+
+        transition: font-weight $transition,
+                    border-width $transition;
 
         $half-padding-inline: math.div( $padding-inline, 2 );
         $half-padding-block: math.div( $padding-block, 2 );
@@ -42,18 +45,13 @@
               #0000ff, 
               #00ff00, 
               #ffff00, 
-              #ff0000, 
-              #fb0094, 
+              #ff0000,  
               #0000ff, 
               #00ff00, 
-              #ffff00, 
-              #ff0000
             );
         }
           
         &:after {
-            $transition: 0.19s ease;
-
             width: $bg-width;
             height: $bg-height;    
             filter: blur( 9px );
@@ -64,6 +62,9 @@
         }
 
         @include activeTap {
+            font-weight: bold;
+            border-width: 2px;
+
             &:after {
                 filter: blur( 14px );
                 opacity: 0.5;

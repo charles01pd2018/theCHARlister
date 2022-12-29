@@ -8,11 +8,15 @@ import { PROJECT_LIST_CONTENT } from 'components/content';
 
 /* TYPES */
 interface Item {
-    
+    title: string;
+    description: string;
+    iframeSrc: string;
+    href: string;
+    projectId: string;
 }
 
 export interface Content {
-    items: ProjectPreviewContent[];
+    items: Item[];
 }
 
 export interface Props {

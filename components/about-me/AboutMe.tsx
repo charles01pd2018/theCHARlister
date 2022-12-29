@@ -25,11 +25,13 @@ export interface Content {
 }
 
 export interface Props {
+    id?: string;
     className?: string;
     content?: Content;
 }
 
 const AboutMe = ( {
+    id='About-Me',
     className='',
     content=ABOUT_ME_CONTENT,
 }: Props ) => {
@@ -46,7 +48,7 @@ const AboutMe = ( {
     );
 
     return (
-        <section className={aboutMeClasses}>
+        <section id={id} className={aboutMeClasses}>
             <div className='text-wrapper'>
                 <h2 className='title big-heading'>{title}</h2>
                 <p className='description text--lg'>{description}</p>

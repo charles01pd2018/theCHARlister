@@ -17,7 +17,7 @@ export interface IconsNavContent {
 export interface IconsNavProps {
     className?: string;
     content?: IconsNavContent;
-    activeItemIndex: number;
+    activeIndex: number;
     iconSize?: Size;
 }
 

@@ -56,11 +56,12 @@
             position: absolute;
             bottom: 1rem;
             right: 1rem;
-            font-size: 150%;
+            font-size: 180%;
             opacity: 0;
             transform: translateY( 5px );
             // TODO - customize color based off project type
             color: white;
+            // TODO - customize text-shadow based off project type
             // idk why i need !important
             transition-delay: $transition-timing !important;
 

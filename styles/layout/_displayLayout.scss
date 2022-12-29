@@ -6,6 +6,10 @@
         display: none;
     }
 
+    .display-layout {
+        overflow-x: hidden;
+    }
+
     @media ( max-width: $breakpoint--medium ) {
         .icons-nav-sidebar {
             display: none;

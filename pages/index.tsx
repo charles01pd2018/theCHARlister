@@ -1,14 +1,13 @@
 // dependencies
 import Head from 'next/head';
 import { useState } from 'react';
+import { InView } from 'react-intersection-observer';
 // components
-import { AboutMe } from 'components';
+import { AboutMe, ProjectHighlights } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
 // types
 import type { GetStaticProps } from 'next';
-
-import { BlobIcon } from 'elements';
 
 
 /* TYPES */
@@ -28,8 +27,15 @@ const Home = ( {
 
   /* HOOKS */
   const [ shouldAnimate, setShouldAnimate ] = useState<boolean>( true );
+  const [ activeIndex, setActiveIndex ] = useState<number>( 0 );
 
   /* FUNCTIONS */
+  const handleInView = ( inView: boolean, index: number ) => {
+    if ( inView ) {
+      setActiveIndex( index );
+    }
+  }
+
   const toggleShouldAnimate = () => {
       setShouldAnimate( state => !state );
   }
@@ -39,12 +45,17 @@ const Home = ( {
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <DisplayLayout displayHeaderSwitchProps={{
-        checked: shouldAnimate,
-        onChange: toggleShouldAnimate,
-      }}>
-        <AboutMe className='container--wide' />
-        <BlobIcon />
+      <DisplayLayout activeIndex={activeIndex} 
+        displayHeaderSwitchProps={{
+          checked: shouldAnimate,
+          onChange: toggleShouldAnimate,
+        }}>
+        <InView onChange={(inView) => handleInView( inView, 0 )} threshold={0.8}>
+          <AboutMe className='container--wide' />
+        </InView>
+        <InView onChange={(inView) => handleInView( inView, 1 )} threshold={0.2}>
+          <ProjectHighlights setActiveIndex={setActiveIndex} />
+        </InView>
       </DisplayLayout>
     </>
   

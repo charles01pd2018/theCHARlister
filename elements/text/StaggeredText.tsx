@@ -31,8 +31,6 @@ const StaggeredText = ( {
             const stringToMap = stringChild.length < divideBy ? stringChild.split( '' ) :
                                 splitStringEvenly( stringChild, divideBy );
 
-            console.log( stringToMap );
-
             return cloneElement( child, {
                 // @ts-ignore
                 children: stringToMap.map( ( char, index ) => (

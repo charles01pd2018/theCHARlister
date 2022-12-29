@@ -2,34 +2,72 @@
  * https://codepen.io/oraclesnarky/pen/GYMmxb
  */
 // dependencies
-import { ReactNode } from 'react';
 import classNames from 'classnames';
+// content
+import { PROJECT_HIGHLIGHTS_CONTENT } from 'components/content';
+// elements
+import { ProjectPreview, BlobIcon, AnimatedCurveArrowIcon } from 'elements';
+// types
+import type { ProjectListContent } from 'components/types';
+import type { SetState } from 'types';
 
 
 /* TYPES */
+export interface Content extends ProjectListContent {
+    navText: string;
+}
+
 export interface Props {
-    children: ReactNode;
-    id: string;
-    color: 'blue' | 'dark';
+    id?: string;
     className?: string;
+    content?: Content;
+    shouldAnimate?: boolean;
+    setActiveIndex: SetState<number>;
 }
 
 const ProjectHighlights = ( {
-    children,
-    id,
-    color,
+    id='Projects',
     className='',
+    content=PROJECT_HIGHLIGHTS_CONTENT,
+    shouldAnimate,
+    setActiveIndex,
 }: Props ) => {
+    /* CONTENT */
+    const { items, navText } = content;
+
     /* CLASSNAMES */
     const projectHighlightsClasses = classNames(
         'project-highlights',
-        color,
         className,
     );
 
     return (
         <section id={id} className={projectHighlightsClasses}>
-            {children}
+            {
+                items.map( ( { title, description, projectId, ...rest }, index ) => {
+                    /* CLASSNAMES */
+                    const projectClasses = classNames(
+                        'project-wrapper',
+                        projectId,
+                    );
+
+                    return (
+                        <div className={projectClasses} key={projectId}>
+                            <div className='container--wide'>
+                                <ProjectPreview size={[ 400, 300 ]} {...rest}>
+                                    <h4>{navText}</h4>
+                                </ProjectPreview>
+                                {/* <div className='blob-wrapper'> */}
+                                    <BlobIcon />
+                                {/* </div> */}
+                                <div className='text-wrapper'>
+                                    <h3 className='project-heading'>{title}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                } )
+            }
         </section>
     )
 }

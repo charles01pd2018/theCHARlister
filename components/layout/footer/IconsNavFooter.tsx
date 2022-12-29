@@ -12,15 +12,20 @@ import type { IconsNavProps } from 'components/types';
 /* CONSTANTS */
 const ARIA_CONTROLS = 'icons-nav';
 
+/**
+ * TODO:
+ * 1. Make this transition smooth for in view
+ * 2. Change order of icons when activeIndex changes
+ */
 const IconsNavFooter = ( {
     className='',
     content=ICONS_NAV_CONTENT,
-    activeItemIndex,
+    activeIndex,
     iconSize=[ 33, 33 ],
 }: IconsNavProps ) => {
     /* CONTENT */
     const { items } = content;
-    const activeIconContent = items[activeItemIndex];
+    const activeIconContent = items[activeIndex];
     const { color, icon } = activeIconContent;
     const { data, alt } = icon;
     const [ width, height ] = iconSize;

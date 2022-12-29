@@ -1,3 +1,41 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../constants/colors' as *;
+
+
 .project-highlights {
-    
+    .project-wrapper {
+        position: relative;
+        height: 100vh;
+
+        .project-preview {
+            .overlay {
+                .text-wrapper {
+                    padding-bottom: 1rem;
+                }
+
+                &:after {
+                    transition-delay: 0.5s !important;
+                }
+            }
+        }
+
+        .blob-icon {
+            position: absolute;
+            left: 50%;
+        }
+
+        &.beemy {
+            background: map.get( $colors, 'blue', 1 );
+        }
+
+        &.musizi {
+
+        }
+
+        &.crypto-block {
+
+        }
+    }
 }

@@ -10,11 +10,13 @@ import type { DisplayHeaderSwitchProps } from 'components/types';
 /* TYPES */
 export interface Props {
     children: ReactNode;
+    activeIndex: number;
     displayHeaderSwitchProps: DisplayHeaderSwitchProps;
 }
 
 const DisplayLayout = ( {
     children,
+    activeIndex,
     displayHeaderSwitchProps,
 }: Props ) => {
 
@@ -24,8 +26,8 @@ const DisplayLayout = ( {
             <main className='display-layout'>
                 {children}
             </main>
-            <IconsNavSidebar activeItemIndex={0} />
-            <IconsNavFooter activeItemIndex={0} />
+            <IconsNavSidebar activeIndex={activeIndex} />
+            <IconsNavFooter activeIndex={activeIndex} />
             <DisplayFooter />
         </div>
     );

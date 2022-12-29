@@ -65,7 +65,7 @@ const DisplayHeader = ( {
                 <Tooltip id={TOOLTIP_ID} ref={toggleRef}
                     className={tooltipClasses} animateType='pop'
                     position='bottom-left' includePointer={false}>
-                    {switchProps.checked ? 'Turn Off Animation' : 'Animate'}
+                    Toggle Animation
                 </Tooltip>
             </div>
         </DynamicHeader>

@@ -2,7 +2,8 @@
 // focus state is for mobile devices and tab focused elements
 @mixin tap {
     &:hover,
-    &:focus {
+    &:focus,
+    &:active {
         @content;
     }
 }

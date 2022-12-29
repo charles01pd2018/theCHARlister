@@ -41,6 +41,7 @@ const ProjectPreview = ( {
 
     return (
         <Link className={projectPreviewClasses} href={href}>
+            {/** TODO - sub this out for an image */}
             <iframe className='iframe'
                 src={iframeSrc}
                 width={width} height={height}

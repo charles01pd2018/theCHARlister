@@ -1,4 +1,5 @@
 
+/* TYPES */
 export interface Options {
     // prevents splitting whole words
     keepWords?: boolean;
@@ -13,26 +14,32 @@ export const splitStringEvenly = (
     options: Options={},
 ) => {
     /* OPTIONS */
+    // TODO - make this work
     const { keepWords=true } = options;
 
     const arr: string[] = [];
-    const DIVIDE = val.length / n;
+    const DIVIDE = Math.floor( val.length / ( n + 1 ) );
 
-    let incVal = 0;
+    let startInc = 0;
+    let endInc = 0;
     for ( let i=0; i < n; i++ ) {
-        let start = i * DIVIDE;
-        let end = ( i + 1 ) * DIVIDE;
+        const start = i * DIVIDE;
+        const end = ( i + 1 ) * DIVIDE;
 
-        if ( 
-            keepWords && 
-            val[ end ] && val[ end ] !== ' ' &&
-            val[ end + 1 ] && val[ end + 1 ] !== ' '
-        ) {
-            // end += 1
-            incVal += 1;
+        if ( keepWords ) {
+            let track = end;
+            while ( typeof val[ track ] === 'string' && val[ track ] !== ' ' ) {
+                endInc += 1;
+                track += 1;
+            }
         }
+        
+        arr.push( val.substring( 
+            start + startInc, 
+            end + endInc,
+        ) );
 
-        arr.push( val.substring( start + incVal, end + incVal ) );
+        startInc = endInc;
     }
 
     return arr;
