@@ -6,6 +6,11 @@ import type { Colors } from 'types';
 
 
 /* TYPES */
+export interface ColorTag {
+    text: string;
+    color: Colors;
+}
+
 export interface Props {
     children: ReactNode;
     color: Colors;

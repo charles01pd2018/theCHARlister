@@ -1,15 +1,71 @@
+// constants
+@use './../constants/breakpoints' as *;
+
+
 .experience {
+    $margin-right: 4rem;
+
     .title-wrapper {
         display: flex;
         align-items: center;
         justify-content: space-between;
 
         .company-logo {
-            margin-right: 4rem;
+            margin-right: $margin-right;
         }
     }
 
+    .role-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        .role {
+            font-weight: bold;
+        }
+
+        .right {
+            margin-right: $margin-right;
+
+            .stacked-icons {
+                margin-block: -1.5rem;
+            }
+
+            .date-range {
+                color: #2e2e2e;
+            }
+        }
+        
+    }
+   
     .bullets {
         list-style: inside;
     }
-}
+
+    @media ( max-width: $breakpoint--large ) {
+        .title-wrapper {
+            .company-logo {
+                margin-right: 0;
+            }
+        }
+
+        .role-info {
+            .right {
+                margin-right: 0;
+            }
+        }
+    }
+
+    @media ( max-width: $breakpoint--small ) {
+        .role-info {
+            flex-direction: column;
+
+            .right {
+                .stacked-icons {
+                    justify-content: center;
+                }
+            }
+        }
+    }
+ }

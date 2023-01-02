@@ -4,11 +4,12 @@ import classNames from 'classnames';
 import { Tag, SVG } from 'elements';
 // types
 import type { IconData, Size } from 'types';
+import type { ColorTag } from 'elements/types';
 
 
 /* TYPES */
 export interface Content {
-    tags: string[];
+    tags: ColorTag[];
     icons: IconData[];
 }
 
@@ -37,18 +38,18 @@ const TagsIcons = ( {
         <div className={tagsIconsClasses}>
             <ul className='tags-wrapper'>
                 {
-                    tags.map( ( text, index ) => (
-                        <Tag key={index}>
+                    tags.map( ( { text, color }, index ) => (
+                        <Tag key={index} color={color}>
                             {text}
                         </Tag>
-                    ))
+                    ) )
                 }
             </ul>
             {
                 icons.map( ( icon ) => (
                     <SVG key={icon.alt} width={width} height={height}
                         {...icon} />
-                ))
+                ) )
             }
         </div>
     );

@@ -4,6 +4,7 @@ import type { Props as IconLinkProps,
     Content as IconLinkContent } from './IconLink';
 import type { Props as IconTextLinkProps,
     Content as IconTextLinkContent } from './IconTextLink';
+import type { Props as HeadingLinkProps } from './HeadingLink';
 
 export type {
     NavLinkProps,
@@ -12,4 +13,5 @@ export type {
     IconLinkProps,
     IconTextLinkProps,
     IconTextLinkContent,
+    HeadingLinkProps,
 }

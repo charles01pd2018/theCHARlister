@@ -4,16 +4,12 @@ import classNames from 'classnames';
 import { Tag } from 'elements';
 // types
 import type { Colors } from 'types';
+import type { ColorTag } from 'elements/types';
 
 
 /* TYPES */
-interface Item {
-    text: string;
-    color: Colors;
-}
-
 export interface Content {
-    tags: Item[];
+    tags: ColorTag[];
 }
 
 export interface Props {

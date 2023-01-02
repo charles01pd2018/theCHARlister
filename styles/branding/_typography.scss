@@ -52,7 +52,7 @@ $header-size: $h1-size;
         font-size: $font-size;
         font-family: Questrial;
         line-height: 120%;
-        margin-block: 3rem;
+        margin-block: 1rem;
     }
 
     .#{$header-tag} {
@@ -95,6 +95,11 @@ $text-size: (
         $max * $text-scale,
     );
 }
+
+/*--------------------------------------------------------------
+# Styled Text
+--------------------------------------------------------------*/
+
 
 /*--------------------------------------------------------------
 # Helper

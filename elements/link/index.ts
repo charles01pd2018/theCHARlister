@@ -3,6 +3,7 @@ import IconLogoLink from './IconLogoLink';
 import IconLink from './IconLink';
 import IconTextLink from './IconTextLink';
 import CTALink from './CTALink';
+import HeadingLink from './HeadingLink';
 
 export {
     NavLink,
@@ -10,4 +11,5 @@ export {
     IconLink,
     IconTextLink,
     CTALink,
+    HeadingLink,
 }

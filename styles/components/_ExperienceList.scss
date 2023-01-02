@@ -1,3 +1,9 @@
 .experience-list {
-    
+    .experience {
+        &:first-child {
+            margin-block: 2rem 4rem;
+        }
+
+        margin-block: 4rem;
+    }
 }

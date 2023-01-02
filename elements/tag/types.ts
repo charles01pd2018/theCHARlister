@@ -1,5 +1,6 @@
-import type { Props as TagProps } from './Tag';
+import type { Props as TagProps, ColorTag } from './Tag';
 
 export type {
     TagProps,
+    ColorTag,
 }
