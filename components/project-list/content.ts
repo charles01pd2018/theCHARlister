@@ -16,6 +16,38 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                     href: BEEMY_PROJECT_ENDPOINT,
                 },
             },
+            tagListContent: {
+                tags: [
+                    {
+                        text: 'FULLSTACK',
+                        color: 'blue',
+                    },
+                    {
+                        text: 'PERSONAL',
+                        color: 'blue',
+                    },
+                ],
+            },
+            stackedIconsContent: {
+                icons: [
+                    {
+                        data: '/static/icons/vercel-logo.svg',
+                        alt: 'Vercel Logo',
+                    },
+                    {
+                        data: '/static/icons/typescript-bg-logo.svg',
+                        alt: 'Typescript Logo',
+                    },
+                    {
+                        data: '/static/icons/graphql-bg-logo.svg',
+                        alt: 'GraphQL Logo',
+                    },
+                    {
+                        data: '/static/icons/mongodb-logo.svg',
+                        alt: 'MongoDB Logo',
+                    },
+                ],
+            },
         },
         {
             title: 'Musizi University',
@@ -28,6 +60,38 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                     href: MUSIZI_PROJECT_ENDPOINT,
                 },
             },
+            tagListContent: {
+                tags: [
+                    {
+                        text: 'MARKETING',
+                        color: 'pink',
+                    },
+                    {
+                        text: 'FREELANCE',
+                        color: 'pink',
+                    },
+                ],
+            },
+            stackedIconsContent: {
+                icons: [
+                    {
+                        data: '/static/icons/vercel-logo.svg',
+                        alt: 'Vercel Logo',
+                    },
+                    {
+                        data: '/static/icons/typescript-bg-logo.svg',
+                        alt: 'Typescript Logo',
+                    },
+                    {
+                        data: '/static/icons/sass-bg-logo.svg',
+                        alt: 'Sass Logo',
+                    },
+                    {
+                        data: '/static/icons/mailchimp-bg-logo.svg',
+                        alt: 'Mailchimp Logo',
+                    },
+                ],
+            },
         },
         {
             title: 'Crypto Block',
@@ -39,6 +103,38 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                     alt: 'Crypto Block Project Cover',
                     href: CRYPTO_BLOCK_PROJECT_ENDPOINT,
                 },
+            },
+            tagListContent: {
+                tags: [
+                    {
+                        text: 'MARKETING',
+                        color: 'green',
+                    },
+                    {
+                        text: 'PERSONAL',
+                        color: 'green',
+                    },
+                ],
+            },
+            stackedIconsContent: {
+                icons: [
+                    {
+                        data: '/static/icons/heroku-bg-logo.svg',
+                        alt: 'Heroku Logo',
+                    },
+                    {
+                        data: '/static/icons/nodejs-bg-logo.svg',
+                        alt: 'NodeJS Logo',
+                    },
+                    {
+                        data: '/static/icons/react-bg-logo.svg',
+                        alt: 'React Logo',
+                    },
+                    {
+                        data: '/static/icons/html-bg-logo.svg',
+                        alt: 'HTML Logo',
+                    },
+                ],
             },
         },
     ],

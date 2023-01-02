@@ -36,7 +36,7 @@ const Breadcrumbs = ( {
                     const isLastLink = index === links.length - 1;
 
                     return (
-                        <li className='link-wrapper'>
+                        <li className='link-wrapper' key={linkContent.href}>
                             <NavLink className={isLastLink ? 'text--sm' : ''}
                                 type={!isLastLink ? 'blue-background' : null} 
                                 content={linkContent} />

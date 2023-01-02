@@ -14,3 +14,5 @@ export * from './video';
 export * from './palette';
 export * from './tag';
 export * from './tags-icons';
+export * from './tag-list';
+export * from './media';

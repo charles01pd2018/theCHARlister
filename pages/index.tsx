@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { InView } from 'react-intersection-observer';
 // components
-import { AboutMe, ProjectHighlights } from 'components';
+import { AboutMe, ProjectHighlights, Contact } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
 // types
@@ -56,6 +56,9 @@ const Home = ( {
         <InView onChange={(inView) => handleInView( inView, 1 )} threshold={0.2}>
           <ProjectHighlights animate={animate}
             setActiveIndex={setActiveIndex} />
+        </InView>
+        <InView onChange={(inView) => handleInView( inView, 2 )} threshold={0.5}>
+          <Contact />
         </InView>
       </DisplayLayout>
     </>

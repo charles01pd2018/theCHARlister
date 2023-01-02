@@ -2,6 +2,7 @@
 @use 'sass:map';
 // constants
 @use '../constants/colors' as *;
+@use '../constants/breakpoints' as *;
 // utils
 @use '../utils/selectors/tap' as *;
 
@@ -19,6 +20,7 @@
 
         border-radius: $border-radius;
         pointer-events: none;
+        max-width: 90vw;
         
         box-shadow: 0px 0.4px 2.2px rgba(0, 0, 0, 0.02),
                     0px 1px 5.3px rgba(0, 0, 0, 0.028),
@@ -105,12 +107,25 @@
         }
 
         .image {
-            filter: blur(5px);
+            filter: blur( 5px );
             box-shadow: white 0 5.5vw 5vw -7.5vw,
                         rgba(50, 50, 80, 0.3) 0 5.5vw 5vw -7.5vw,
                         rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, 
                         rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
 
+        }
+    }
+
+    @media( max-width: $breakpoint--extra-small ) {
+        .overlay {
+            .text-wrapper {
+                padding-block: 1rem 3rem;
+
+                h1, h2, h3,
+                h4, h5, h6 {
+                    margin-block: 1rem;
+                }
+            }
         }
     }
 }

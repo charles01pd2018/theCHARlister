@@ -1,0 +1,9 @@
+.tag-list {
+    display: flex;
+
+    .tag {
+        &:not( :last-child ) {
+            margin-right: 0.5rem;
+        }
+    }
+}

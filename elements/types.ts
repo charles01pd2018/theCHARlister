@@ -15,3 +15,4 @@ export * from './video/types';
 export * from './palette/types';
 export * from './tag/types';
 export * from './tags-icons/types';
+export * from './tag-list/types';

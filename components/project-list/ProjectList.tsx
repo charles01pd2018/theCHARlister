@@ -1,10 +1,11 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { ProjectPreview } from 'elements';
+import { ProjectPreview, TagList, StackedIcons } from 'elements';
 // constants
 import { PROJECT_LIST_CONTENT } from 'components/content';
-import type { ProjectPreviewContent } from 'elements/types';
+import type { ProjectPreviewContent, TagListContent, 
+    StackedIconsContent } from 'elements/types';
 
 
 /* TYPES */
@@ -12,6 +13,8 @@ interface Item {
     title: string;
     description: string;
     projectPreviewContent: ProjectPreviewContent;
+    tagListContent: TagListContent;
+    stackedIconsContent: StackedIconsContent;
 }
 
 export interface Content {
@@ -40,11 +43,24 @@ const ProjectList = ( {
         <section className={projectListClasses}>
             <ul className='projects-wrapper'>
                 {
-                    items.map( ( { title, description, projectPreviewContent } ) => (
+                    items.map( ( { 
+                        title, 
+                        description, 
+                        projectPreviewContent,
+                        tagListContent,
+                        stackedIconsContent,
+                    } ) => (
                         <li className='project' key={title}>
-                            <ProjectPreview content={projectPreviewContent}>
-                                <h3 className='h1'>{title}</h3>
-                                <p>{description}</p>
+                            <ProjectPreview content={projectPreviewContent} textChildren={
+                                <>
+                                    <h3 className='h1'>{title}</h3>
+                                    <p>{description}</p>
+                                </>
+                            }>
+                                <div className='top-strip'>
+                                    <TagList className='text--xxxs' content={tagListContent} />
+                                    <StackedIcons content={stackedIconsContent} />
+                                </div>
                             </ProjectPreview>
                         </li>
                     ) )

@@ -9,6 +9,8 @@ import classNames from 'classnames';
 import { ReactNode } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+// lib
+import { useClientWidth, BREAKPOINT_EXTRA_SMALL } from 'lib';
 // elements
 import { StaggeredText } from 'elements';
 // types
@@ -22,22 +24,28 @@ export interface Content {
 }
 
 export interface Props {
-    children: ReactNode;
+    textChildren: ReactNode;
+    children?: ReactNode;
     className?: string;
     content: Content;
     size?: Size;
 }
 
 const ProjectPreview = ( {
+    textChildren,
     children,
     className='',
     content,
     size=[ 480, 360 ],
 }: Props ) => {
+    /* HOOKS */
+    const clientWidth = useClientWidth();
+
     /* CONTENT */
     const { imageLink, color } = content;
     const { src, href, alt } = imageLink;
     const [ width, height ] = size;
+    const actualHeight = clientWidth < BREAKPOINT_EXTRA_SMALL ? height / 1.3 : height;
 
     /* CLASSNAMES */
     const projectPreviewClasses = classNames(
@@ -50,13 +58,14 @@ const ProjectPreview = ( {
         <Link className={projectPreviewClasses} href={href}>
             <Image className='image'
                 src={src} alt={alt || ''}
-                width={width} height={height} />
+                width={width} height={actualHeight} />
             <div className='overlay' style={{
-                height,
+                height: actualHeight,
             }}>
+                {children || ''}
                 <div className='text-wrapper'>
                     <StaggeredText>
-                        {children}
+                        {textChildren}
                     </StaggeredText>
                 </div>
             </div>

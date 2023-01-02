@@ -6,13 +6,16 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 // elements
-import { SVG, StyledText } from 'elements';
+import { SVG, StyledText, TagList, StackedIcons } from 'elements';
 // types
 import type { ArticleContent } from 'components/types';
+import type { StackedIconsContent, TagListContent } from 'elements/types';
 
 
 /* TYPES */
 export interface Content extends ArticleContent {
+    stackedIconsContent: StackedIconsContent;
+    tagListContent: TagListContent;
 }
 
 export interface Props {
@@ -21,13 +24,13 @@ export interface Props {
     WrapperTag?: 'article' | 'div';
 }
 
-const Technologies = ( {
+const Parallax = ( {
     className='',
     content,
     WrapperTag='article',
 }: Props ) => {
     /* CONTENT */
-    const { items } = content;
+    const { items, stackedIconsContent, tagListContent } = content;
 
     /* HOOKS */
     const [ activeArticleIndex, setActiveArticleIndex ] = useState<number>( 0 );
@@ -66,4 +69,4 @@ const Technologies = ( {
     )
 }
 
-export default Technologies;
+export default Parallax;
