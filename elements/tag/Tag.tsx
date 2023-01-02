@@ -7,11 +7,13 @@ import { ReactNode } from 'react';
 export interface Props {
     children: ReactNode;
     className?: string;
+    WrapperTag?: 'div' | 'li';
 }
 
 const Tag = ( {
     children,
     className='',
+    WrapperTag='li',
 }: Props ) => {
     /* CLASSNAMES */
     const tagClasses = classNames(
@@ -20,9 +22,9 @@ const Tag = ( {
     );
 
     return (
-        <div className={tagClasses}>
+        <WrapperTag className={tagClasses}>
             {children}
-        </div>
+        </WrapperTag>
     );
 }
 

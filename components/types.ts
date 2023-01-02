@@ -8,3 +8,5 @@ export * from './article/types';
 export * from './parallax/types';
 export * from './profile/types';
 export * from './references/types';
+export * from './article-intro/types';
+export * from './contact/types';

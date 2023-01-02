@@ -33,14 +33,15 @@ const StackedIcons = ( {
     );
 
     return (
-        <div className={stackedIcons}>
+        <ul className={stackedIcons}>
             {
                 icons.map( ( content ) => (
-                    <SVG key={content.alt} {...content}
-                        width={width} height={height} />
+                    <li className='icon-wrapper' key={content.alt}>
+                        <SVG width={width} height={height} {...content} />
+                    </li>
                 ) )
             }
-        </div>
+        </ul>
     );
 }
 

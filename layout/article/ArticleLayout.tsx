@@ -1,5 +1,7 @@
 // components
 import { DisplayFooter, Parallax, Article } from 'components';
+// components
+import { ArticleIntro } from 'components';
 // elements
 import { Breadcrumbs } from 'elements/breadcrumbs';
 // types
@@ -25,12 +27,17 @@ const ArticleLayout = ( {
     return (
         <>
             <main className='article-layout'>
-                <Breadcrumbs className='spacing--hWide'
-                    content={breadcrumbsContent} />
-                <Parallax className='spacing--v'
-                    content={articleContent} />
-                <Article className='container--wide'
-                    content={articleContent} />
+                <section className='desktop-article-wrapper'>
+                    <Breadcrumbs className='spacing--hWide'
+                        content={breadcrumbsContent} />
+                    <Parallax className='spacing--v'
+                        content={articleContent} />
+                </section>
+                <section className='mobile-article-wrapper'>
+                    <ArticleIntro />
+                    <Article className='container--wide'
+                        content={articleContent} />
+                </section>
             </main>
             <DisplayFooter />
         </>

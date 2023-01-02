@@ -3,23 +3,27 @@
 
 
 .article-layout {
-    .breadcrumbs {
+    .desktop-article-wrapper,
+    .mobile-article-wrapper {
         padding-top: 1.5rem;
     }
 
-    .article {
+    .mobile-article-wrapper {
         display: none;
-        border-top: 2px solid gray;
-        padding-top: 1rem;
     }
 
     @media ( max-width: $breakpoint--medium ) {
-        .parallax-container {
+        .desktop-article-wrapper {
             display: none;
         }
 
-        .article {
+        .mobile-article-wrapper {
             display: block;
+
+            .article {
+                border-top: 2px solid gray;
+                padding-top: 1rem;
+            }
         }
     }
 }
