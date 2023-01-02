@@ -28,7 +28,6 @@
                     padding: $padding-inline 0.5rem;
     
                     &:not( :last-child ) {
-                        // TODO - detect new lines and do not put this here
                         &:after {
                             content: '|';
                             opacity: 0.6;
@@ -70,6 +69,23 @@
 
             .contact-wrapper {
                 margin-top: 2rem;
+            }
+        }
+    }
+
+    @media ( max-width: $breakpoint--extra-small ) {
+        .main-links-wrapper {
+            .site-nav-wrapper {
+                .site-nav {
+                    .link-wrapper {
+                        &:nth-child( 3 ) {
+                            &:after {
+                                // TODO - temp
+                                content: '';
+                            }
+                        }
+                    }
+                }
             }
         }
     }
