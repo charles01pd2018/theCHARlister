@@ -4,15 +4,14 @@ import classNames from 'classnames';
 import { ProjectPreview } from 'elements';
 // constants
 import { PROJECT_LIST_CONTENT } from 'components/content';
+import type { ProjectPreviewContent } from 'elements/types';
 
 
 /* TYPES */
 interface Item {
     title: string;
     description: string;
-    iframeSrc: string;
-    href: string;
-    projectId: string;
+    projectPreviewContent: ProjectPreviewContent;
 }
 
 export interface Content {
@@ -40,18 +39,16 @@ const ProjectList = ( {
     return (
         <section className={projectListClasses}>
             <ul className='projects-wrapper'>
-                <li className='project'>
-                    <ProjectPreview iframeSrc='https://www.writebeemy.com/' href=''>
-                        <h1>beemy</h1>
-                        <p>One click blog post publishing with built-in SEO and a rich editor experience.</p>
-                    </ProjectPreview>
-                </li>
-                <li className='project'>
-                    <ProjectPreview iframeSrc='https://www.writebeemy.com/' href=''>
-                        <h1>beemy</h1>
-                        <p>One click blog post publishing with built-in SEO and a rich editor experience.</p>
-                    </ProjectPreview>
-                </li>
+                {
+                    items.map( ( { title, description, projectPreviewContent } ) => (
+                        <li className='project' key={title}>
+                            <ProjectPreview content={projectPreviewContent}>
+                                <h3 className='h1'>{title}</h3>
+                                <p>{description}</p>
+                            </ProjectPreview>
+                        </li>
+                    ) )
+                }
             </ul>
         </section>
     );

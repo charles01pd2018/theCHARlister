@@ -1,11 +1,11 @@
-// dependencies
-@use 'sass:map';
-// constants
-@use '../constants/colors' as *;
+// utils
+@use '../utils/color/getBackgroundColors' as *;
 
 
 .project-highlights {
     .project-wrapper {
+        @include getBackgroundColors();
+
         position: relative;
         height: 100vh;
         border: 5px solid black;
@@ -47,18 +47,6 @@
                     transition-delay: 0.5s !important;
                 }
             }
-        }
-
-        &.beemy {
-            background: map.get( $colors, 'blue', 1 );
-        }
-
-        &.musizi {
-
-        }
-
-        &.crypto-block {
-
         }
     }
 }

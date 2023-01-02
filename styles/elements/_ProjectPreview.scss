@@ -7,22 +7,19 @@
 
 
 .project-preview {
-    --highlight: white;
-
     $transition-timing: 0.75s;
     $border-radius: 8px;
 
     position: relative;
     mix-blend-mode: multiply;
 
-    .iframe {
+    .image {
         // matches time of _StaggeredText transition
-        $transition: $transition-timing cubic-bezier(0.38, 0.26, 0.05, 1.07);
+        $transition: $transition-timing cubic-bezier( 0.38, 0.26, 0.05, 1.07 );
 
         border-radius: $border-radius;
         pointer-events: none;
         
-        // TODO - map through colors for box shadows
         box-shadow: 0px 0.4px 2.2px rgba(0, 0, 0, 0.02),
                     0px 1px 5.3px rgba(0, 0, 0, 0.028),
                     0px 1.9px 10px rgba(0, 0, 0, 0.035),
@@ -51,11 +48,6 @@
             padding-inline: 1rem;
             padding-block: 2rem 5rem;
             color: white;
-            
-            h1, h2, h3,
-            h4, h5, h6 {
-                text-shadow: map.get( $colors, 'blue', 1 ) 0 0 15px;
-            }
         }
 
         &:after {
@@ -68,14 +60,30 @@
             font-size: 180%;
             opacity: 0;
             transform: translateY( 5px );
-            // TODO - customize color based off project type
-            color: white;
-            // TODO - customize text-shadow based off project type
             // idk why i need !important
             transition-delay: $transition-timing !important;
 
             transition: opacity $transition,
                         transform $transition;
+        }
+    }
+
+    @each $color, $color-map in $colors {
+        &.#{$color} {
+            $color: map.get( $color-map, 1 );
+
+            .overlay {
+                .text-wrapper {
+                    h1, h2, h3,
+                    h4, h5, h6 {
+                        text-shadow: $color 0 0 15px;
+                    }
+                }
+
+                &:after {
+                    color: $color;
+                }
+            }
         }
     }
 
@@ -96,24 +104,13 @@
             }
         }
 
-        .iframe {
-            // TODO - map through colors for box shadows
-            box-shadow:                         var(--highlight) 0 5.5vw 5vw -7.5vw,
-
-            rgba(50, 50, 80, 0.3) 0 5.5vw 5vw -7.5vw,
+        .image {
+            filter: blur(5px);
+            box-shadow: white 0 5.5vw 5vw -7.5vw,
+                        rgba(50, 50, 80, 0.3) 0 5.5vw 5vw -7.5vw,
                         rgba(50, 50, 80, 0.5) 0px 4vw 8vw -2vw, 
                         rgba(0, 0, 0, 0.8) 0px 4vw 5vw -3vw;
 
-            box-shadow: inset 0 0 0 200px rgba(255,255,255,0.05);
-            filter: blur(5px);
-        }
-        
-        &:nth-of-type(1) {
-          --highlight: coral;
-        }
-        
-        &:nth-of-type(2) {
-          --highlight: #56ffe5;
         }
     }
 }

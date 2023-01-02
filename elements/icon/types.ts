@@ -5,7 +5,7 @@ import type { Props as StackedIconsProps,
     Content as StackedIconsContent } from './StackedIcons';
 import type { Props as HamburgerIconProps } from './HamburgerIcon';
 // used
-import type { Size } from 'types';
+import type { Size, Colors } from 'types';
 
 
 export interface BaseIconProps {
@@ -14,7 +14,7 @@ export interface BaseIconProps {
 }
 
 export interface IconProps extends BaseIconProps {
-    color?: string;
+    color: Colors;
 }
 
 export * from './animated/types';
@@ -23,4 +23,5 @@ export {
     TooltipIconProps,
     StackedIconsContent,
     StackedIconsProps,
+    HamburgerIconProps
 }

@@ -1,20 +1,27 @@
 // dependencies
 import classNames from 'classnames';
+// lib
+import { COLORS } from 'lib';
+// types
+import type { Colors } from 'types';
 
 
 export interface Props {
     className?: string;
     animate?: boolean;
     direction: 'bl-tr';
-    color: string;
+    color: Colors;
 }
 
 const AnimatedCurveArrowIcon = ( {
     className='',
     animate,
     direction,
-    color
+    color,
 }: Props ) => {
+    /* CONTENT */
+    const stroke = COLORS[ color ][ 4 ];
+
     /* CLASSNAMES */
     const animatedCurveArrowIconClasses = classNames(
         'animated-curve-arrow-icon',
@@ -26,7 +33,7 @@ const AnimatedCurveArrowIcon = ( {
     return (
         <svg className={animatedCurveArrowIconClasses} viewBox="0 0 800 800"
             xmlns="http://www.w3.org/2000/svg">
-            <g stroke-width="12" stroke="hsl(227, 71%, 57%)" fill="none" 
+            <g stroke-width="12" stroke={stroke} fill="none" 
                 stroke-linecap="round" stroke-linejoin="round">
                 <path className='line-path'
                     d="M250 250Q450 350 400 400Q294 533 550 550 " 
@@ -38,7 +45,7 @@ const AnimatedCurveArrowIcon = ( {
                     viewBox="0 0 10 10" orient="auto" id="SvgjsMarker1141">
                     <polyline points="0,5 5,2.5 0,0" fill="none" 
                         stroke-width="1.6666666666666667" 
-                        stroke="hsl(227, 71%, 57%)" 
+                        stroke={stroke}
                         stroke-linecap="round" 
                         transform="matrix(1,0,0,1,1.6666666666666667,2.5)" 
                         stroke-linejoin="round" />

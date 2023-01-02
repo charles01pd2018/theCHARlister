@@ -44,26 +44,29 @@ const ProjectHighlights = ( {
     return (
         <section id={id} className={projectHighlightsClasses}>
             {
-                items.map( ( { title, description, projectId, ...rest }, index ) => {
+                items.map( ( { title, description, projectPreviewContent } ) => {
+                    /* CONTENT */
+                    const color = projectPreviewContent.color;
+
                     /* CLASSNAMES */
                     const projectClasses = classNames(
                         'project-wrapper',
-                        projectId,
+                        color,
                     );
 
                     return (
-                        <div className={projectClasses} key={projectId}>
+                        <div className={projectClasses} key={title}>
                             <div className='container--wide'>
                                 <div className='blob-wrapper'>
-                                    <BlobIcon />
+                                    <BlobIcon color={color} />
                                 </div>
                                 <div className='text-wrapper'>
                                     <h3 className='h1 project-heading'>{title}</h3>
                                     <p className='description text--lg'>{description}</p>
                                 </div>
                                 <AnimatedCurveArrowIcon animate={animate}
-                                    direction='bl-tr' color='blue' />
-                                <ProjectPreview size={[ 400, 300 ]} {...rest}>
+                                    direction='bl-tr' color={color} />
+                                <ProjectPreview size={[ 400, 300 ]} content={projectPreviewContent}>
                                     <h4>{navText}</h4>
                                 </ProjectPreview>
                             </div>

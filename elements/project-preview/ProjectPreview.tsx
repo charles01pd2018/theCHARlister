@@ -12,44 +12,45 @@ import Image from 'next/image';
 // elements
 import { StaggeredText } from 'elements';
 // types
-import type { Size } from 'types';
+import type { Size, ImageLinkData, Colors } from 'types';
 
 
 /* TYPES */
+export interface Content {
+    imageLink: ImageLinkData;
+    color: Colors;
+}
+
 export interface Props {
     children: ReactNode;
     className?: string;
-    iframeSrc: string;
-    href: string;
+    content: Content;
     size?: Size;
 }
 
 const ProjectPreview = ( {
     children,
     className='',
-    iframeSrc,
+    content,
     size=[ 480, 360 ],
-    href,
 }: Props ) => {
     /* CONTENT */
+    const { imageLink, color } = content;
+    const { src, href, alt } = imageLink;
     const [ width, height ] = size;
 
     /* CLASSNAMES */
     const projectPreviewClasses = classNames(
         'project-preview',
+        color,
         className,
     );
 
     return (
         <Link className={projectPreviewClasses} href={href}>
-            {/** TODO - sub this out for an image */}
-            <Image className='iframe'
-                src='/static/images/boop.png'
+            <Image className='image'
+                src={src} alt={alt || ''}
                 width={width} height={height} />
-            {/* <iframe className='iframe'
-                src={iframeSrc}
-                width={width} height={height}
-                tabIndex={-1} /> */}
             <div className='overlay' style={{
                 height,
             }}>
