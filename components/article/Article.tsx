@@ -1,15 +1,15 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { Text } from 'elements';
+import { StyledText } from 'elements';
 // types
-import type { TextContent } from 'elements/types';
+import type { StyledTextContent } from 'elements/types';
 import type { Media } from 'types';
 
 
 /* TYPES */
 interface Item {
-    texts: TextContent[];
+    texts: StyledTextContent[];
     media?: Media;
 }
 
@@ -43,7 +43,7 @@ const Article = ( {
                         <div className='text-wrapper' key={index}>
                             {
                                 texts.map( ( textContent, innerIndex ) => (
-                                    <Text key={`text:${innerIndex}`}
+                                    <StyledText key={`text:${innerIndex}`}
                                         content={textContent} />
                                 ) )
                             }

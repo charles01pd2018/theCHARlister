@@ -1,0 +1,1 @@
+export type ActivePage = 'About Me' | 'Projects' | 'Experience' | 'References';

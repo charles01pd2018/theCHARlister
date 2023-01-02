@@ -46,6 +46,12 @@ const ProjectList = ( {
                         <p>One click blog post publishing with built-in SEO and a rich editor experience.</p>
                     </ProjectPreview>
                 </li>
+                <li className='project'>
+                    <ProjectPreview iframeSrc='https://www.writebeemy.com/' href=''>
+                        <h1>beemy</h1>
+                        <p>One click blog post publishing with built-in SEO and a rich editor experience.</p>
+                    </ProjectPreview>
+                </li>
             </ul>
         </section>
     );

@@ -6,3 +6,5 @@ export * from './experience-list/types';
 export * from './project-list/types';
 export * from './article/types';
 export * from './parallax/types';
+export * from './profile/types';
+export * from './references/types';

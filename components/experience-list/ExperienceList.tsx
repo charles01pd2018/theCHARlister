@@ -15,7 +15,7 @@ export interface Content {
 
 export interface Props {
     className?: string;
-    content: Content;
+    content?: Content;
 }
 
 const ExperienceList = ( {

@@ -12,6 +12,8 @@
 
     .main-links-wrapper {
         display: flex;
+        // TODO - fix mobile wrapping
+        flex-flow: row wrap;
         align-items: center;
         justify-content: space-around;
 
@@ -34,6 +36,10 @@
                             right: -$padding-inline * 2;
                         }
                     }
+
+                    .nav-link {
+                        white-space: nowrap;
+                    }
                 }
             }
         }
@@ -52,7 +58,7 @@
         }
     }
 
-    @media( max-width: $breakpoint--small ) {
+    @media( max-width: $breakpoint--medium ) {
         .main-links-wrapper {
             flex-direction: column;
 

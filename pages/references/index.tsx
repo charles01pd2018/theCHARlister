@@ -1,5 +1,9 @@
 // dependencies
 import Head from 'next/head';
+// layout
+import { GenericLayout } from 'layout';
+// components
+import { References } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 
@@ -12,7 +16,7 @@ interface Props {
     content: Content;
 }
 
-const References = ( {
+const ReferencesPage = ( {
     content,
 }: Props ) => {
     /* CONTENT */
@@ -23,14 +27,24 @@ const References = ( {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
+            <GenericLayout activePage='References'>
+                <References />
+            </GenericLayout>
         </>
     );
 }
 
-export default References;
+export default ReferencesPage;
+
+
+const content: Content = {
+    pageTitle: 'References - theCHARlister',
+}
 
 export const getStaticProps: GetStaticProps = () => {
     return {
-        props: {}
+        props: {
+            content,
+        }
     }
 }

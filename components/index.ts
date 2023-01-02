@@ -6,3 +6,5 @@ export * from './experience-list';
 export * from './project-list';
 export * from './article';
 export * from './parallax';
+export * from './profile';
+export * from './references';

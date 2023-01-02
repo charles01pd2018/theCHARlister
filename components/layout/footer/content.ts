@@ -1,5 +1,5 @@
 // lib
-import { PROJECTS_ENDPOINT, EXPERIENCE_ENDPOINT, REFERENCES_ENDPOINT } from '@lib/constants';
+import { ABOUT_ME_ENDPOINT, PROJECTS_ENDPOINT, EXPERIENCE_ENDPOINT, REFERENCES_ENDPOINT } from '@lib/constants';
 // types
 import type { DisplayFooterContent } from 'components/types';
 
@@ -8,12 +8,16 @@ export const DISPLAY_FOOTER_CONTENT: DisplayFooterContent = {
     email: 'theCHARlister@gmail.com',
     textLinks: [
         {
-            href: PROJECTS_ENDPOINT,
-            text: 'Projects',
+            href: ABOUT_ME_ENDPOINT,
+            text: 'About Me',
         },
         {
             href: EXPERIENCE_ENDPOINT,
             text: 'Experience',
+        },
+        {
+            href: PROJECTS_ENDPOINT,
+            text: 'Projects',
         },
         {
             href: REFERENCES_ENDPOINT,

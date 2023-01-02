@@ -8,6 +8,7 @@
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 // elements
 import { StaggeredText } from 'elements';
 // types
@@ -27,7 +28,7 @@ const ProjectPreview = ( {
     children,
     className='',
     iframeSrc,
-    size=[ 500, 500 ],
+    size=[ 480, 360 ],
     href,
 }: Props ) => {
     /* CONTENT */
@@ -42,10 +43,13 @@ const ProjectPreview = ( {
     return (
         <Link className={projectPreviewClasses} href={href}>
             {/** TODO - sub this out for an image */}
-            <iframe className='iframe'
+            <Image className='iframe'
+                src='/static/images/boop.png'
+                width={width} height={height} />
+            {/* <iframe className='iframe'
                 src={iframeSrc}
                 width={width} height={height}
-                tabIndex={-1} />
+                tabIndex={-1} /> */}
             <div className='overlay' style={{
                 height,
             }}>
