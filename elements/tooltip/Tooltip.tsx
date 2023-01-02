@@ -119,7 +119,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
         setIsActive( true );
     }, [ isActive ] );
 
-    const handlePointeLeave = useCallback( () => {
+    const handlePointerLeave = useCallback( () => {
         setIsActive( false );
     }, [ isActive ] );
 
@@ -145,7 +145,9 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
             ref?.current
         ) {
             ref.current?.addEventListener( 'pointerover', handlePointerOver );
-            ref.current?.addEventListener( 'pointerleave', handlePointeLeave );
+            ref.current?.addEventListener( 'pointerleave', handlePointerLeave );
+            ref.current?.addEventListener( 'focus', handlePointerOver );
+            ref.current?.addEventListener( 'focusout', handlePointerLeave );
 
             setTooltipStyles( getTooltipStyles( {
                 ref,
@@ -156,7 +158,9 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
 
             return () => {
                 ref.current?.removeEventListener( 'pointerover', handlePointerOver );
-                ref.current?.removeEventListener( 'pointerleave', handlePointeLeave );
+                ref.current?.removeEventListener( 'pointerleave', handlePointerLeave );
+                ref.current?.removeEventListener( 'focus', handlePointerOver );
+                ref.current?.removeEventListener( 'focusout', handlePointerLeave );
             }
         }
     }, [ position, ref, tooltipPadding, children ] );

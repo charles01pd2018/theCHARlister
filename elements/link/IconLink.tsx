@@ -1,7 +1,7 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, forwardRef } from 'react';
 // elements
 import { SVG } from 'elements';
 // types
@@ -25,7 +25,7 @@ export interface Props extends HTMLAttributes<HTMLAnchorElement> {
     isActive?: boolean;
 }
 
-const IconLink = ( {
+const IconLink = forwardRef<HTMLAnchorElement, Props>( ( {
     className='',
     content,
     iconSize=[ 30, 30 ],
@@ -34,7 +34,7 @@ const IconLink = ( {
     type,
     isActive,
     ...rest
-}: Props ) => {
+}, ref ) => {
     /* CONTENT */
     const { href, color, icon, title } = content;
     const { data, alt } = icon;
@@ -50,12 +50,12 @@ const IconLink = ( {
     );
 
     return (
-        <Link className={iconLinkClasses} href={href} onClick={onClick}
+        <Link ref={ref} className={iconLinkClasses} href={href} onClick={onClick}
             title={title} aria-label={title} target={target} {...rest}>
             <SVG data={data} alt={alt}
                 width={width} height={height} />
         </Link>
     );
-}
+} );
 
 export default IconLink;

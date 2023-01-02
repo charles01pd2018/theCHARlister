@@ -39,7 +39,7 @@
             border-radius: 50%;
         }
 
-        &:hover {
+        @include tap {
             &.not-active {
                 border-radius: 50%;
     

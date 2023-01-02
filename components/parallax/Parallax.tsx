@@ -6,7 +6,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 // elements
-import { SVG, Text } from 'elements';
+import { SVG, StyledText } from 'elements';
 // types
 import type { ArticleContent } from 'components/types';
 
@@ -52,7 +52,7 @@ const Technologies = ( {
                                 <div className='text-wrapper' key={index}>
                                     {
                                         texts.map( ( textContent, innerIndex ) => (
-                                            <Text key={`text:${innerIndex}`}
+                                            <StyledText key={`text:${innerIndex}`}
                                                 content={textContent} />
                                         ) )
                                     }

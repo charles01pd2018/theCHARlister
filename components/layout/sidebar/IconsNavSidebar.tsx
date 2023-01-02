@@ -30,7 +30,7 @@ const IconsNavSidebar = ( {
                 {
                     items.map( ( content, index ) => {
                         /* HOOKS */
-                        const ref = useRef<HTMLLIElement>( null );
+                        const ref = useRef<HTMLAnchorElement>( null );
 
                         /* CONTENT */
                         const { tooltip, ...restContent } = content;
@@ -38,8 +38,8 @@ const IconsNavSidebar = ( {
                         const tooltipId = `${key}-tooltip`;
 
                         return (
-                            <li className='link-wrapper' ref={ref} key={key}>
-                                <IconLink isActive={activeIndex === index} 
+                            <li className='link-wrapper' key={key}>
+                                <IconLink ref={ref} isActive={activeIndex === index} 
                                     content={restContent} iconSize={iconSize}
                                     type='fill' aria-labelledby={tooltipId} />
                                 <Tooltip id={tooltipId} className='text--xxxs'
