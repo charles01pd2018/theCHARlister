@@ -8,6 +8,7 @@ export interface Props extends HTMLAttributes<HTMLButtonElement>  {
     className?: string;
     onClick: () => void;
     ariaControls: string;
+    ariaExpanded: boolean;
 }
 
 const ToggleButton = ( {
@@ -15,6 +16,7 @@ const ToggleButton = ( {
     className='',
     onClick,
     ariaControls,
+    ariaExpanded,
     ...rest
 }: Props ) => {
     /* CLASSNAMES */
@@ -25,7 +27,7 @@ const ToggleButton = ( {
 
     return (
         <button className={toggleButtonClasses} onClick={onClick}
-            aria-controls={ariaControls} {...rest}>
+            aria-controls={ariaControls} aria-expanded={ariaExpanded} {...rest}>
             {children}
         </button>
     )

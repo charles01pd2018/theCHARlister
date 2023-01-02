@@ -17,6 +17,7 @@ export interface Props {
     content: Content;
     iconSize?: Size;
     isActive?: boolean;
+    onClick?: () => void;
 }
 
 const IconTextLink = ( {
@@ -24,6 +25,7 @@ const IconTextLink = ( {
     content,
     iconSize=[ 17, 17 ],
     isActive,
+    onClick,
 }: Props ) => {
     /* CONTENT */
     const { href, icon, text, color } = content;
@@ -43,7 +45,8 @@ const IconTextLink = ( {
     );
 
     return (
-        <Link className={iconTextLinkClasses} href={href}>
+        <Link className={iconTextLinkClasses} href={href}
+            onClick={onClick}>
             <div className={iconWrapperClasses}>
                 <SVG {...icon} width={width} height={height} />
             </div>

@@ -3,6 +3,7 @@ import type { Props as TooltipIconProps,
     Content as TooltipIconContent } from './TooltipIcon';
 import type { Props as StackedIconsProps,
     Content as StackedIconsContent } from './StackedIcons';
+import type { Props as HamburgerIconProps } from './HamburgerIcon';
 // used
 import type { Size } from 'types';
 

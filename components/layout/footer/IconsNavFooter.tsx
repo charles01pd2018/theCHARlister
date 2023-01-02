@@ -62,7 +62,7 @@ const IconsNavFooter = ( {
 
     return (
         <footer className={iconsNavFooterClasses}>
-            <ToggleButton className={toggleButtonClasses}
+            <ToggleButton className={toggleButtonClasses} ariaExpanded={isOpen}
                 onClick={toggleIsOpen} ariaControls={ARIA_CONTROLS}
                 aria-label={`${isOpen ? 'Close' : 'Open'} Navigation`}>
                 <XIcon />

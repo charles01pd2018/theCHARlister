@@ -1,13 +1,17 @@
 // dependencies
 import classNames from 'classnames';
+import { useState } from 'react';
 // elements
-import { IconLogoLink, IconTextLink } from 'elements';
+import { IconLogoLink, IconTextLink, HamburgerToggleButton } from 'elements';
 // content
 import { OVERVIEW_HEADER_CONTENT } from 'components/content';
 // types
 import type { ActivePage } from 'components/types';
 import type { IconTextLinkContent } from 'elements/types';
 
+
+/* CONSTANTS */
+const NAV_ID = 'mobile-nav';
 
 /* TYPES */
 export interface Content {
@@ -28,6 +32,18 @@ const OverviewHeader = ( {
     /* CONTENT */
     const { links } = content;
 
+    /* HOOKS */
+    const [ isMobileNavActive, setIsMobileNavActive ] = useState<boolean>( false );
+
+    /* FUNCTIONS */
+    const closeMobileNav = () => {
+        setIsMobileNavActive( false );
+    }
+
+    const toggleMobileNav = () => {
+        setIsMobileNavActive( state => !state );
+    }
+
     /* CLASSNAMES */
     const overviewHeaderClasses = classNames(
         'header',
@@ -35,16 +51,24 @@ const OverviewHeader = ( {
         className,
     );
 
+    const linksClasses = classNames(
+        'links',
+        isMobileNavActive && 'active',
+    );
+
     return (
         <header className={overviewHeaderClasses}>
             <IconLogoLink />
-            <nav className='nav'>
-                <ul className='links'>
+            <HamburgerToggleButton onClick={toggleMobileNav}
+                 isActive={isMobileNavActive} ariaControls={NAV_ID} />
+            <nav id={NAV_ID} className='nav'>
+                <ul className={linksClasses}>
                     {
                         links.map( ( linkContent ) => (
-                            <li key={linkContent.href} className='link-wrapper' >
+                            <li key={linkContent.href} className='link-wrapper'>
                                 <IconTextLink content={linkContent}
-                                    isActive={activePage === linkContent.text} />
+                                    isActive={activePage === linkContent.text}
+                                    onClick={closeMobileNav} />
                             </li>
                         ) )
                     }

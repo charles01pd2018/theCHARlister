@@ -1,0 +1,36 @@
+.hamburger-icon {
+    $height: 0.25rem;
+    $transition: 0.33s ease-out;
+
+    transition: transform $transition;
+
+    .line {
+        display: block;
+        width: 2rem;
+        height: 0.25rem;
+        margin-block: 0.3rem;
+        background: black;
+        border-radius: 0.3rem;
+
+        transition: transform $transition,
+                    opacity $transition;
+    }
+
+    &.active {
+        .line {
+            $shift-y: $height * 2.185;
+
+            &:nth-child( 1 ) {
+                transform: translateY( $shift-y ) rotate( 45deg );
+            }
+
+            &:nth-child( 2 ) {
+                opacity: 0;
+            }
+
+            &:nth-child( 3 ) {
+                transform: translateY( -$shift-y ) rotate( 135deg );
+            }
+        }
+    }
+}

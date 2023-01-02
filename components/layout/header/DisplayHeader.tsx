@@ -61,7 +61,6 @@ const DisplayHeader = ( {
                     type='doggo' content={switchContent}
                     hideLabel={true} aria-labelledby={TOOLTIP_ID} 
                     {...switchProps} />
-                {/** TODO - animate the width of this when checked status changes */}
                 <Tooltip id={TOOLTIP_ID} ref={toggleRef}
                     className={tooltipClasses} animateType='pop'
                     position='bottom-left' includePointer={false}>
