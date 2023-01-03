@@ -1,7 +1,6 @@
 export * from './svg';
 export * from './breadcrumbs';
 export * from './icon';
-export * from './image';
 export * from './switch';
 export * from './tooltip';
 export * from './project-preview';

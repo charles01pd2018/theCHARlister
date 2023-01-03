@@ -5,9 +5,6 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head >
-          {/* Viewport */}
-          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="apple-mobile-web-app-capable" content="yes" />
           {/* Site Logo */}
           <link rel='icon' href='/favicon.ico' />
           {/* Imported Fonts */}

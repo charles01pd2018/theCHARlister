@@ -63,11 +63,11 @@ const ProjectPreview = ( {
                 height: actualHeight,
             }}>
                 {children || ''}
-                <div className='text-wrapper'>
+                <p className='text-wrapper'>
                     <StaggeredText>
                         {textChildren}
                     </StaggeredText>
-                </div>
+                </p>
             </div>
         </Link>
     );
