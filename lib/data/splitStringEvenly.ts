@@ -17,7 +17,7 @@ export const splitStringEvenly = (
     const { keepWords=true } = options;
 
     const arr: string[] = [];
-    const DIVIDE = Math.floor( val.length / ( n + 1 ) );
+    const DIVIDE = Math.floor( val.length / n );
 
     let startInc = 0;
     let endInc = 0;
@@ -33,12 +33,17 @@ export const splitStringEvenly = (
             }
         }
         
-        arr.push( val.substring( 
+        const substring = val.substring( 
             start + startInc, 
             end + endInc,
-        ) );
+        );
+
+        if ( substring ) {
+            arr.push( substring );
+        }
 
         startInc = endInc;
+        endInc = 0;
     }
 
     return arr;

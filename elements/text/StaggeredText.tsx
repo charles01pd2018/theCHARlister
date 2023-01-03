@@ -42,7 +42,6 @@ const StaggeredText = ( {
                             }}>
                                 {char}
                             </span>
-                            {char.endsWith(' ') ? ' ' : ''}
                         </Fragment>
                     ) ),
                 } );

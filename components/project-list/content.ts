@@ -7,7 +7,7 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
     items: [
         {
             title: 'beemy',
-            description: 'One click blog post publishing with built-in SEO and a rich editor experience.',
+            description: 'One click blog post publishing with built-in SEO and a rich editor experience',
             projectPreviewContent: {
                 color: 'blue',
                 imageLink: {
