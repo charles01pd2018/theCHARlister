@@ -12,6 +12,7 @@
     min-height: calc( 100vh - 5rem );
 
     .text-wrapper {
+        margin-top: 5rem;
         width: $text-width;
 
         .title {
@@ -41,6 +42,7 @@
         flex-flow: row wrap;
 
         .text-wrapper {
+            margin-top: 2rem;
             width: 100vw;
             text-align: center;
 

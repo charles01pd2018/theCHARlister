@@ -32,7 +32,7 @@ const AboutMe = ( {
                 <title>{pageTitle}</title>
             </Head>
             <GenericLayout activePage='About Me'>
-                <Profile />
+                <Profile className='spacing--v' />
             </GenericLayout>
         </>
     );

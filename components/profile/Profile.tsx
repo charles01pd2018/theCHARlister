@@ -8,8 +8,10 @@ import type { ImageData, IconData } from 'types';
 
 /* TYPES */
 export interface Content {
+    name: string;
+    role: string;
     image: ImageData;
-    icons: IconData;
+    icons: IconData[];
 }
 
 export interface Props {
@@ -21,6 +23,9 @@ const Profile = ( {
     className='',
     content=PROFILE_CONTENT,
 }: Props ) => {
+    /* CONTENT */
+    const { name, role } = content;
+
     /* CLASSNAMES */
     const profileClasses = classNames(
         'profile',
@@ -29,7 +34,10 @@ const Profile = ( {
 
     return (
         <section className={profileClasses}>
-
+            <div className='content'>
+                <h3 className='h6 name'>{name}</h3>
+                <p className='text--norm role'>{role}</p>
+            </div>
         </section>
     );
 }

@@ -59,7 +59,7 @@ const content: Content = {
         articleContent: {
             items: [
                 {
-                    title: '',
+                    title: 'Dingus',
                     texts: [
                         'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
                         'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
@@ -102,6 +102,10 @@ const content: Content = {
                 {
                     data: '/static/icons/graphql-bg-logo.svg',
                     alt: 'GraphQL Logo',
+                },
+                {
+                    data: '/static/icons/sendgrid-bg-logo.svg',
+                    alt: 'Twilio SendGrid Logo',
                 },
                 {
                     data: '/static/icons/mongodb-logo.svg',

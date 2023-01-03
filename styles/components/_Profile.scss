@@ -1,3 +1,38 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../constants/colors' as *;
+
+
 .profile {
-    
+    $border-radius: 20%;
+
+    height: 30vh;
+    border-bottom-right-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    background: linear-gradient(
+        to right, 
+        #c8ddfa,
+        #c0f0d0,
+    );
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding-top: 6vh;
+
+        .role {
+            color: #525252;
+        }
+
+        .name,
+        .role {
+            &::selection {
+                background: map.get( $colors, 'green', 3 );
+            }
+        }
+    }
 }

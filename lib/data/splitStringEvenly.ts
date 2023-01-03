@@ -14,7 +14,6 @@ export const splitStringEvenly = (
     options: Options={},
 ) => {
     /* OPTIONS */
-    // TODO - make this work
     const { keepWords=true } = options;
 
     const arr: string[] = [];
