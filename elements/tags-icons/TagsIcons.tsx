@@ -1,15 +1,15 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { Tag, SVG } from 'elements';
+import { TagList, SVG } from 'elements';
 // types
 import type { IconData, Size } from 'types';
-import type { ColorTag } from 'elements/types';
+import type { TagListContent } from 'elements/types';
 
 
 /* TYPES */
 export interface Content {
-    tags: ColorTag[];
+    tagListContent: TagListContent;
     icons: IconData[];
 }
 
@@ -25,26 +25,18 @@ const TagsIcons = ( {
     iconSize=[ 20, 20 ],
 }: Props ) => {
     /* CONTENT */
-    const { tags, icons } = content;
+    const { tagListContent, icons } = content;
     const [ width, height ] = iconSize;
 
     /* CLASSNAMES */
     const tagsIconsClasses = classNames(
-        'tags-icon',
+        'tags-icons',
         className,
     );
 
     return (
         <div className={tagsIconsClasses}>
-            <ul className='tags-wrapper'>
-                {
-                    tags.map( ( { text, color }, index ) => (
-                        <Tag key={index} color={color}>
-                            {text}
-                        </Tag>
-                    ) )
-                }
-            </ul>
+            <TagList content={tagListContent} />
             {
                 icons.map( ( icon ) => (
                     <SVG key={icon.alt} width={width} height={height}

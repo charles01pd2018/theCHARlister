@@ -1,5 +1,7 @@
 // dependencies
 import classNames from 'classnames';
+// content
+import { PROFILE_CONTENT } from 'components/content';
 // types
 import type { ImageData, IconData } from 'types';
 
@@ -12,10 +14,12 @@ export interface Content {
 
 export interface Props {
     className?: string;
+    content?: Content;
 }
 
 const Profile = ( {
-    className=''
+    className='',
+    content=PROFILE_CONTENT,
 }: Props ) => {
     /* CLASSNAMES */
     const profileClasses = classNames(

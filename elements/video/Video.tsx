@@ -18,7 +18,7 @@ const Video = ( {
     );
 
     return (
-        <video>
+        <video className={videoClasses}>
         </video>
     );
 }

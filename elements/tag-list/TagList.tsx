@@ -3,7 +3,6 @@ import classNames from 'classnames';
 // elements
 import { Tag } from 'elements';
 // types
-import type { Colors } from 'types';
 import type { ColorTag } from 'elements/types';
 
 

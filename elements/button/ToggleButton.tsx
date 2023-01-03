@@ -30,7 +30,7 @@ const ToggleButton = ( {
             aria-controls={ariaControls} aria-expanded={ariaExpanded} {...rest}>
             {children}
         </button>
-    )
+    );
 }
 
 export default ToggleButton;

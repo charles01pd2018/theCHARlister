@@ -60,6 +60,38 @@ const content: Content = {
 
             ],
         },
+        tagListContent: {
+            tags: [
+                {
+                    text: 'MARKETING',
+                    color: 'green',
+                },
+                {
+                    text: 'PERSONAL',
+                    color: 'green',
+                },
+            ],
+        },
+        stackedIconsContent: {
+            icons: [
+                {
+                    data: '/static/icons/heroku-bg-logo.svg',
+                    alt: 'Heroku Logo',
+                },
+                {
+                    data: '/static/icons/nodejs-bg-logo.svg',
+                    alt: 'NodeJS Logo',
+                },
+                {
+                    data: '/static/icons/react-bg-logo.svg',
+                    alt: 'React Logo',
+                },
+                {
+                    data: '/static/icons/html-bg-logo.svg',
+                    alt: 'HTML Logo',
+                },
+            ],
+        },
     },
 }
 

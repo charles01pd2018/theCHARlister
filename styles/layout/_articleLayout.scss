@@ -20,6 +20,10 @@
         .mobile-article-wrapper {
             display: block;
 
+            .article-intro {
+                margin-bottom: 2rem;
+            }
+
             .article {
                 border-top: 2px solid gray;
                 padding-top: 1rem;

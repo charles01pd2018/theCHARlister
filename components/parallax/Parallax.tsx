@@ -6,7 +6,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 // elements
-import { SVG, TagList, StackedIcons } from 'elements';
+import { SVG, Media, TagList, StackedIcons } from 'elements';
 // types
 import type { ArticleContent } from 'components/types';
 import type { StackedIconsContent, TagListContent } from 'elements/types';
@@ -48,22 +48,28 @@ const Parallax = ( {
                     <SVG {...items[activeArticleIndex].media}
                         width={150} height={150} />
                 </div>
-                <WrapperTag className='text-container'>
-                    {
-                        items.map( ( { texts }, index ) => {
-                            return (
-                                <div className='text-wrapper' key={index}>
-                                    {
-                                        texts.map( ( text, innerIndex ) => (
-                                            <p key={`text:${innerIndex}`}
-                                                dangerouslySetInnerHTML={{ __html: text }} />
-                                        ) )
-                                    }
-                                </div>
-                            )
-                        } )
-                    }
-                </WrapperTag>
+                <div className='content-wrapper'>
+                    <div className='top'>
+                        <TagList content={tagListContent} />
+                        <StackedIcons content={stackedIconsContent} />
+                    </div>
+                    <WrapperTag className='text-container'>
+                        {
+                            items.map( ( { texts }, index ) => {
+                                return (
+                                    <div className='text-wrapper' key={index}>
+                                        {
+                                            texts.map( ( text, innerIndex ) => (
+                                                <p key={`text:${innerIndex}`}
+                                                    dangerouslySetInnerHTML={{ __html: text }} />
+                                            ) )
+                                        }
+                                    </div>
+                                )
+                            } )
+                        }
+                    </WrapperTag>
+                </div>
             </div>
         </section>
     )

@@ -36,7 +36,7 @@ const ExperienceList = ( {
             {
                 items.map( ( experienceContent ) => {
                     return (
-                        <Experience key={experienceContent.company.name}
+                        <Experience key={experienceContent.company.text}
                             content={experienceContent} />
                     )
                 } )

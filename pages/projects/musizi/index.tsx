@@ -60,6 +60,38 @@ const content: Content = {
 
             ],
         },
+        tagListContent: {
+            tags: [
+                {
+                    text: 'MARKETING',
+                    color: 'pink',
+                },
+                {
+                    text: 'FREELANCE',
+                    color: 'pink',
+                },
+            ],
+        },
+        stackedIconsContent: {
+            icons: [
+                {
+                    data: '/static/icons/vercel-logo.svg',
+                    alt: 'Vercel Logo',
+                },
+                {
+                    data: '/static/icons/typescript-bg-logo.svg',
+                    alt: 'Typescript Logo',
+                },
+                {
+                    data: '/static/icons/sass-bg-logo.svg',
+                    alt: 'Sass Logo',
+                },
+                {
+                    data: '/static/icons/mailchimp-bg-logo.svg',
+                    alt: 'Mailchimp Logo',
+                },
+            ],
+        },
     },
 }
 

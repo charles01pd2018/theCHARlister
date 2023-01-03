@@ -9,7 +9,7 @@ import type { LinkData } from 'types';
 export interface Props {
     className?: string;
     content: LinkData;
-    type: 'lift-underline' | 'arrow' | 'blue-background' | null;
+    type: 'lift-underline' | 'blue-background' | null;
     isActive?: boolean;
 }
 

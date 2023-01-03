@@ -18,14 +18,22 @@
             width: 100% - $text-width;
         }
 
-        .text-container {
-            width: $text-width;
+        .content-wrapper {
+            .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-            .text-wrapper {
-                margin-block: auto;
-
-                .text {
-                    margin-block: 1rem;
+            .text-container {
+                width: $text-width;
+    
+                .text-wrapper {
+                    margin-block: auto;
+    
+                    .text {
+                        margin-block: 1rem;
+                    }
                 }
             }
         }

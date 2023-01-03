@@ -59,6 +59,7 @@ const content: Content = {
         articleContent: {
             items: [
                 {
+                    title: '',
                     texts: [
                         'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
                         'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
@@ -73,6 +74,38 @@ const content: Content = {
                         data: '/static/icons/contact.svg',
                         alt: '',
                     },
+                },
+            ],
+        },
+        tagListContent: {
+            tags: [
+                {
+                    text: 'FULLSTACK',
+                    color: 'blue',
+                },
+                {
+                    text: 'PERSONAL',
+                    color: 'blue',
+                },
+            ],
+        },
+        stackedIconsContent: {
+            icons: [
+                {
+                    data: '/static/icons/vercel-logo.svg',
+                    alt: 'Vercel Logo',
+                },
+                {
+                    data: '/static/icons/typescript-bg-logo.svg',
+                    alt: 'Typescript Logo',
+                },
+                {
+                    data: '/static/icons/graphql-bg-logo.svg',
+                    alt: 'GraphQL Logo',
+                },
+                {
+                    data: '/static/icons/mongodb-logo.svg',
+                    alt: 'MongoDB Logo',
                 },
             ],
         },

@@ -1,7 +1,7 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { Breadcrumbs, StackedIcons, TagsIcons } from 'elements';
+import { Breadcrumbs, TagsIcons } from 'elements';
 // types
 import type { BreadcrumbsContent, TagsIconsContent } from 'elements/types';
 
@@ -20,6 +20,9 @@ const ArticleIntro = ( {
     className='',
     content,
 }: Props ) => {
+    /* CONTENT */
+    const { breadcrumbsContent, tagsIconsContent } = content;
+
     /* CLASSNAMES */
     const articleIntroClasses = classNames(
         'article-intro',
@@ -28,7 +31,8 @@ const ArticleIntro = ( {
 
     return (
         <section className={articleIntroClasses}>
-
+            <Breadcrumbs content={breadcrumbsContent} />
+            <TagsIcons content={tagsIconsContent} />
         </section>
     );
 }
