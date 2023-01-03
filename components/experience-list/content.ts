@@ -13,13 +13,6 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
             },
             role: 'Software Engineer',
             dateRange: 'Oct 2022 - Present',
-            // nextjs
-            // typescript
-            // motion.div
-            // mui
-            // aws
-            // styled.div
-            // Prosemirror
             technologies: {
                 icons: [
                     {
@@ -29,6 +22,22 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                     {
                         data: '/static/icons/typescript-bg-logo.svg',
                         alt: 'Typescript Logo',
+                    },
+                    {
+                        data: '/static/icons/motion-bg-logo.svg',
+                        alt: 'Framer Motion Logo',
+                    },
+                    {
+                        data: '/static/icons/mui-bg-logo.svg',
+                        alt: 'Material UI Logo',
+                    },
+                    {
+                        data: '/static/icons/aws-bg-logo.svg',
+                        alt: 'AWS Logo',
+                    },
+                    {
+                        data: '/static/icons/prosemirror-bg-logo.svg',
+                        alt: 'ProseMirror Logo',
                     },
                 ],
             },
@@ -50,24 +59,27 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
             },
             role: 'Software Developement Engineer I',
             dateRange: 'Oct 2022 - Present',
-            // backbone
-            // angular
-            // sass
-            // storybook
-            // nodejs
             technologies: {
                 icons: [
                     {
-                        data: '/static/icons/nextjs-bg-logo.svg',
-                        alt: 'NextJS Logo',
+                        data: '/static/icons/angular-bg-logo.svg',
+                        alt: 'Angular Logo',
                     },
                     {
-                        data: '/static/icons/typescript-bg-logo.svg',
-                        alt: 'Typescript Logo',
+                        data: '/static/icons/backbonejs-bg-logo.svg',
+                        alt: 'BackboneJS Logo',
                     },
                     {
-                        data: '/static/icons/typescript-bg-logo.svg',
-                        alt: 'Typescript Logo',
+                        data: '/static/icons/sass-bg-logo.svg',
+                        alt: 'Sass Logo',
+                    },
+                    {
+                        data: '/static/icons/nodejs-bg-logo.svg',
+                        alt: 'NodeJS Logo',
+                    },
+                    {
+                        data: '/static/icons/storybook-bg-logo.svg',
+                        alt: 'Storybook Logo',
                     },
                 ],
             },
