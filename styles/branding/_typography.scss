@@ -1,6 +1,9 @@
 // dependencies
 @use 'sass:list';
 @use 'sass:math';
+// utils
+@use '../utils/color/getBackgroundColors' as *;
+
 
 /*--------------------------------------------------------------
 # Font Family
@@ -99,7 +102,11 @@ $text-size: (
 /*--------------------------------------------------------------
 # Styled Text
 --------------------------------------------------------------*/
-
+mark {
+    @include getBackgroundColors();
+    padding-inline: 2px;
+    border-radius: 3px;
+}
 
 /*--------------------------------------------------------------
 # Helper
@@ -110,4 +117,8 @@ $text-size: (
 
 .big-heading {
     font-size: clamp( 2.8em, 3.8vw, 4.5em );
+}
+
+.txt-center {
+    text-align: center;
 }

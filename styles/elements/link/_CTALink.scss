@@ -19,10 +19,10 @@
         background: #fff;
         padding: $padding-block $padding-inline;
         border-radius: $border-radius;
-        border: 1px solid map.get( $colors, 'blue', 1 );
+        outline: 1px solid map.get( $colors, 'blue', 1 );
 
         transition: font-weight $transition,
-                    border-width $transition;
+                    outline-width $transition;
 
         $half-padding-inline: math.div( $padding-inline, 2 );
         $half-padding-block: math.div( $padding-block, 2 );
@@ -63,7 +63,7 @@
 
         @include activeTap {
             font-weight: bold;
-            border-width: 2px;
+            outline-width: 2px;
 
             &:after {
                 filter: blur( 14px );

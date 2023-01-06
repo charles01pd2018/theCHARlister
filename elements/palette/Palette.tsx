@@ -44,9 +44,8 @@ const Palette = ( {
             {
                 icons.map( ( { title, ...iconContent } ) => {
                     return (
-                        <div className='icon-wrapper' key={iconContent.alt}>
-                            <SVG {...iconContent} width={width} height={height}
-                                title={title} aria-label={title} />
+                        <div key={iconContent.alt} className='icon-wrapper' title={title}>
+                            <SVG {...iconContent} width={width} height={height} />
                         </div>
                     )
                 } )
