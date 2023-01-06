@@ -13,7 +13,7 @@ import type { IconsNavProps } from 'components/types';
 const ARIA_CONTROLS = 'icons-nav';
 
 /**
- * TODO:
+ * TODO (I don't rlly mind either tbh):
  * 1. Make this transition smooth for in view
  * 2. Change order of icons when activeIndex changes
  */

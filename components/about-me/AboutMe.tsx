@@ -51,7 +51,8 @@ const AboutMe = ( {
         <section id={id} className={aboutMeClasses}>
             <div className='text-wrapper'>
                 <h2 className='title big-heading'>{title}</h2>
-                <p className='description text--lg'>{description}</p>
+                <p className='description text--lg' 
+                    dangerouslySetInnerHTML={{ __html: description }} />
                 <CTALink className='text--norm' content={link} type='rainbow-shadow' />
             </div>
             <Palette content={paletteContent} 
