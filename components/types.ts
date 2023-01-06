@@ -9,3 +9,4 @@ export * from './profile/types';
 export * from './references/types';
 export * from './article-intro/types';
 export * from './contact/types';
+export * from './progress-bar/types';

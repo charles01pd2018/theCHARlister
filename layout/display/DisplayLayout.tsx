@@ -1,8 +1,8 @@
 // dependencies
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 // components
 import { DisplayHeader, DisplayFooter, 
-    IconsNavFooter, IconsNavSidebar } from 'components';
+    IconsNavFooter, IconsNavSidebar, ProgressBar } from 'components';
 // types
 import type { DisplayHeaderSwitchProps } from 'components/types';
 
@@ -19,9 +19,13 @@ const DisplayLayout = ( {
     activeIndex,
     displayHeaderSwitchProps,
 }: Props ) => {
+    useEffect( () => {
+        document.body.classList.add( 'hide-scrollbar' );
+    }, [] );
 
     return (
         <div className='display-layout-wrapper'>
+            <ProgressBar />
             <DisplayHeader switchProps={displayHeaderSwitchProps} />
             <main className='display-layout'>
                 {children}
