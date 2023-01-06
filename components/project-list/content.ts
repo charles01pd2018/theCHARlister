@@ -33,18 +33,22 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                     {
                         data: '/static/icons/vercel-logo.svg',
                         alt: 'Vercel Logo',
+                        title: 'Vercel',
                     },
                     {
                         data: '/static/icons/typescript-bg-logo.svg',
                         alt: 'Typescript Logo',
+                        title: 'Typescript',
                     },
                     {
                         data: '/static/icons/graphql-bg-logo.svg',
                         alt: 'GraphQL Logo',
+                        title: 'GraphQL',
                     },
                     {
                         data: '/static/icons/mongodb-logo.svg',
                         alt: 'MongoDB Logo',
+                        title: 'MongoDB',
                     },
                 ],
             },
@@ -77,18 +81,22 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                     {
                         data: '/static/icons/vercel-logo.svg',
                         alt: 'Vercel Logo',
+                        title: 'Vercel',
                     },
                     {
                         data: '/static/icons/typescript-bg-logo.svg',
                         alt: 'Typescript Logo',
+                        title: 'Typescript',
                     },
                     {
                         data: '/static/icons/sass-bg-logo.svg',
                         alt: 'Sass Logo',
+                        title: 'Sass',
                     },
                     {
                         data: '/static/icons/mailchimp-bg-logo.svg',
                         alt: 'Mailchimp Logo',
+                        title: 'Mailchimp',
                     },
                 ],
             },
@@ -121,18 +129,22 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                     {
                         data: '/static/icons/heroku-bg-logo.svg',
                         alt: 'Heroku Logo',
+                        title: 'Heroku',
                     },
                     {
                         data: '/static/icons/nodejs-bg-logo.svg',
                         alt: 'NodeJS Logo',
+                        title: 'Javascript',
                     },
                     {
                         data: '/static/icons/react-bg-logo.svg',
                         alt: 'React Logo',
+                        title: 'React',
                     },
                     {
                         data: '/static/icons/html-bg-logo.svg',
                         alt: 'HTML Logo',
+                        title: 'HTML',
                     },
                 ],
             },

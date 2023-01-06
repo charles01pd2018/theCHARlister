@@ -1,6 +1,7 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
+import { HTMLAttributes } from 'react';
 // elements
 import { SVG } from 'elements';
 // types
@@ -12,12 +13,11 @@ export interface Content extends IconTextLinkData {
     color: Colors;
 }
 
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLAnchorElement> {
     className?: string;
     content: Content;
     iconSize?: Size;
     isActive?: boolean;
-    onClick?: () => void;
 }
 
 const IconTextLink = ( {
@@ -25,7 +25,7 @@ const IconTextLink = ( {
     content,
     iconSize=[ 17, 17 ],
     isActive,
-    onClick,
+    ...rest
 }: Props ) => {
     /* CONTENT */
     const { href, icon, text, color } = content;
@@ -46,7 +46,7 @@ const IconTextLink = ( {
 
     return (
         <Link className={iconTextLinkClasses} href={href}
-            onClick={onClick}>
+            {...rest}>
             <div className={iconWrapperClasses}>
                 <SVG {...icon} width={width} height={height} />
             </div>

@@ -1,12 +1,13 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
+import { HTMLAttributes } from 'react';
 // types
 import type { LinkData } from 'types';
 
 
 /* TYPES */
-export interface Props {
+export interface Props extends HTMLAttributes<HTMLAnchorElement> {
     className?: string;
     content: LinkData;
     type: 'lift-underline' | 'blue-background' | null;
@@ -18,6 +19,7 @@ const NavLink = ( {
     content,
     type,
     isActive,
+    ...rest
 }: Props ) => {
     /* CONTENT */
     const { href, text } = content;
@@ -31,7 +33,7 @@ const NavLink = ( {
     );
 
     return (
-        <Link className={navLinkClasses} href={href}>
+        <Link className={navLinkClasses} href={href} {...rest}>
             {text}
         </Link>
     );

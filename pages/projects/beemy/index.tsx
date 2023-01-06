@@ -94,22 +94,27 @@ const content: Content = {
                 {
                     data: '/static/icons/vercel-logo.svg',
                     alt: 'Vercel Logo',
+                    title: 'Vercel',
                 },
                 {
                     data: '/static/icons/typescript-bg-logo.svg',
                     alt: 'Typescript Logo',
+                    title: 'Typescript',
                 },
                 {
                     data: '/static/icons/graphql-bg-logo.svg',
                     alt: 'GraphQL Logo',
+                    title: 'GraphQL',
                 },
                 {
                     data: '/static/icons/sendgrid-bg-logo.svg',
                     alt: 'Twilio SendGrid Logo',
+                    title: 'Twilio SendGrid'
                 },
                 {
                     data: '/static/icons/mongodb-logo.svg',
                     alt: 'MongoDB Logo',
+                    title: 'MongoDB',
                 },
             ],
         },

@@ -77,18 +77,22 @@ const content: Content = {
                 {
                     data: '/static/icons/heroku-bg-logo.svg',
                     alt: 'Heroku Logo',
+                    title: 'Heroku',
                 },
                 {
                     data: '/static/icons/nodejs-bg-logo.svg',
                     alt: 'NodeJS Logo',
+                    title: 'Javascript',
                 },
                 {
                     data: '/static/icons/react-bg-logo.svg',
                     alt: 'React Logo',
+                    title: 'React',
                 },
                 {
                     data: '/static/icons/html-bg-logo.svg',
                     alt: 'HTML Logo',
+                    title: 'HTML',
                 },
             ],
         },

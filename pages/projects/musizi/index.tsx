@@ -77,18 +77,22 @@ const content: Content = {
                 {
                     data: '/static/icons/vercel-logo.svg',
                     alt: 'Vercel Logo',
+                    title: 'Vercel',
                 },
                 {
                     data: '/static/icons/typescript-bg-logo.svg',
                     alt: 'Typescript Logo',
+                    title: 'Typescript',
                 },
                 {
                     data: '/static/icons/sass-bg-logo.svg',
                     alt: 'Sass Logo',
+                    title: 'Sass',
                 },
                 {
                     data: '/static/icons/mailchimp-bg-logo.svg',
                     alt: 'Mailchimp Logo',
+                    title: 'Mailchimp',
                 },
             ],
         },

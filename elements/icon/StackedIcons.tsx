@@ -7,8 +7,12 @@ import type { IconData, Size } from 'types';
 
 
 /* TYPES */
+interface Icon extends IconData {
+    title: string;
+}
+
 export interface Content {
-    icons: IconData[];
+    icons: Icon[];
 }
 
 export interface Props {
@@ -35,9 +39,9 @@ const StackedIcons = ( {
     return (
         <ul className={stackedIcons}>
             {
-                icons.map( ( content ) => (
-                    <li className='icon-wrapper' key={content.alt}>
-                        <SVG width={width} height={height} {...content} />
+                icons.map( ( { title, ...iconContent } ) => (
+                    <li className='icon-wrapper' title={title} key={iconContent.alt}>
+                        <SVG width={width} height={height} {...iconContent} />
                     </li>
                 ) )
             }
