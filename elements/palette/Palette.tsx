@@ -3,16 +3,12 @@ import classNames from 'classnames';
 // elements
 import { SVG } from 'elements';
 // types
-import type { Colors, IconData, Size } from 'types';
+import type { Colors, IconTitleData, Size } from 'types';
 
 
 /* TYPES */
-interface Icon extends IconData {
-    title: string;
-}
-
 export interface Content {
-    icons: Icon[];
+    icons: IconTitleData[];
 }
 
 export interface Props {

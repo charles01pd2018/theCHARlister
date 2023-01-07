@@ -32,9 +32,9 @@
         .icon-wrapper {
             @include getBackgroundColors( 2 );
         }
+    }
 
-        .text {
-            font-weight: bold;
-        }
+    &.active {
+        font-weight: bold;
     }
 }
