@@ -15,3 +15,4 @@ export * from './tag';
 export * from './tags-icons';
 export * from './tag-list';
 export * from './media';
+export * from './slider';

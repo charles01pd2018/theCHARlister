@@ -21,8 +21,7 @@
         border-radius: $border-radius;
         outline: 1px solid map.get( $colors, 'blue', 1 );
 
-        transition: font-weight $transition,
-                    outline-width $transition;
+        transition: outline-width $transition;
 
         $half-padding-inline: math.div( $padding-inline, 2 );
         $half-padding-block: math.div( $padding-block, 2 );
@@ -62,7 +61,6 @@
         }
 
         @include activeTap {
-            font-weight: bold;
             outline-width: 2px;
 
             &:after {

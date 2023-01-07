@@ -9,7 +9,6 @@ import { DisplayLayout } from 'layout';
 // types
 import type { GetStaticProps } from 'next';
 
-
 /* TYPES */
 interface Content {
   pageTitle: string;
