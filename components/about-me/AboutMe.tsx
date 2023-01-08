@@ -5,6 +5,7 @@
  */
 // dependencies
 import classNames from 'classnames';
+import { InView } from 'react-intersection-observer';
 // elements
 import { CTALink, Palette } from 'elements';
 // content
@@ -12,7 +13,7 @@ import { ABOUT_ME_CONTENT } from 'components/content';
 // lib
 import { useClientWidth, BREAKPOINT_MEDIUM } from 'lib';
 // types
-import type { LinkData } from 'types';
+import type { LinkData, InViewProps } from 'types';
 import type { PaletteContent } from 'elements/types';
 
 
@@ -28,12 +29,14 @@ export interface Props {
     id?: string;
     className?: string;
     content?: Content;
+    inViewProps: InViewProps;
 }
 
 const AboutMe = ( {
     id='About-Me',
     className='',
     content=ABOUT_ME_CONTENT,
+    inViewProps,
 }: Props ) => {
     /* CONTENT */
     const { title, description, link, paletteContent } = content;
@@ -48,7 +51,7 @@ const AboutMe = ( {
     );
 
     return (
-        <section id={id} className={aboutMeClasses}>
+        <InView id={id} className={aboutMeClasses} as='section' {...inViewProps}>
             <div className='text-wrapper'>
                 <h2 className='title big-heading'>{title}</h2>
                 <p className='description text--lg' 
@@ -57,7 +60,7 @@ const AboutMe = ( {
             </div>
             <Palette content={paletteContent} 
                 iconSize={width < BREAKPOINT_MEDIUM ? [ 70, 70 ] : undefined} />
-        </section>
+        </InView>
     )
 }
 

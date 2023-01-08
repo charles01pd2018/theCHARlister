@@ -3,6 +3,7 @@
  */
 // dependencies
 import classNames from 'classnames';
+import { InView } from 'react-intersection-observer';
 // content
 import { PROJECT_HIGHLIGHTS_CONTENT } from 'components/content';
 // elements
@@ -10,7 +11,7 @@ import { ProjectPreview, BlobIcon, AnimatedCurveArrowIcon, TagList,
     StackedIcons } from 'elements';
 // types
 import type { ProjectListContent } from 'components/types';
-import type { SetState } from 'types';
+import type { InViewProps } from 'types';
 
 
 /* TYPES */
@@ -22,8 +23,8 @@ export interface Props {
     id?: string;
     className?: string;
     content?: Content;
-    animate?: boolean;
-    setActiveIndex: SetState<number>;
+    animate: boolean;
+    inViewProps: InViewProps;
 }
 
 const ProjectHighlights = ( {
@@ -31,7 +32,7 @@ const ProjectHighlights = ( {
     className='',
     content=PROJECT_HIGHLIGHTS_CONTENT,
     animate,
-    setActiveIndex,
+    inViewProps,
 }: Props ) => {
     /* CONTENT */
     const { items, navText } = content;
@@ -43,7 +44,7 @@ const ProjectHighlights = ( {
     );
 
     return (
-        <section id={id} className={projectHighlightsClasses}>
+        <InView id={id} className={projectHighlightsClasses} as='section' {...inViewProps}>
             {
                 items.map( ( { 
                     title, 
@@ -84,7 +85,7 @@ const ProjectHighlights = ( {
                     );
                 } )
             }
-        </section>
+        </InView>
     );
 }
 

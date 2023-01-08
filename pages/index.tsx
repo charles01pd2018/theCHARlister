@@ -1,13 +1,13 @@
 // dependencies
 import Head from 'next/head';
 import { useState } from 'react';
-import { InView } from 'react-intersection-observer';
 // components
 import { AboutMe, ProjectHighlights, Contact } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
 // types
 import type { GetStaticProps } from 'next';
+
 
 /* TYPES */
 interface Content {
@@ -49,16 +49,18 @@ const Home = ( {
           checked: animate,
           onChange: toggleAnimate,
         }}>
-        <InView onChange={(inView) => handleInView( inView, 0 )} threshold={0.8}>
-          <AboutMe className='container--wide' />
-        </InView>
-        <InView onChange={(inView) => handleInView( inView, 1 )} threshold={0.2}>
-          <ProjectHighlights animate={animate}
-            setActiveIndex={setActiveIndex} />
-        </InView>
-        <InView onChange={(inView) => handleInView( inView, 2 )} threshold={0.5}>
-          <Contact />
-        </InView>
+        <AboutMe className='container--wide' inViewProps={{
+          onChange: (inView) => handleInView( inView, 0 ),
+          threshold: 0.8,
+        }} />
+        <ProjectHighlights animate={animate} inViewProps={{
+          onChange: (inView) => handleInView( inView, 1 ),
+          threshold: 0.2,
+        }} />
+        <Contact inViewProps={{
+          onChange: (inView) => handleInView( inView, 2 ),
+          threshold: 0.5,
+        }} />
       </DisplayLayout>
     </>
   
