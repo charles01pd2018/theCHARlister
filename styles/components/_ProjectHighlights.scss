@@ -1,51 +1,162 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../constants/breakpoints' as *;
+@use '../constants/colors' as *;
 // utils
 @use '../utils/color/getBackgroundColors' as *;
 
 
+// stagger text
+// draw arrow
+// fade in project highlight
 .project-highlights {
     .project-wrapper {
         @include getBackgroundColors();
 
         position: relative;
-        height: 100vh;
-        border: 5px solid black;
+        height: 102vh;
         overflow: hidden;
 
         .blob-wrapper {
             position: absolute;
-            top: 100%;
-            left: 30%;
 
             transform: translate( -50%, -50% );
         }
 
-        .text-wrapper {
+        .blob-text-wrapper {
             position: absolute;
-            bottom: 30%;
             color: white;
+            width: 55%;
 
-            ::selection {
-                background: black;
+            .top {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .description {
+                margin-top: 2rem;
             }
         }
 
         .animated-curve-arrow-icon {
             position: absolute;
-            bottom: 0;
         }
         
         .project-preview {
             position: absolute;
-            right: 15%;
 
             .overlay {
                 .text-wrapper {
-                    padding-bottom: 1rem;
+                    .title {
+                        margin-bottom: 0;
+                    }
                 }
 
                 &:after {
                     transition-delay: 0.5s !important;
                 }
+            }
+        }
+
+        &:nth-child( 1 ) {
+            .blob-wrapper {
+                top: 100%;
+                left: 35%;
+            }
+
+            .blob-text-wrapper {
+                top: 65%;
+                left: 2%;
+
+                ::selection {
+                    background: map.get( $colors, 'blue', 3 );
+                }
+            }
+
+            .animated-curve-arrow-icon {
+                left: 50%;
+                top: 20%;
+                
+                transform: rotate( -90deg );
+            }
+
+            .project-preview {
+                right: 7%;
+            }
+        }
+
+        &:nth-child( 2 ) {
+            .blob-wrapper {
+                top: 20%;
+                left: 30%;
+            }
+
+            .blob-text-wrapper {
+                ::selection {
+                    background: map.get( $colors, 'pink', 3 );
+                }
+            }
+
+            .animated-curve-arrow-icon {
+                top: 99%;
+                right: 100%;
+            }
+
+            .project-preview {
+                bottom: 7%;
+                right: 7%;
+            }
+        }
+
+        &:nth-child( 3 ) {
+            .blob-wrapper {
+                top: 100%;
+                left: 75%;
+            }
+
+            .blob-text-wrapper {
+                top: 65%;
+                left: 42%;
+
+                ::selection {
+                    background: map.get( $colors, 'green', 3 );
+                }
+            }
+
+            .animated-curve-arrow-icon {
+                top: 65%;
+                left: 80%;
+            }
+
+            .project-preview {
+            }
+        }
+
+        &.animate {
+            border: 2px solid black;
+        }
+    }
+
+    @media ( max-width: $breakpoint--extra-large ) {
+        .project-wrapper {
+            &:nth-child( 1 ) {
+                .blob-wrapper {
+                    top: 110%;
+                }
+
+                .animated-curve-arrow-icon {
+                    top: 30%;
+                }
+            }
+
+            &:nth-child( 2 ) {
+                
+            }
+
+            &:nth-child( 3 ) {
+                
             }
         }
     }

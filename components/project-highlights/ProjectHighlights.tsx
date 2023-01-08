@@ -3,15 +3,17 @@
  */
 // dependencies
 import classNames from 'classnames';
-import { InView } from 'react-intersection-observer';
+import { InView, useInView } from 'react-intersection-observer';
 // content
 import { PROJECT_HIGHLIGHTS_CONTENT } from 'components/content';
+// lib
+import { useClientWidth, BREAKPOINT_MEDIUM, multiplyArray } from 'lib';
 // elements
 import { ProjectPreview, BlobIcon, AnimatedCurveArrowIcon, TagList,
     StackedIcons } from 'elements';
 // types
 import type { ProjectListContent } from 'components/types';
-import type { InViewProps } from 'types';
+import type { InViewProps, Size } from 'types';
 
 
 /* TYPES */
@@ -25,6 +27,7 @@ export interface Props {
     content?: Content;
     animate: boolean;
     inViewProps: InViewProps;
+    imgSize?: Size;
 }
 
 const ProjectHighlights = ( {
@@ -33,9 +36,13 @@ const ProjectHighlights = ( {
     content=PROJECT_HIGHLIGHTS_CONTENT,
     animate,
     inViewProps,
+    imgSize=[ 400, 300 ],
 }: Props ) => {
     /* CONTENT */
     const { items, navText } = content;
+
+    /* HOOKS */
+    const clientWidth = useClientWidth();
 
     /* CLASSNAMES */
     const projectHighlightsClasses = classNames(
@@ -56,32 +63,42 @@ const ProjectHighlights = ( {
                     /* CONTENT */
                     const color = projectPreviewContent.color;
 
+                    /* HOOKS */
+                    const { ref, inView } = useInView({
+                        threshold: 0.85,
+                    });
+
                     /* CLASSNAMES */
                     const projectClasses = classNames(
                         'project-wrapper',
+                        inView && animate && 'animate',
                         color,
                     );
 
                     return (
-                        <div className={projectClasses} key={title}>
+                        <section ref={ref} key={title} className={projectClasses}>
                             <div className='container--wide'>
                                 <div className='blob-wrapper'>
                                     <BlobIcon color={color} />
                                 </div>
-                                <div className='text-wrapper'>
-                                    <TagList className='text--xxxs' content={tagListContent} />
-                                    <StackedIcons content={stackedIconsContent} />
+                                <div className='blob-text-wrapper'>
+                                    <div className='top'>
+                                        <TagList className='text--xxxs' content={tagListContent} />
+                                        <StackedIcons content={stackedIconsContent} />
+                                    </div>
                                     <h3 className='h1 project-heading'>{title}</h3>
                                     <p className='description text--lg'>{description}</p>
                                 </div>
                                 <AnimatedCurveArrowIcon animate={animate}
                                     direction='bl-tr' color={color} />
-                                <ProjectPreview size={[ 400, 300 ]} 
-                                    content={projectPreviewContent} textChildren={
-                                        <h4>{navText}</h4>
+                                <ProjectPreview content={projectPreviewContent} 
+                                    size={clientWidth > BREAKPOINT_MEDIUM ? 
+                                        imgSize : multiplyArray( imgSize, 0.85 ) as Size} 
+                                    textChildren={
+                                        <h4 className='title'>{navText}</h4>
                                     } />
                             </div>
-                        </div>
+                        </section>
                     );
                 } )
             }

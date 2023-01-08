@@ -92,12 +92,12 @@
 
     @include tap {
         .overlay {
-            transform: scaleX(1);
+            transform: scaleX( 1 );
 
             .text-wrapper {
                 span {
                     opacity: 1;
-                    transform: translateY(0);
+                    transform: translateY( 0 );
                 }
             }
 
