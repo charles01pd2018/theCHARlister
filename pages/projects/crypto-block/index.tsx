@@ -55,7 +55,12 @@ const content: Content = {
                 },
             ],
         },
-        articleContent: {
+        productArticleContent: {
+            items: [
+
+            ],
+        },
+        technicalArticleContent: {
             items: [
 
             ],

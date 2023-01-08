@@ -8,8 +8,25 @@
         padding-top: 1.5rem;
     }
 
+    .desktop-article-wrapper {
+        .desktop-article-intro {
+            display: flex;
+            justify-content: space-between;
+            margin-inline: 2vw;
+        }
+    }
+
     .mobile-article-wrapper {
         display: none;
+
+        .mobile-article-intro {
+            margin-bottom: 2rem;
+        }
+
+        .article {
+            border-top: 2px solid gray;
+            padding-top: 1rem;
+        }
     }
 
     @media ( max-width: $breakpoint--medium ) {
@@ -19,15 +36,6 @@
 
         .mobile-article-wrapper {
             display: block;
-
-            .article-intro {
-                margin-bottom: 2rem;
-            }
-
-            .article {
-                border-top: 2px solid gray;
-                padding-top: 1rem;
-            }
         }
     }
 }

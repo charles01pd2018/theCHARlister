@@ -1,7 +1,9 @@
 import type { Props as SliderProps,
-    Content as SlideContent } from './Slider';
+    Content as SliderContent,
+    SliderItem } from './Slider';
 
 export type {
-    SlideContent,
+    SliderContent,
     SliderProps,
+    SliderItem,
 }

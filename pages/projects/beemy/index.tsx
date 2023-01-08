@@ -56,7 +56,28 @@ const content: Content = {
                 },
             ],
         },
-        articleContent: {
+        productArticleContent: {
+            items: [
+                {
+                    title: 'Dingus',
+                    texts: [
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                    ],
+                    media: {
+                        data: '/static/icons/contact.svg',
+                        alt: '',
+                    },
+                },
+            ],
+        },
+        technicalArticleContent: {
             items: [
                 {
                     title: 'Dingus',

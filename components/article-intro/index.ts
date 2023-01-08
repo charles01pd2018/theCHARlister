@@ -1,5 +1,7 @@
-import ArticleIntro from './ArticleIntro';
+import MobileArticleIntro from './MobileArticleIntro';
+import DesktopArticleIntro from './DesktopArticleIntro';
 
 export {
-    ArticleIntro,
+    MobileArticleIntro,
+    DesktopArticleIntro,
 }

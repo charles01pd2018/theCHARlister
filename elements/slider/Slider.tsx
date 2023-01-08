@@ -1,27 +1,27 @@
 // dependencies
 import classNames from 'classnames';
-import { useEffect, useState, useRef, useMemo } from 'react';
+import { useEffect, useState, useRef, useMemo, ReactNode,
+    MutableRefObject } from 'react';
 // types
 import type { Colors } from 'types';
 
 
 /* TYPES */
-interface Item {
-    type: string;
-    text: string;
-    isActive?: boolean;
+export interface SliderItem {
+    labelChildren: ReactNode;
+    value: string;
+    checked?: boolean;
 }
 
 export interface Content {
-    items: Item[];
+    items: SliderItem[];
 }
 
 export interface Props {
-    id?: string;
     className?: string;
     content: Content;
-    onClick: ( sectionType: string ) => void;
-    activeIndex: number;
+    name: string;
+    onChange: ( newItems: SliderItem[] ) => void;
     color?: Colors;
 }
 
@@ -56,12 +56,18 @@ const calcPrevItemWidths = ( input: CalcPrevItemWidthsInput ) => {
     return width;
 }
 
+const updateItems = ( items: SliderItem[], index: number ) => {
+    return items.map( ( item, i ) => ( {
+        ...item,
+        checked: index === i,
+    } ) );
+}
 
 const Slider = ( {
     className='',
     content,
-    onClick,
-    activeIndex,
+    name,
+    onChange,
     color='blue',
 }: Props ) => {
     /* CONTENT */
@@ -69,10 +75,18 @@ const Slider = ( {
     
     /* HOOKS */
     const ref = useRef<HTMLUListElement>( null );
-    const initialActiveIndex = useRef<number>( activeIndex );
+    const initialActiveIndex = useRef<number>( null ) as MutableRefObject<number>;
+    const activeIndex = useRef<number>( null ) as MutableRefObject<number>;
     const [ itemWidths, setItemWidths ] = useState<number[]>();
     const [ activeItemWidth, setActiveItemWidth ] = useState<number>();
  
+    items.forEach( ( { checked }, index ) => {
+        if ( checked ) {
+            initialActiveIndex.current = index;
+            activeIndex.current = index;
+        }
+    } );
+
     /* CLASSNAMES */
     const sliderClasses = classNames(
         'slider',
@@ -82,53 +96,59 @@ const Slider = ( {
 
     useEffect( () => {
         const activeItem = document
-            .getElementsByClassName( 'active-slide-state-nav-item' )[0];
+            .getElementsByClassName( 'active-slider-item' )[0];
 
-        setActiveItemWidth( activeItem.clientWidth );
+        if ( activeItem ) {
+            setActiveItemWidth( activeItem.clientWidth );
+        }
     }, [ items ] );
 
     useEffect( () => {
-        const items = document
-            .getElementsByClassName( 'slide-state-nav-item' );
+        const htmlItems = document
+            .getElementsByClassName( 'slider-item' );
 
-        setItemWidths( 
-            [ ...items ].map( ( { clientWidth } ) => clientWidth ) );
-    }, [] );
+        setItemWidths( [ ...htmlItems ].map( ( { clientWidth } ) => clientWidth ) );
+    }, [ items ] );
 
     const initialLeft = useMemo( () => calcPrevItemWidths( {
         activeIndex: initialActiveIndex.current,
         itemWidths,
-    } ), [ itemWidths ] );
+    } ), [ itemWidths, initialActiveIndex ] );
 
     const prevItemWidths = useMemo( () => calcPrevItemWidths( {
-        activeIndex,
+        activeIndex: activeIndex.current,
         initialNum: initialActiveIndex.current,
         itemWidths,
-    } ), [ activeIndex ] );
+    } ), [ activeIndex, initialActiveIndex, itemWidths ] );
 
     return (
         <ul ref={ref} className={sliderClasses}>
             <span className='background-slider'
                 aria-hidden={true} style={{
-                    left: `${initialLeft}px`,
-                    transform: `translateX(${prevItemWidths}px)`,
-                    width: `${activeItemWidth}px`,
+                    left: typeof initialLeft === 'number' ? 
+                        `${initialLeft}px` : undefined,
+                    transform: typeof prevItemWidths === 'number' ? 
+                        `translateX(${prevItemWidths}px)` : undefined,
+                    width: typeof activeItemWidth === 'number' ? 
+                        `${activeItemWidth}px`: undefined,
                 }} />
             {
-                items.map( ( { type, isActive, text } ) => {
+                items.map( ( { labelChildren, value, checked }, index ) => {
                     /* CLASSNAMES */
                     const itemClasses = classNames(
-                        'slide-state-nav-item',
-                        isActive ? 'active-slide-state-nav-item' : 
-                            'not-active-slide-state-nav-item',
+                        'slider-item',
+                        checked ? 'active-slider-item' : 
+                            'not-active-slider-item',
                     );
 
                     return (
-                        <li key={type} className={itemClasses}>
-                            <button onClick={() => onClick( type )} 
-                                aria-pressed={!!isActive}>
-                                {text}
-                            </button>
+                        <li key={value} className={itemClasses}>
+                            <input id={name} className='input' type='radio'
+                                name={name} value={value} checked={checked}
+                                onChange={() => onChange( updateItems( items, index ) ) } />
+                            <label className='label' htmlFor={name}>
+                                {labelChildren}
+                            </label>
                         </li>
                     )
                 } )

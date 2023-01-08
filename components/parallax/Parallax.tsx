@@ -6,7 +6,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 // elements
-import { SVG, Media, TagList, StackedIcons, Slider } from 'elements';
+import { SVG, Media, TagList, StackedIcons } from 'elements';
 // types
 import type { ArticleContent } from 'components/types';
 import type { StackedIconsContent, TagListContent } from 'elements/types';

@@ -1,20 +1,36 @@
+// dependencies
+import { useState } from 'react';
+// content
+import { ARTICLE_LAYOUT_SLIDER_CONTENT } from 'layout/content';
 // components
-import { DisplayFooter, Parallax, Article } from 'components';
-// components
-import { ArticleIntro } from 'components';
-// elements
-import { Breadcrumbs } from 'elements/breadcrumbs';
+import { DisplayFooter, Parallax, Article, MobileArticleIntro,
+    DesktopArticleIntro } from 'components';
 // types
-import type { ArticleContent } from 'components/types';
+import type { ArticleContent, ArticleIntroSliderContent } from 'components/types';
 import type { BreadcrumbsContent, StackedIconsContent, 
-    TagListContent } from 'elements/types';
+    TagListContent, SliderItem, SliderContent } from 'elements/types';
 
 
+/* UTIL FUNCTIONS */
+const getArticleIntroSliderContent = (
+    content: ArticleIntroSliderContent,
+): SliderContent => {
+    return {
+        items: content.items.map( ( { label, ...restContent } ) => ( {
+            ...restContent,
+            labelChildren: label,
+        } ) ),
+    }
+}
+
+/* TYPES */
 export interface Content {
-    articleContent: ArticleContent;
+    productArticleContent: ArticleContent;
+    technicalArticleContent: ArticleContent;
     breadcrumbsContent: BreadcrumbsContent;
     stackedIconsContent: StackedIconsContent;
     tagListContent: TagListContent;
+    sliderContent?: ArticleIntroSliderContent;
 }
 
 export interface Props {
@@ -25,17 +41,35 @@ const ArticleLayout = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { articleContent, 
+    const { technicalArticleContent,
+        productArticleContent,
         breadcrumbsContent,
         stackedIconsContent,
-        tagListContent, } = content;
+        tagListContent,
+        sliderContent=ARTICLE_LAYOUT_SLIDER_CONTENT } = content;
+
+    /* HOOKS */
+    const [ sliderItems, setSliderItems ] = 
+        useState<SliderItem[]>( getArticleIntroSliderContent( sliderContent ).items );
+
+    const { value: articleType } = sliderItems.find( ( { checked } ) => checked )!;
+    const articleContent = articleType === 'technical' ? 
+        technicalArticleContent : productArticleContent;
+    const sliderProps = {
+        name: 'articleSection',
+        onChange: ( items: SliderItem[] ) => setSliderItems( items ),
+        content: {
+            items: sliderItems,
+        },
+    }
 
     return (
         <>
             <main className='article-layout'>
                 <section className='desktop-article-wrapper'>
-                    <Breadcrumbs className='spacing--hWide'
-                        content={breadcrumbsContent} />
+                    <DesktopArticleIntro sliderProps={sliderProps} content={{
+                        breadcrumbsContent,
+                    }} />
                     <Parallax className='spacing--v'
                         content={{
                             ...articleContent,
@@ -44,7 +78,7 @@ const ArticleLayout = ( {
                         }} />
                 </section>
                 <section className='mobile-article-wrapper'>
-                    <ArticleIntro content={{
+                    <MobileArticleIntro sliderProps={sliderProps} content={{
                         breadcrumbsContent,
                         tagsIconsContent: {
                             tagListContent,
