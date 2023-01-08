@@ -35,7 +35,7 @@
 
     .slider-item {
         position: relative;
-        padding: 0.4rem 0.5rem;
+        padding: 0.5rem;
 
         .input {
             position: absolute;
@@ -43,8 +43,9 @@
             mix-blend-mode: multiply;
             width: 100%;
             height: 100%;
-            left: 0;
-            top: 0;
+            // idk why tf the positioning is off wtf is this bs omg
+            left: -5px;
+            top: -3px;
 
             transition: background-color $transition;
         }

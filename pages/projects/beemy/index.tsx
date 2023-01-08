@@ -82,14 +82,6 @@ const content: Content = {
                 {
                     title: 'Dingus',
                     texts: [
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
-                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
                     ],
                     media: {
                         data: '/static/icons/contact.svg',

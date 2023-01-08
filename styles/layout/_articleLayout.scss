@@ -6,22 +6,24 @@
     .desktop-article-wrapper,
     .mobile-article-wrapper {
         padding-top: 1.5rem;
+
+        .desktop-article-intro,
+        .mobile-article-intro {
+            margin-bottom: 1.5rem;
+        }
     }
 
     .desktop-article-wrapper {
         .desktop-article-intro {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             margin-inline: 2vw;
         }
     }
 
     .mobile-article-wrapper {
         display: none;
-
-        .mobile-article-intro {
-            margin-bottom: 2rem;
-        }
 
         .article {
             border-top: 2px solid gray;

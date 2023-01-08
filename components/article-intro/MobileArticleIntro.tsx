@@ -38,7 +38,9 @@ const MobileArticleIntro = ( {
         <section className={mobileArticleIntroClasses}>
             <Breadcrumbs content={breadcrumbsContent} />
             <TagsIcons content={tagsIconsContent} />
-            <Slider {...sliderProps} />
+            <div className='slider-wrapper'>
+                <Slider {...sliderProps} />
+            </div>
         </section>
     );
 }

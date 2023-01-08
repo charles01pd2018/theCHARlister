@@ -38,10 +38,6 @@
             align-items: flex-end;
             margin-right: $margin-right;
 
-            .stacked-icons {
-                margin-block: -1.5rem;
-            }
-
             .date-range {
                 color: #2e2e2e;
             }
@@ -51,6 +47,10 @@
    
     .bullets {
         list-style: inside;
+
+        .point {
+            margin-block: 1.5rem;
+        }
     }
 
     @media ( max-width: $breakpoint--large ) {

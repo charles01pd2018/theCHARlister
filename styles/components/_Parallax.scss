@@ -19,15 +19,16 @@
         }
 
         .content-wrapper {
+            width: $text-width;
+
             .top {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
+                margin-bottom: 1.5rem;
             }
 
             .text-container {
-                width: $text-width;
-    
                 .text-wrapper {
                     margin-block: auto;
     

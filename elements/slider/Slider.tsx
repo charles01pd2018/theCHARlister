@@ -63,6 +63,14 @@ const updateItems = ( items: SliderItem[], index: number ) => {
     } ) );
 }
 
+const getInitialActiveIndex = ( items: SliderItem[] ) => {
+    for ( let i=0; i < items.length; i++ ) {
+        if ( items[i].checked ) {
+            return i;
+        }
+    }
+}
+
 const Slider = ( {
     className='',
     content,
@@ -72,20 +80,20 @@ const Slider = ( {
 }: Props ) => {
     /* CONTENT */
     const { items } = content;
+    const initialActiveIndex = useMemo( 
+        () => getInitialActiveIndex( items ), [] ) as number;
     
     /* HOOKS */
     const ref = useRef<HTMLUListElement>( null );
-    const initialActiveIndex = useRef<number>( null ) as MutableRefObject<number>;
-    const activeIndex = useRef<number>( null ) as MutableRefObject<number>;
+    const activeIndex = useRef<number>( initialActiveIndex ) as MutableRefObject<number>;
     const [ itemWidths, setItemWidths ] = useState<number[]>();
     const [ activeItemWidth, setActiveItemWidth ] = useState<number>();
- 
-    items.forEach( ( { checked }, index ) => {
-        if ( checked ) {
-            initialActiveIndex.current = index;
-            activeIndex.current = index;
-        }
-    } );
+
+    /* FUNCTIONS */
+    const handleChange = ( index: number ) => {
+        onChange( updateItems( items, index ) );
+        activeIndex.current = index;
+    }
 
     /* CLASSNAMES */
     const sliderClasses = classNames(
@@ -104,33 +112,30 @@ const Slider = ( {
     }, [ items ] );
 
     useEffect( () => {
-        const htmlItems = document
+        const items = document
             .getElementsByClassName( 'slider-item' );
 
-        setItemWidths( [ ...htmlItems ].map( ( { clientWidth } ) => clientWidth ) );
+        setItemWidths( [ ...items ].map( ( { clientWidth } ) => clientWidth ) );
     }, [ items ] );
 
     const initialLeft = useMemo( () => calcPrevItemWidths( {
-        activeIndex: initialActiveIndex.current,
+        activeIndex: initialActiveIndex,
         itemWidths,
-    } ), [ itemWidths, initialActiveIndex ] );
+    } ), [ itemWidths ] );
 
     const prevItemWidths = useMemo( () => calcPrevItemWidths( {
         activeIndex: activeIndex.current,
-        initialNum: initialActiveIndex.current,
+        initialNum: initialActiveIndex,
         itemWidths,
-    } ), [ activeIndex, initialActiveIndex, itemWidths ] );
+    } ), [ activeIndex, itemWidths ] );
 
     return (
         <ul ref={ref} className={sliderClasses}>
             <span className='background-slider'
                 aria-hidden={true} style={{
-                    left: typeof initialLeft === 'number' ? 
-                        `${initialLeft}px` : undefined,
-                    transform: typeof prevItemWidths === 'number' ? 
-                        `translateX(${prevItemWidths}px)` : undefined,
-                    width: typeof activeItemWidth === 'number' ? 
-                        `${activeItemWidth}px`: undefined,
+                    left: initialLeft ? `${initialLeft}px` : undefined,
+                    transform: prevItemWidths ? `translateX(${prevItemWidths}px)` : undefined,
+                    width: activeItemWidth ? `${activeItemWidth}px` : undefined,
                 }} />
             {
                 items.map( ( { labelChildren, value, checked }, index ) => {
@@ -145,7 +150,7 @@ const Slider = ( {
                         <li key={value} className={itemClasses}>
                             <input id={name} className='input' type='radio'
                                 name={name} value={value} checked={checked}
-                                onChange={() => onChange( updateItems( items, index ) ) } />
+                                onChange={() => handleChange( index )} />
                             <label className='label' htmlFor={name}>
                                 {labelChildren}
                             </label>
