@@ -12,11 +12,6 @@ import type { IconsNavProps } from 'components/types';
 /* CONSTANTS */
 const ARIA_CONTROLS = 'icons-nav';
 
-/**
- * TODO (I don't rlly mind either tbh):
- * 1. Make this transition smooth for in view
- * 2. Change order of icons when activeIndex changes
- */
 const IconsNavFooter = ( {
     className='',
     content=ICONS_NAV_CONTENT,
@@ -26,8 +21,7 @@ const IconsNavFooter = ( {
     /* CONTENT */
     const { items } = content;
     const activeIconContent = items[activeIndex];
-    const { color, icon } = activeIconContent;
-    const { data, alt } = icon;
+    const { color } = activeIconContent;
     const [ width, height ] = iconSize;
 
     /* HOOKS */
@@ -66,20 +60,29 @@ const IconsNavFooter = ( {
                 onClick={toggleIsOpen} ariaControls={ARIA_CONTROLS}
                 aria-label={`${isOpen ? 'Close' : 'Open'} Navigation`}>
                 <XIcon />
-                <SVG className='ref-icon'
-                    data={data} alt={alt}
-                    width={width} height={height} />
+                {
+                    items.map( ( { icon }, index ) => {
+                        /* CLASSNAMES */
+                        const iconClasses = classNames(
+                            'ref-icon',
+                            index === activeIndex ? 'active' : 'not-active',
+                        );
+
+                        return (
+                            <SVG className={iconClasses} {...icon}
+                                width={width} height={height} />
+                        );
+                    } )
+                }
             </ToggleButton>
             <ul id={ARIA_CONTROLS} className='nav-icons-wrapper'>
                 {
-                    items.map( ( content ) => {
-                        return (
-                            <li className={popoutLinkWrapperClasses} key={`footer:${content.href}`}>
-                                <IconLink onClick={close}
-                                    content={content} type='background' />
-                            </li>
-                        )
-                    } )
+                    items.map( ( content ) => (
+                        <li className={popoutLinkWrapperClasses} key={`footer:${content.href}`}>
+                            <IconLink onClick={close}
+                                content={content} type='background' />
+                        </li>
+                    ) )
                 }
             </ul>
         </footer>

@@ -27,7 +27,8 @@
                     0.6px 0px 9px rgba(0, 0, 0, 0.052),
                     2px 0px 30px rgba(0, 0, 0, 0.08);
                 
-        transition: transform $transition-duration ease-in-out;
+        transition: transform $transition-duration ease-in-out,
+                    background-color $transition-duration ease;
 
         &.active {
             transform: scale( 0.8 );
@@ -45,12 +46,25 @@
             }
         }
 
-        .x-icon,
-        .ref-icon {
+        .x-icon {
             position: absolute;
             
             transition: opacity $transition-duration ease,
                         visibility $transition-duration ease;
+        }
+
+        .ref-icon {
+            position: absolute;
+            
+            transition: opacity $transition-duration ease,
+                        visibility $transition-duration ease,
+                        transform $transition-duration ease;
+
+            &.not-active {
+                opacity: 0;
+                visibility: hidden;
+                transform: scale( 0.5 );
+            }
         }
     }
     
