@@ -50,19 +50,43 @@ const content: Content = {
                     href: PROJECTS_ENDPOINT,
                 },
                 {
-                    text: 'Crypto Block',
+                    text: 'Musizi University',
                     href: MUSIZI_PROJECT_ENDPOINT,
                 },
             ],
         },
         productArticleContent: {
             items: [
-
+                {
+                    title: 'Dingus',
+                    texts: [
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk hdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                        'fhdsjkahfjkasfj fsdjkhfkjsd asjkfh skjdfh jk',
+                    ],
+                    media: {
+                        data: '/static/icons/contact.svg',
+                        alt: '',
+                    },
+                },
             ],
         },
         technicalArticleContent: {
             items: [
-
+                {
+                    title: 'Dingus',
+                    texts: [
+                    ],
+                    media: {
+                        data: '/static/icons/contact.svg',
+                        alt: '',
+                    },
+                },
             ],
         },
         tagListContent: {

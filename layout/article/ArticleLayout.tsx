@@ -61,6 +61,7 @@ const ArticleLayout = ( {
         content: {
             items: sliderItems,
         },
+        color: tagListContent.tags[0].color,
     }
 
     return (

@@ -44,7 +44,7 @@ const Article = ( {
                             <h3 className='title'>{title}</h3>
                             {
                                 texts.map( ( text, innerIndex ) => (
-                                    <p key={`text:${innerIndex}`}
+                                    <p key={`text:${innerIndex}`} className='text'
                                         dangerouslySetInnerHTML={{ __html: text }} />
                                 ) )
                             }
