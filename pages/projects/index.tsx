@@ -31,7 +31,7 @@ const Projects = ( {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
-            <OverviewLayout activePage='Projects'
+            <OverviewLayout className='projects' activePage='Projects'
                 content={overviewLayoutContent}>
                 <ProjectList />
             </OverviewLayout>

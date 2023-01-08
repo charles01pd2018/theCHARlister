@@ -55,9 +55,10 @@ const Parallax = ( {
                     </div>
                     <WrapperTag className='text-container'>
                         {
-                            items.map( ( { texts }, index ) => {
+                            items.map( ( { title, texts }, index ) => {
                                 return (
                                     <div className='text-wrapper' key={index}>
+                                        <h3 className='title'>{title}</h3>
                                         {
                                             texts.map( ( text, innerIndex ) => (
                                                 <p key={`text:${innerIndex}`}

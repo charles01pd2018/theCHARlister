@@ -1,5 +1,6 @@
 // dependencies
 import { ReactNode } from 'react';
+import classNames from 'classnames';
 // components
 import { OverviewHeader, DisplayFooter } from 'components';
 // elements
@@ -16,22 +17,31 @@ export interface Content {
 
 export interface Props {
     children: ReactNode;
+    className?: string;
     content: Content;
     activePage?: ActivePage;
 }
 
 const DisplayLayout = ( {
     children,
+    className='',
     content,
     activePage,
 }: Props ) => {
     /* CONTENT */
     const { breadcrumbsContent } = content;
 
+    /* CLASSNAMES */
+    const overviewLayoutClasses = classNames(
+        'overview-layout',
+        'container',
+        className,
+    );
+
     return (
         <>
             <OverviewHeader activePage={activePage} />
-            <main className='overview-layout container'>
+            <main className={overviewLayoutClasses}>
                 <Breadcrumbs content={breadcrumbsContent} />
                 {children}
             </main>

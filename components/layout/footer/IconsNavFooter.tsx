@@ -69,7 +69,7 @@ const IconsNavFooter = ( {
                         );
 
                         return (
-                            <SVG className={iconClasses} {...icon}
+                            <SVG key={icon.alt} className={iconClasses} {...icon}
                                 width={width} height={height} />
                         );
                     } )
