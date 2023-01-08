@@ -1,3 +1,7 @@
+// constants
+@use '../../../constants/breakpoints' as *;
+
+
 .display-header {
     $border-radius: 0.5rem;
 
@@ -25,6 +29,12 @@
             &.not-checked {
                 text-shadow: #c3c2f0 0 0 15px;
             }
+        }
+    }
+
+    @media ( max-width: $breakpoint--extra-small ) {
+        .toggle-wrapper {
+            display: none;
         }
     }
 }

@@ -1,6 +1,7 @@
 // constants
 @use '../constants/breakpoints' as *;
 
+
 .display-layout-wrapper {
     .icons-nav-footer {
         display: none;
@@ -24,6 +25,10 @@
     @media ( max-width: $breakpoint--extra-large ) {
         .display-layout {
             margin-top: 3rem;
+
+            .project-highlights {
+                margin-top: 7rem;
+            }
         }
     }
 }

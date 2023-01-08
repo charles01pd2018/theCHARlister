@@ -89,8 +89,10 @@ const ProjectHighlights = ( {
                                     <h3 className='h1 project-heading'>{title}</h3>
                                     <p className='description text--lg'>{description}</p>
                                 </div>
-                                <AnimatedCurveArrowIcon animate={animate}
-                                    direction='bl-tr' color={color} />
+                                {/* <div className='arrow-wrapper'> */}
+                                    <AnimatedCurveArrowIcon animate={animate}
+                                        direction='bl-tr' color={color} />
+                                {/* </div> */}
                                 <ProjectPreview content={projectPreviewContent} 
                                     size={clientWidth > BREAKPOINT_MEDIUM ? 
                                         imgSize : multiplyArray( imgSize, 0.85 ) as Size} 
