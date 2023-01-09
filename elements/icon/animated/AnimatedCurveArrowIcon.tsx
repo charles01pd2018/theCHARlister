@@ -9,12 +9,14 @@ import type { Colors } from 'types';
 export interface Props {
     className?: string;
     animate?: boolean;
+    triggerAnimation?: boolean;
     color: Colors;
 }
 
 const AnimatedCurveArrowIcon = ( {
     className='',
     animate,
+    triggerAnimation=true,
     color,
 }: Props ) => {
     /* CONTENT */
@@ -25,6 +27,7 @@ const AnimatedCurveArrowIcon = ( {
     const animatedCurveArrowIconClasses = classNames(
         'animated-curve-arrow-icon',
         animate && 'animate',
+        triggerAnimation && 'trigger-animation',
         className,
     );
 

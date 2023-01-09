@@ -25,7 +25,7 @@ const Home = ( {
   const { pageTitle } = content;
 
   /* HOOKS */
-  const [ animate, setAnimate ] = useState<boolean>( true );
+  const [ animate, setAnimate ] = useState<boolean>( false );
   const [ activeIndex, setActiveIndex ] = useState<number>( 0 );
 
   /* FUNCTIONS */

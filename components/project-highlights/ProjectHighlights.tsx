@@ -65,13 +65,15 @@ const ProjectHighlights = ( {
 
                     /* HOOKS */
                     const { ref, inView } = useInView({
-                        threshold: 0.85,
+                        threshold: 0.7,
+                        triggerOnce: animate,
                     });
 
                     /* CLASSNAMES */
                     const projectClasses = classNames(
                         'project-wrapper',
-                        inView && animate && 'animate',
+                        animate && 'animate', 
+                        inView && 'in-view',
                         color,
                     );
 
@@ -91,7 +93,8 @@ const ProjectHighlights = ( {
                                         <p className='description text--lg'>{description}</p>
                                     </div>
                                 </div>
-                                <AnimatedCurveArrowIcon animate={animate} color={color} />
+                                <AnimatedCurveArrowIcon animate={animate} color={color}
+                                    triggerAnimation={inView} />
                                 <ProjectPreview content={projectPreviewContent} 
                                     size={clientWidth > BREAKPOINT_MEDIUM ? 
                                         imgSize : multiplyArray( imgSize, 0.85 ) as Size} 
