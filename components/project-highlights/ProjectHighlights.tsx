@@ -78,21 +78,20 @@ const ProjectHighlights = ( {
                     return (
                         <section ref={ref} key={title} className={projectClasses}>
                             <div className='container--wide'>
-                                <div className='blob-wrapper'>
-                                    <BlobIcon color={color} />
-                                </div>
-                                <div className='blob-text-wrapper'>
-                                    <div className='top'>
-                                        <TagList className='text--xxxs' content={tagListContent} />
-                                        <StackedIcons content={stackedIconsContent} />
+                                <div className='content-wrapper'>
+                                    <span className='blob-wrapper'>
+                                        <BlobIcon color={color} />
+                                    </span>
+                                    <div className='blob-text-wrapper'>
+                                        <div className='top'>
+                                            <TagList className='text--xxxs' content={tagListContent} />
+                                            <StackedIcons content={stackedIconsContent} />
+                                        </div>
+                                        <h3 className='h1 project-heading'>{title}</h3>
+                                        <p className='description text--lg'>{description}</p>
                                     </div>
-                                    <h3 className='h1 project-heading'>{title}</h3>
-                                    <p className='description text--lg'>{description}</p>
                                 </div>
-                                {/* <div className='arrow-wrapper'> */}
-                                    <AnimatedCurveArrowIcon animate={animate}
-                                        direction='bl-tr' color={color} />
-                                {/* </div> */}
+                                <AnimatedCurveArrowIcon animate={animate} color={color} />
                                 <ProjectPreview content={projectPreviewContent} 
                                     size={clientWidth > BREAKPOINT_MEDIUM ? 
                                         imgSize : multiplyArray( imgSize, 0.85 ) as Size} 

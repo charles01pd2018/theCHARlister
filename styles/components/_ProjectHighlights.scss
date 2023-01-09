@@ -11,6 +11,8 @@
 // draw arrow
 // fade in project highlight
 .project-highlights {
+    width: 100vw;
+
     .project-wrapper {
         @include getBackgroundColors();
 
@@ -18,30 +20,36 @@
         height: 102vh;
         overflow: hidden;
 
-        .blob-wrapper {
+        .content-wrapper {
             position: absolute;
+            width: 50rem;
+            max-width: calc( 100vw - 4rem );
 
-            transform: translate( -50%, -50% );
-        }
+            .blob-wrapper {
+                position: absolute;
+                z-index: -1;
 
-        .blob-text-wrapper {
-            position: absolute;
-            color: white;
-            width: 55%;
-
-            .top {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                transform: translate( -50%, -50% );
             }
-
-            .description {
-                margin-top: 2rem;
+    
+            .blob-text-wrapper {
+                color: white;
+    
+                .top {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+    
+                .description {
+                    margin-top: 2rem;
+                }
             }
         }
 
         .animated-curve-arrow-icon {
             position: absolute;
+            z-index: -1;
         }
         
         .project-preview {
@@ -60,18 +68,21 @@
             }
         }
 
+        /* CHILDREN */
         &:nth-child( 1 ) {
-            .blob-wrapper {
-                top: 100%;
-                left: 35%;
-            }
+            .content-wrapper {
+                bottom: 10%;
+                left: 2rem;
 
-            .blob-text-wrapper {
-                top: 65%;
-                left: 2%;
+                .blob-wrapper {
+                    top: 150%;
+                    left: 30rem;
+                }
 
-                ::selection {
-                    background: map.get( $colors, 'blue', 3 );
+                .blob-text-wrapper {
+                    ::selection {
+                        background: map.get( $colors, 'blue', 3 );
+                    }
                 }
             }
 
@@ -88,19 +99,22 @@
         }
 
         &:nth-child( 2 ) {
-            .blob-wrapper {
-                top: 20%;
-                left: 30%;
-            }
+            .content-wrapper {
+                .blob-wrapper {
+                    top: 22%;
+                    left: 62.1%;
+                }
 
-            .blob-text-wrapper {
-                ::selection {
-                    background: map.get( $colors, 'pink', 3 );
+                .blob-text-wrapper {
+                    ::selection {
+                        background: map.get( $colors, 'pink', 3 );
+                    }
                 }
             }
 
             .animated-curve-arrow-icon {
-                bottom: 0%;
+                top: -28%;
+                right: 15%;
             }
 
             .project-preview {
@@ -110,26 +124,29 @@
         }
 
         &:nth-child( 3 ) {
-            .blob-wrapper {
-                top: 100%;
-                left: 75%;
-            }
+            .content-wrapper {
+                bottom: 5rem;
+                right: 2rem;
 
-            .blob-text-wrapper {
-                top: 65%;
-                left: 42%;
+                .blob-wrapper {
+                    top: 140%;
+                    left: 65%;
+                }
 
-                ::selection {
-                    background: map.get( $colors, 'green', 3 );
+                .blob-text-wrapper {
+                    ::selection {
+                        background: map.get( $colors, 'green', 3 );
+                    }
                 }
             }
 
             .animated-curve-arrow-icon {
-                top: 65%;
-                left: 80%;
-            }
+                top: -35%;
+                left: 7%;
 
-            .project-preview {
+                transform: rotate( 180deg );
+                // top: 65%;
+                // left: -5%;
             }
         }
 
@@ -154,6 +171,11 @@
                 .blob-wrapper {
                     top: 0;
                 }
+
+                .animated-curve-arrow-icon {
+                    bottom: -10%;
+                    right: 25%;
+                }
             }
 
             &:nth-child( 3 ) {
@@ -162,9 +184,15 @@
         }
     }
 
-    @media ( max-width: $breakpoint--medium ) {
+    @media ( max-width: $breakpoint--large ) {
         .project-wrapper {
+            .content-wrapper {
+
+            }
+
             .blob-text-wrapper {
+                width: 70%;
+
                 .top {
                     flex-direction: column;
                     align-items: flex-start;
@@ -174,6 +202,10 @@
                         margin-top: 1rem;
                     }
                 }
+            }
+
+            .animated-curve-arrow-icon {
+                display: none;
             }
         }
     }
