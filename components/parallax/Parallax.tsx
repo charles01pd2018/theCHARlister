@@ -6,7 +6,8 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 // elements
-import { SVG, Media, TagList, StackedIcons } from 'elements';
+import { SVG, Media, TagList, StackedIcons,
+    ArticleText } from 'elements';
 // types
 import type { ArticleContent } from 'components/types';
 import type { StackedIconsContent, TagListContent } from 'elements/types';
@@ -60,9 +61,9 @@ const Parallax = ( {
                                     <div className='text-wrapper' key={index}>
                                         <h3 className='title'>{title}</h3>
                                         {
-                                            texts.map( ( text, innerIndex ) => (
-                                                <p key={`text:${innerIndex}`} className='text'
-                                                    dangerouslySetInnerHTML={{ __html: text }} />
+                                            texts.map( ( textProps, innerIndex ) => (
+                                                <ArticleText key={`text:${innerIndex}`} 
+                                                    {...textProps} />
                                             ) )
                                         }
                                     </div>

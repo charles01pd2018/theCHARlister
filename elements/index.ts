@@ -16,3 +16,4 @@ export * from './tags-icons';
 export * from './tag-list';
 export * from './media';
 export * from './slider';
+export * from './article-text';

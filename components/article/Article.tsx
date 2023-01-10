@@ -1,16 +1,17 @@
 // dependencies
 import classNames from 'classnames';
 // elemenets
-import { Media } from 'elements';
+import { Media, ArticleText } from 'elements';
 // types
 import type { MediaData } from 'types';
+import type { ArticleTextProps } from 'elements/types';
 
 
 /* TYPES */
 interface Item {
     title: string;
     media?: MediaData;
-    texts: string[];
+    texts: ArticleTextProps[];
 }
 
 export interface Content {
@@ -43,9 +44,9 @@ const Article = ( {
                         <div className='text-wrapper' key={index}>
                             <h3 className='title'>{title}</h3>
                             {
-                                texts.map( ( text, innerIndex ) => (
-                                    <p key={`text:${innerIndex}`} className='text'
-                                        dangerouslySetInnerHTML={{ __html: text }} />
+                                texts.map( ( textProps, innerIndex ) => (
+                                    <ArticleText key={`text:${innerIndex}`} 
+                                        {...textProps} />
                                 ) )
                             }
                         </div>

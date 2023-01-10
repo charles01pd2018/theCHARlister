@@ -1,0 +1,87 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../constants/colors' as *;
+// utils
+@use '../utils/color/getBackgroundColors' as *;
+@use '../utils/selectors/tap' as *;
+@use '../utils/shadow/getShadowColors' as *;
+
+
+$article-text-indent: 2rem;
+
+@mixin article-text-link {
+    $transition: 0.21s ease;
+
+    color: map.get( $colors, 'blue', 4 );
+
+    transition: background-color $transition,
+                border-radius $transition;
+
+    @include tap {
+        border-radius: 6px;
+        background: map.get( $colors, 'blue', 1 );
+    }
+}
+
+.article-text {
+    $spacing-shrink: -1.5rem;
+
+    margin-bottom: 2rem;
+
+    a {
+        @include article-text-link();
+    }
+
+    mark {
+        @include getBackgroundColors();
+        padding-inline: 2px;
+        border-radius: 3px;
+    }
+
+    + ol.article-text,
+    + ul.article-text {
+        li {
+            &:first-child {
+                margin-top: $spacing-shrink;
+            }
+        }
+    }
+
+    code {
+        $shadow-colors: getShadowColors( map.get( $shadows, 2 ) );
+
+        padding-inline: 3px;
+        border-radius: 3px;
+        box-shadow: inset 0 0 3px 0.4px map.get( $shadow-colors, 2 ),
+                    inset 0 0 1.5px 0.4px map.get( $shadow-colors, 1 );
+    }
+
+    &.shrink-spacing {
+        + .article-text {
+            margin-top: $spacing-shrink;
+        }
+    }
+
+    &.indent {
+        margin-left: $article-text-indent;
+    }
+}
+
+a.article-text {
+    @include article-text-link();
+}
+
+ol.article-text,
+ul.article-text {
+    margin-left: $article-text-indent;
+
+    li {
+        margin-block: 1rem;
+        line-height: 25px;
+    }
+}
+
+ul.article-text {
+    list-style: inside;
+}

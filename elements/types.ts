@@ -16,3 +16,4 @@ export * from './tag/types';
 export * from './tags-icons/types';
 export * from './tag-list/types';
 export * from './slider/types';
+export * from './article-text/types';

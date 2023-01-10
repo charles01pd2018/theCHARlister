@@ -1,5 +1,7 @@
 // dependencies
 import classNames from 'classnames';
+// lib
+import { titleCase } from 'lib';
 // elements
 import { SVG, StackedIcons, HeadingLink } from 'elements';
 // types
@@ -18,11 +20,13 @@ export interface Content {
 }
 
 export interface Props {
+    id?: string;
     className?: string;
     content: Content;
 }
 
 const Experience = ( {
+    id,
     className='',
     content,
 }: Props ) => {
@@ -42,7 +46,7 @@ const Experience = ( {
     );
 
     return (
-        <div className={experienceClasses}>
+        <div id={id || titleCase( company.text )} className={experienceClasses}>
             <div className='title-wrapper'>
                 <HeadingLink className='company' HeadingTag='h3'
                     content={company} />

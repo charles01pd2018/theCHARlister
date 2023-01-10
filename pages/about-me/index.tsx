@@ -11,16 +11,17 @@ import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT } from '@lib/constants';
 // components
 import { Profile } from 'components';
 // elements
-import { CTALink } from 'elements';
+import { CTALink, ArticleText } from 'elements';
 // types
 import type { GetStaticProps } from 'next';
 import type { LinkData } from 'types';
+import type { ArticleTextContent } from 'elements/types';
 
 
 interface Content {
     pageTitle: string;
     introText: string;
-    texts: string[];
+    texts: ArticleTextContent[];
     ctaLinks: LinkData[];
 }
 
@@ -44,9 +45,9 @@ const AboutMe = ( {
                 <section className='container text--lg'>
                     <p className='text--xlg spacing--v txt-center'>{introText}</p>
                     {
-                        texts.map( ( txt, index ) => (
-                            <p key={index} className='spacing--v'
-                                dangerouslySetInnerHTML={{ __html: txt }} />
+                        texts.map( ( textContent, index ) => (
+                            <ArticleText key={index} className='spacing--v'
+                                content={textContent} />
                         ) )
                     }
                 </section>
@@ -69,9 +70,18 @@ const content: Content = {
     pageTitle: 'About Me - theCHARlister',
     introText: 'Hello! 👋',
     texts: [
-        '🖥️ I love building meaningful projects and crafting great user experiences. My work on the front-end consists of ideating <mark class="green">designs</mark> that matches an applications content + requirements and then translating those designs into a <mark class="pink">tangible interface</mark>. On the backend, I pride myself in writing <b>secure</b>, <b>scalable</b>, and <b>usable</b> code.',
-        '🤓 I started off as a <u>self-taught developer</u> in an attempt to break into Software Engineering. I graduated from the University of California, Irvine (zot!) as a Business Administration major with a couple of Sales internships. From my humble beginnings of mindlessly going through tutorial after tutorial, it’s safe to say I’ve come a long way in my programming journey.',
-        '🤗 In my free time I enjoy cooking, playing basketball, and trying new foods!',
+        {
+            WrapperTag: 'p',
+            text: '🖥️ I love building meaningful projects and crafting great user experiences. My work on the front-end consists of ideating <mark class="green">designs</mark> that matches an applications content + requirements and then translating those designs into a <mark class="pink">tangible interface</mark>. On the backend, I pride myself in writing <b>secure</b>, <b>scalable</b>, and <b>usable</b> code.',
+        },
+        {
+            WrapperTag: 'p',
+            text: '🤓 I started off as a <u>self-taught developer</u> in an attempt to break into Software Engineering. I graduated from the University of California, Irvine (zot!) as a Business Administration major with a couple of Sales internships. From my humble beginnings of mindlessly going through tutorial after tutorial, it’s safe to say I’ve come a long way in my programming journey.',
+        },
+        {
+            WrapperTag: 'p',
+            text: '🤗 In my free time I enjoy cooking, playing basketball, and trying new foods!',
+        },
     ],
     ctaLinks: [
         {
