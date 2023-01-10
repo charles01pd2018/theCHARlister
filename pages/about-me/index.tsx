@@ -15,13 +15,13 @@ import { CTALink, ArticleText } from 'elements';
 // types
 import type { GetStaticProps } from 'next';
 import type { LinkData } from 'types';
-import type { ArticleTextContent } from 'elements/types';
+import type { ArticleTextProps } from 'elements/types';
 
 
 interface Content {
     pageTitle: string;
     introText: string;
-    texts: ArticleTextContent[];
+    texts: ArticleTextProps[];
     ctaLinks: LinkData[];
 }
 
@@ -45,9 +45,9 @@ const AboutMe = ( {
                 <section className='container text--lg'>
                     <p className='text--xlg spacing--v txt-center'>{introText}</p>
                     {
-                        texts.map( ( textContent, index ) => (
+                        texts.map( ( textProps, index ) => (
                             <ArticleText key={index} className='spacing--v'
-                                content={textContent} />
+                                {...textProps} />
                         ) )
                     }
                 </section>
