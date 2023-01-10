@@ -31,7 +31,8 @@ const Beemy = ( {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
-            <ArticleLayout content={articleLayoutContent} />
+            <ArticleLayout className='beemy'
+                content={articleLayoutContent} />
         </>
     );
 }

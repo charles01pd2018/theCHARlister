@@ -29,7 +29,8 @@ const Musizi = ( {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
-            <ArticleLayout content={articleLayoutContent} />
+            <ArticleLayout className='musizi'
+                content={articleLayoutContent} />
         </>
     );
 }

@@ -1,5 +1,6 @@
 // dependencies
 import { useState } from 'react';
+import classNames from 'classnames';
 // content
 import { ARTICLE_LAYOUT_SLIDER_CONTENT } from 'layout/content';
 // components
@@ -34,10 +35,12 @@ export interface Content {
 }
 
 export interface Props {
+    className?: string;
     content: Content;
 }
 
 const ArticleLayout = ( {
+    className='',
     content,
 }: Props ) => {
     /* CONTENT */
@@ -64,9 +67,15 @@ const ArticleLayout = ( {
         color: tagListContent.tags[0].color,
     }
 
+    /* CLASSNAMES */
+    const articleLayoutClasses = classNames(
+        'article-layout',
+        className,
+    );
+
     return (
         <>
-            <main className='article-layout'>
+            <main className={articleLayoutClasses}>
                 <section className='desktop-article-wrapper'>
                     <DesktopArticleIntro sliderProps={sliderProps} content={{
                         breadcrumbsContent,

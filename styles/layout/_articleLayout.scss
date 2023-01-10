@@ -1,5 +1,8 @@
+// dependencies
+@use 'sass:map';
 // constants
 @use '../constants/breakpoints' as *;
+@use '../constants/colors' as *;
 
 
 .article-layout {
@@ -28,6 +31,34 @@
         .article {
             border-top: 2px solid gray;
             padding-top: 1rem;
+        }
+    }
+
+    /* CLASSNAMES */
+    &.beemy {
+        * {
+            &::selection {
+                background: map.get( $colors, 'blue', 1 );
+    
+            }
+        }
+    }
+
+    &.musizi {
+        * {
+            &::selection {
+                background: map.get( $colors, 'pink', 1 );
+    
+            }
+        }
+    }
+
+    &.crypto-block {
+        * {
+            &::selection {
+                background: map.get( $colors, 'green', 1 );
+    
+            }
         }
     }
 

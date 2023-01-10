@@ -29,7 +29,8 @@ const CryptoBlock = ( {
             <Head>
                 <title>{pageTitle}</title>
             </Head>
-            <ArticleLayout content={articleLayoutContent} />
+            <ArticleLayout className='crypto-block'
+                content={articleLayoutContent} />
         </>
     );
 }
