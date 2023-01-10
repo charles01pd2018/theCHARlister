@@ -2,6 +2,8 @@
 import classNames from 'classnames';
 import { useEffect, useState, useRef, useMemo, ReactNode,
     MutableRefObject } from 'react';
+// lib
+import { useClientWidth } from 'lib';
 // types
 import type { Colors } from 'types';
 
@@ -18,6 +20,7 @@ export interface Content {
 }
 
 export interface Props {
+    id: string;
     className?: string;
     content: Content;
     name: string;
@@ -72,6 +75,7 @@ const getInitialActiveIndex = ( items: SliderItem[] ) => {
 }
 
 const Slider = ( {
+    id,
     className='',
     content,
     name,
@@ -88,6 +92,7 @@ const Slider = ( {
     const activeIndex = useRef<number>( initialActiveIndex ) as MutableRefObject<number>;
     const [ itemWidths, setItemWidths ] = useState<number[]>();
     const [ activeItemWidth, setActiveItemWidth ] = useState<number>();
+    const clientWidth = useClientWidth();
 
     /* FUNCTIONS */
     const handleChange = ( index: number ) => {
@@ -96,6 +101,7 @@ const Slider = ( {
     }
 
     /* CLASSNAMES */
+    const activeId = `${id}--checked`;
     const sliderClasses = classNames(
         'slider',
         color,
@@ -103,31 +109,30 @@ const Slider = ( {
     );
 
     useEffect( () => {
-        const activeItem = document
-            .getElementsByClassName( 'active-slider-item' )[0];
+        const activeItem = document.getElementById( activeId );
 
         if ( activeItem ) {
             setActiveItemWidth( activeItem.clientWidth );
         }
-    }, [ items ] );
+    }, [ items, clientWidth ] );
 
     useEffect( () => {
         const items = document
-            .getElementsByClassName( 'slider-item' );
+            .getElementsByClassName( id );
 
         setItemWidths( [ ...items ].map( ( { clientWidth } ) => clientWidth ) );
-    }, [ items ] );
+    }, [ items, clientWidth ] );
 
     const initialLeft = useMemo( () => calcPrevItemWidths( {
         activeIndex: initialActiveIndex,
         itemWidths,
-    } ), [ itemWidths ] );
+    } ), [ itemWidths, clientWidth ] );
 
     const prevItemWidths = useMemo( () => calcPrevItemWidths( {
         activeIndex: activeIndex.current,
         initialNum: initialActiveIndex,
         itemWidths,
-    } ), [ activeIndex, itemWidths ] );
+    } ), [ activeIndex, itemWidths, clientWidth ] );
 
     return (
         <ul ref={ref} className={sliderClasses}>
@@ -142,12 +147,14 @@ const Slider = ( {
                     /* CLASSNAMES */
                     const itemClasses = classNames(
                         'slider-item',
+                        id,
                         checked ? 'active-slider-item' : 
                             'not-active-slider-item',
                     );
 
                     return (
-                        <li key={value} className={itemClasses}>
+                        <li id={checked ? activeId : undefined} key={value} 
+                            className={itemClasses}>
                             <input id={name} className='input' type='radio'
                                 name={name} value={value} checked={checked}
                                 onChange={() => handleChange( index )} />

@@ -77,7 +77,10 @@ const ArticleLayout = ( {
         <>
             <main className={articleLayoutClasses}>
                 <section className='desktop-article-wrapper'>
-                    <DesktopArticleIntro sliderProps={sliderProps} content={{
+                    <DesktopArticleIntro sliderProps={{
+                        id: 'desktop-article-slider',
+                        ...sliderProps,
+                    }} content={{
                         breadcrumbsContent,
                     }} />
                     <Parallax className='spacing--v'
@@ -88,7 +91,10 @@ const ArticleLayout = ( {
                         }} />
                 </section>
                 <section className='mobile-article-wrapper'>
-                    <MobileArticleIntro sliderProps={sliderProps} content={{
+                    <MobileArticleIntro sliderProps={{
+                        id: 'mobile-article-slider',
+                        ...sliderProps,
+                    }} content={{
                         breadcrumbsContent,
                         tagsIconsContent: {
                             tagListContent,
