@@ -6,7 +6,6 @@ export * from './project-list';
 export * from './article';
 export * from './parallax';
 export * from './profile';
-export * from './references';
 export * from './article-intro';
 export * from './contact';
 export * from './progress-bar';

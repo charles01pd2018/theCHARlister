@@ -19,6 +19,7 @@ export interface Props extends HTMLAttributes<HTMLAnchorElement> {
     content: Content;
     iconSize?: Size;
     type: 'background' | 'fill' | 'pop-out';
+    target?: '_blank' | '_self';
     // only applies when type is specified as 'active'
     isActive?: boolean;
 }

@@ -1,7 +1,3 @@
-/**
- * https://codepen.io/team/jotform/pen/XWmqoMp
- */
-
 // dependencies
 import Head from 'next/head';
 // layout

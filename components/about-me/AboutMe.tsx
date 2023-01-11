@@ -1,8 +1,3 @@
-/**
- * 2. Heading Gradient: https://colorffy.com/text-gradient-generator
- * 3. shadows.brumm
- * 4. Sub out for code icons - https://codepen.io/ykadosh/pen/PoBPKvJ
- */
 // dependencies
 import classNames from 'classnames';
 import { InView } from 'react-intersection-observer';

@@ -1,8 +1,8 @@
 {
-  "name": "nextjs-starting-template",
-  "description": "This is going to be the greatest app ever!!!",
+  "name": "thecharlister",
+  "description": "Personal Portfolio for Charlie Lu",
   "version": "0.1.0",
-  "author": "pofo",
+  "author": "Charlie Lu",
   "license": "MIT",
   "scripts": {
     "dev": "next dev",

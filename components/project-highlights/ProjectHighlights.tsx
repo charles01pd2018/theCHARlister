@@ -1,6 +1,3 @@
-/**
- * https://codepen.io/oraclesnarky/pen/GYMmxb
- */
 // dependencies
 import classNames from 'classnames';
 import { InView, useInView } from 'react-intersection-observer';

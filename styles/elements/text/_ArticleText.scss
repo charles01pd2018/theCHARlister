@@ -1,11 +1,11 @@
 // dependencies
 @use 'sass:map';
 // constants
-@use '../constants/colors' as *;
+@use '../../constants/colors' as *;
 // utils
-@use '../utils/color/getBackgroundColors' as *;
-@use '../utils/selectors/tap' as *;
-@use '../utils/shadow/getShadowColors' as *;
+@use '../../utils/color/getBackgroundColors' as *;
+@use '../../utils/selectors/tap' as *;
+@use '../../utils/shadow/getShadowColors' as *;
 
 
 $article-text-indent: 2rem;

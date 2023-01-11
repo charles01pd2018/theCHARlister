@@ -1,7 +1,3 @@
-/**
- * Have unique box-shadow color depending on project?
- */
-
 // dependencies
 import classNames from 'classnames';
 import { useState } from 'react';

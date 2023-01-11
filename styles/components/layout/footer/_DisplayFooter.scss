@@ -72,21 +72,4 @@
             }
         }
     }
-
-    @media ( max-width: $breakpoint--extra-small ) {
-        .main-links-wrapper {
-            .site-nav-wrapper {
-                .site-nav {
-                    .link-wrapper {
-                        &:nth-child( 3 ) {
-                            &:after {
-                                // TODO - temp
-                                content: '';
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
 }

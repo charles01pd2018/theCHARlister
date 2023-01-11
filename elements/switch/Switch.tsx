@@ -1,6 +1,3 @@
-/**
- * Doggo wants a treat: https://codepen.io/oliviale/pen/xxboXzo
- */
 // dependencies
 import classNames from 'classnames';
 import { HTMLAttributes } from 'react';
