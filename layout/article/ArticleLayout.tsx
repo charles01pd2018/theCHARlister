@@ -101,7 +101,7 @@ const ArticleLayout = ( {
                             icons: stackedIconsContent.icons,
                         },
                     }} />
-                    <Article className='container--wide'
+                    <Article className='container--wide spacing--v'
                         content={articleContent} />
                 </section>
             </main>

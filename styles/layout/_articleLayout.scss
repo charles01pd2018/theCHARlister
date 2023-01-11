@@ -29,37 +29,50 @@
         display: none;
 
         .article {
-            border-top: 2px solid gray;
             padding-top: 1rem;
+        }
+    }
+
+    @mixin article-layout-selection( $background ) {
+        * {
+            &::selection {
+                background: $background;
+            }
+        }
+    }
+
+    @mixin article-layout-border( $color ) {
+        .desktop-article-wrapper {
+            .parallax-container {
+                border-block: 2px solid $color;
+                box-shadow: 0px 0.7px 3.6px $color,
+                            0px 1.9px 10px $color;
+            }
+        }
+    
+        .mobile-article-wrapper {
+            .article {
+                border-block: 2px solid $color;
+                box-shadow: 0px 0.7px 3.6px $color,
+                            0px 1.9px 10px $color;
+            }
         }
     }
 
     /* CLASSNAMES */
     &.beemy {
-        * {
-            &::selection {
-                background: map.get( $colors, 'blue', 1 );
-    
-            }
-        }
+        @include article-layout-selection( map.get( $colors, 'blue', 1 ) );
+        @include article-layout-border( map.get( $colors, 'blue', 2 ) );
     }
 
     &.musizi {
-        * {
-            &::selection {
-                background: map.get( $colors, 'pink', 1 );
-    
-            }
-        }
+        @include article-layout-selection( map.get( $colors, 'pink', 1 ) );
+        @include article-layout-border( map.get( $colors, 'pink', 2 ) );
     }
 
     &.crypto-block {
-        * {
-            &::selection {
-                background: map.get( $colors, 'green', 1 );
-    
-            }
-        }
+        @include article-layout-selection( map.get( $colors, 'green', 1 ) );
+        @include article-layout-border( map.get( $colors, 'green', 2 ) );
     }
 
     @media ( max-width: $breakpoint--medium ) {
