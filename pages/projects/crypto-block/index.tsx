@@ -63,6 +63,10 @@ const content: Content = {
                     texts: [
                         {
                             WrapperTag: 'p',
+                            text: 'Learn what’s possible in the world of cryptocurrency!',
+                        },
+                        {
+                            WrapperTag: 'p',
                             text: 'This project will always have a special place in my heart 💕 because it was the first fully-built website I made using React based on my interest of cryptocurrency.',
                         },
                     ],

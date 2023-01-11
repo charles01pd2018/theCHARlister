@@ -59,6 +59,15 @@ const content: Content = {
         productArticleContent: {
             items: [
                 {
+                    title: 'Overview',
+                    texts: [
+                        {
+                            WrapperTag: 'p',
+                            text: 'An upcoming Uganda University aiming to foster independent thinkers driven by empathy.',
+                        },
+                    ],
+                },
+                {
                     title: 'Communication',
                     texts: [
                         {

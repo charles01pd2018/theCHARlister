@@ -62,6 +62,15 @@ const content: Content = {
         productArticleContent: {
             items: [
                 {
+                    title: 'Overview',
+                    texts: [
+                        {
+                            WrapperTag: 'p',
+                            text: 'One click blog post publishing with built-in SEO and a rich editor experience.',
+                        },
+                    ],
+                },
+                {
                     title: 'Editor',
                     texts: [
                         {
