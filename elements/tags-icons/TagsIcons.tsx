@@ -1,16 +1,16 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { TagList, SVG } from 'elements';
+import { TagList, StackedIcons } from 'elements';
 // types
-import type { IconData, Size } from 'types';
-import type { TagListContent } from 'elements/types';
+import type { Size } from 'types';
+import type { TagListContent, StackedIconsContent } from 'elements/types';
 
 
 /* TYPES */
 export interface Content {
     tagListContent: TagListContent;
-    icons: IconData[];
+    stackedIconsContent: StackedIconsContent;
 }
 
 export interface Props {
@@ -22,11 +22,10 @@ export interface Props {
 const TagsIcons = ( {
     className='',
     content,
-    iconSize=[ 20, 20 ],
+    iconSize=[ 24, 24 ],
 }: Props ) => {
     /* CONTENT */
-    const { tagListContent, icons } = content;
-    const [ width, height ] = iconSize;
+    const { tagListContent, stackedIconsContent } = content;
 
     /* CLASSNAMES */
     const tagsIconsClasses = classNames(
@@ -37,12 +36,8 @@ const TagsIcons = ( {
     return (
         <div className={tagsIconsClasses}>
             <TagList content={tagListContent} />
-            {
-                icons.map( ( icon ) => (
-                    <SVG key={icon.alt} width={width} height={height}
-                        {...icon} />
-                ) )
-            }
+            <StackedIcons content={stackedIconsContent}
+                iconSize={iconSize} />
         </div>
     );
 }

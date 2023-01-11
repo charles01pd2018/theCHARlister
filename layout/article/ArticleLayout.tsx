@@ -98,7 +98,7 @@ const ArticleLayout = ( {
                         breadcrumbsContent,
                         tagsIconsContent: {
                             tagListContent,
-                            icons: stackedIconsContent.icons,
+                            stackedIconsContent,
                         },
                     }} />
                     <Article className='container--wide spacing--v'

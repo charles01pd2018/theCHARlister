@@ -62,6 +62,14 @@
                             visibility $transition,
                             transform $transition;
 
+                .link-wrapper {
+                    margin-block: 1rem;
+
+                    &:last-of-type {
+                        margin-bottom: 2rem;
+                    }
+                }
+
                 &.active {
                     opacity: 1;
                     visibility: visible;
