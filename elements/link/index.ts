@@ -4,6 +4,7 @@ import IconLink from './IconLink';
 import IconTextLink from './IconTextLink';
 import CTALink from './CTALink';
 import HeadingLink from './HeadingLink';
+import GithubLink from './GitHubLink';
 
 export {
     NavLink,
@@ -12,4 +13,5 @@ export {
     IconTextLink,
     CTALink,
     HeadingLink,
+    GithubLink,
 }

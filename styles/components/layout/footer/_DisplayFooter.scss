@@ -6,6 +6,7 @@
 
 
 .display-footer {
+    position: relative;
     padding-block: 2rem 1rem;
     padding-inline: 2vw;
     background: map.get( $backgrounds, 'mint-cream' );
@@ -55,6 +56,12 @@
                 }
             }
         }
+    }
+
+    .github-link {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
     }
 
     @media( max-width: $breakpoint--medium ) {

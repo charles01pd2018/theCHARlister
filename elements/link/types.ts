@@ -5,6 +5,7 @@ import type { Props as IconLinkProps,
 import type { Props as IconTextLinkProps,
     Content as IconTextLinkContent } from './IconTextLink';
 import type { Props as HeadingLinkProps } from './HeadingLink';
+import type { Props as GithubLinkProps } from './GitHubLink';
 
 export type {
     NavLinkProps,
@@ -14,4 +15,5 @@ export type {
     IconTextLinkProps,
     IconTextLinkContent,
     HeadingLinkProps,
+    GithubLinkProps,
 }

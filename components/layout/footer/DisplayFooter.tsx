@@ -1,7 +1,7 @@
 // dependencies
 import classNames from 'classnames';
 // elements
-import { NavLink, IconLink, IconLogoLink } from 'elements';
+import { NavLink, IconLink, IconLogoLink, GithubLink } from 'elements';
 // content
 import { DISPLAY_FOOTER_CONTENT } from 'components/content';
 // types
@@ -77,6 +77,7 @@ const DisplayFooter = ( {
                 </div>
             </div>
             <IconLogoLink type='regular' />
+            <GithubLink />
         </footer>
     )
 }

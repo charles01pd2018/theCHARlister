@@ -1,0 +1,38 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../../constants/colors' as *;
+// utils
+@use '../../utils/shadow/getShadowColors' as *;
+@use '../../utils/selectors/tap' as *;
+
+
+.github-link {
+    $transition: 0.18s ease;
+    $box-shadow: 0 0 5px;
+    $shadow-colors: getShadowColors( map.get( $shadows, 2 ) );
+
+    display: flex;
+    align-items: center;
+    padding: 0.2rem .3rem;
+    border-radius: 6px;
+    background: #24292e;
+    color: #f6f8fa;
+    box-shadow: $box-shadow 1px map.get( $shadow-colors, 2 ),
+                $box-shadow 1.5px map.get( $shadow-colors, 1 );
+
+    transition: box-shadow $transition,
+                transform $transition;
+
+    .svg {
+        margin-right: 0.2rem;
+    }
+
+    @include tap {
+        $hover-box-shadow: 0 0 7.5px;
+        
+        transform: scale( 1.03 );
+        box-shadow: $hover-box-shadow 1px map.get( $shadow-colors, 2 ),
+                    $hover-box-shadow 1.5px map.get( $shadow-colors, 1 );
+    }
+}
