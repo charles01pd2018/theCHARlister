@@ -4,7 +4,6 @@
 @use '../../constants/colors' as *;
 // utils
 @use '../../utils/shadow/getShadowColors' as *;
-@use '../../utils/selectors/tap' as *;
 
 
 .github-link {
@@ -28,9 +27,9 @@
         margin-right: 0.2rem;
     }
 
-    @include tap {
+    &:hover {
         $hover-box-shadow: 0 0 7.5px;
-        
+
         transform: scale( 1.03 );
         box-shadow: $hover-box-shadow 1px map.get( $shadow-colors, 2 ),
                     $hover-box-shadow 1.5px map.get( $shadow-colors, 1 );
