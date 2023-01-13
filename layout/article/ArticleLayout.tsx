@@ -88,12 +88,11 @@ const ArticleLayout = ( {
                     }} content={{
                         breadcrumbsContent,
                     }} />
-                    <div className='main-content-wrapper'>
+                    <div className='main-content-wrapper spacing--v'>
                         <div className='project-link-wrapper'>
                             <ProjectLink content={projectLinkContent} />
                         </div>
-                        <Parallax className='spacing--v'
-                            content={{
+                        <Parallax content={{
                                 ...articleContent,
                                 stackedIconsContent,
                                 tagListContent,
@@ -111,11 +110,11 @@ const ArticleLayout = ( {
                             stackedIconsContent,
                         },
                     }} />
-                    <div className='main-content-wrapper'>
+                    <div className='main-content-wrapper spacing--v'>
                         <div className='project-link-wrapper'>
                             <ProjectLink content={projectLinkContent} />
                         </div>
-                        <Article className='container--wide spacing--v'
+                        <Article className='container--wide'
                             content={articleContent} />
                     </div>
                 </section>
