@@ -4,7 +4,7 @@ import { InView, useInView } from 'react-intersection-observer';
 // content
 import { PROJECT_HIGHLIGHTS_CONTENT } from 'components/content';
 // lib
-import { useClientWidth, BREAKPOINT_MEDIUM, multiplyArray } from 'lib';
+import { useClientWidth, BREAKPOINT_MEDIUM, multiplyArray, useIsSafari } from 'lib';
 // elements
 import { ProjectPreview, BlobIcon, AnimatedCurveArrowIcon, TagList,
     StackedIcons } from 'elements';
@@ -40,6 +40,7 @@ const ProjectHighlights = ( {
 
     /* HOOKS */
     const clientWidth = useClientWidth();
+    const isSafari = useIsSafari();
 
     /* CLASSNAMES */
     const projectHighlightsClasses = classNames(
@@ -90,8 +91,12 @@ const ProjectHighlights = ( {
                                         <p className='description text--lg'>{description}</p>
                                     </div>
                                 </div>
-                                <AnimatedCurveArrowIcon animate={animate} color={color}
-                                    triggerAnimation={inView} />
+                                {
+                                    !isSafari ? (
+                                        <AnimatedCurveArrowIcon animate={animate} color={color}
+                                            triggerAnimation={inView} />
+                                    ) : ''
+                                }
                                 <ProjectPreview content={projectPreviewContent} 
                                     size={clientWidth > BREAKPOINT_MEDIUM ? 
                                         imgSize : multiplyArray( imgSize, 0.85 ) as Size} 

@@ -10,10 +10,10 @@ export const useScroll = ( throttleTime: number=150 ) => {
     const [ scrollPos, setScrollPos ] = useState<number>( 0 );
     const [ scrollDirection, setScrollDirection ] = useState<'up' | 'down' | null>( null );
 
-     /* FUNCTIONS */
-     const handleScroll = ( prevScrollPos: number ): void => {
+    /* FUNCTIONS */
+    const handleScroll = ( prevScrollPos: number ): void => {
         const currScrollPos = window.scrollY;
-        const scrollDirection = currScrollPos >= prevScrollPos ? 'down' : 'up';
+        const scrollDirection = currScrollPos >= prevScrollPos && currScrollPos > 0 ? 'down' : 'up';
         
         setScrollPos( currScrollPos );
         setScrollDirection( scrollDirection );
