@@ -80,7 +80,7 @@ const content: Content = {
                     texts: [
                         {
                             WrapperTag: 'p',
-                            text: 'I joined the team when the design was completed and ready to be translated into code. Because of this, I had to catch up on the vision and make sure that the website matched the design specs. This included overall theming, <mark class="pink">color schemes</mark>, and animating a static design file.',
+                            text: 'I joined the team when the design was completed and ready to be translated into code. Because of this, I had to catch up on the vision and make sure that the website matched the design specs. This included overall theming, <mark class="green">color schemes</mark>, and animating a static design file.',
                         },
                     ],
                     media: {
