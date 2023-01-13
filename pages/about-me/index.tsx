@@ -7,18 +7,24 @@ import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT } from '@lib/constants';
 // components
 import { Profile } from 'components';
 // elements
-import { CTALink, ArticleText } from 'elements';
+import { CTALink, ArticleText, SVG } from 'elements';
 // types
 import type { GetStaticProps } from 'next';
-import type { LinkData } from 'types';
+import type { LinkData, IconData } from 'types';
 import type { ArticleTextProps } from 'elements/types';
 
+
+/* TYPES */
+interface CtaLink {
+    link: LinkData;
+    icon: IconData;
+}
 
 interface Content {
     pageTitle: string;
     introText: string;
     texts: ArticleTextProps[];
-    ctaLinks: LinkData[];
+    ctaLinks: CtaLink[];
 }
 
 interface Props {
@@ -49,9 +55,11 @@ const AboutMe = ( {
                 </section>
                 <section className='cta-links spacing--vXlg text--xlg'>
                     {
-                        ctaLinks.map( ( linkContent ) => (
-                            <CTALink key={linkContent.href} content={linkContent} 
-                                type='rainbow-shadow' />
+                        ctaLinks.map( ( { link, icon } ) => (
+                            <CTALink key={link.href} href={link.href} type='rainbow-shadow'>
+                                <SVG {...icon} width={22} height={22} />
+                                {link.text}
+                            </CTALink>
                         ) )
                     }
                 </section>
@@ -81,12 +89,24 @@ const content: Content = {
     ],
     ctaLinks: [
         {
-            text: 'Career Experience',
-            href: EXPERIENCE_ENDPOINT,
+            link: {
+                text: 'Career Experience',
+                href: EXPERIENCE_ENDPOINT,
+            },
+            icon: {
+                data: '/static/icons/career.svg',
+                alt: 'Briefcase Icon',
+            },
         },
         {
-            text: 'Projects',
-            href: PROJECTS_ENDPOINT,
+            link: {
+                text: 'Projects',
+                href: PROJECTS_ENDPOINT,
+            },
+            icon: {
+                data: '/static/icons/projects.svg',
+                alt: 'Paper Icon',
+            },
         },
     ],
 }

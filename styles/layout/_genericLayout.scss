@@ -12,6 +12,13 @@
             justify-content: center;
 
             .cta-link {
+                display: flex;
+                align-items: center;
+
+                .svg {
+                    margin-right: 0.4rem;
+                }
+
                 &:first-child {
                     margin-right: 5rem;
                     outline-color: map.get( $colors, 'pink', 2 );

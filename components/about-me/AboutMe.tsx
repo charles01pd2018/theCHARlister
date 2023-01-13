@@ -35,6 +35,7 @@ const AboutMe = ( {
 }: Props ) => {
     /* CONTENT */
     const { title, description, link, paletteContent } = content;
+    const { href, text } = link;
 
     /* HOOKS */
     const width = useClientWidth();
@@ -51,7 +52,9 @@ const AboutMe = ( {
                 <h2 className='title big-heading'>{title}</h2>
                 <p className='description text--lg' 
                     dangerouslySetInnerHTML={{ __html: description }} />
-                <CTALink className='text--norm' content={link} type='rainbow-shadow' />
+                <CTALink className='text--norm' href={href} type='rainbow-shadow'>
+                    {text}
+                </CTALink>
             </div>
             <Palette content={paletteContent} 
                 iconSize={width < BREAKPOINT_MEDIUM ? [ 70, 70 ] : undefined} />

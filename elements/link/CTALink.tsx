@@ -1,29 +1,28 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactNode } from 'react';
 // types
 import type { LinkData } from 'types';
 
 
 /* TYPES */
 export interface Props extends HTMLAttributes<HTMLAnchorElement> {
+    children: ReactNode;
     className?: string;
-    content: LinkData;
+    href: string;
     type: 'rainbow-shadow';
     isActive?: boolean;
 }
 
 const CTALink = ( {
+    children,
     className='',
-    content,
+    href,
     type,
     isActive,
     ...rest
 }: Props ) => {
-    /* CONTENT */
-    const { href, text } = content;
-
     /* CLASSNAMES */
     const ctaLinkClasses = classNames(
         'cta-link',
@@ -34,7 +33,7 @@ const CTALink = ( {
 
     return (
         <Link className={ctaLinkClasses} href={href} {...rest}>
-            {text}
+            {children}
         </Link>
     );
 }
