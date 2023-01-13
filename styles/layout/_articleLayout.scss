@@ -33,6 +33,14 @@
         }
     }
 
+    .main-content-wrapper {
+        .project-link-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-block: 1rem;
+        }
+    }
+
     @mixin article-layout-selection( $background ) {
         * {
             &::selection {
@@ -42,20 +50,10 @@
     }
 
     @mixin article-layout-border( $color ) {
-        .desktop-article-wrapper {
-            .parallax-container {
-                border-block: 2px solid $color;
-                box-shadow: 0px 0.7px 3.6px $color,
-                            0px 1.9px 10px $color;
-            }
-        }
-    
-        .mobile-article-wrapper {
-            .article {
-                border-block: 2px solid $color;
-                box-shadow: 0px 0.7px 3.6px $color,
-                            0px 1.9px 10px $color;
-            }
+        .main-content-wrapper {
+            border-block: 2px solid $color;
+            box-shadow: 0px 0.7px 3.6px $color,
+                        0px 1.9px 10px $color;
         }
     }
 

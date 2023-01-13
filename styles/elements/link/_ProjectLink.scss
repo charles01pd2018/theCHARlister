@@ -1,0 +1,27 @@
+// utils
+@use '../../utils/selectors/tap' as *;
+
+
+.project-link {
+    $border-radius: 50%;
+    $transition: 0.23s ease;
+
+    border-radius: $border-radius;
+
+    .svg {
+        filter: grayscale( 30% );
+        border-radius: $border-radius;
+        box-shadow:0px 0px 3.6px rgba(0, 0, 0, 0.059),
+                0px 0px 10px rgba(0, 0, 0, 0.085),
+                0px 0px 24.1px rgba(0, 0, 0, 0.111),
+                0px 0px 80px rgba(0, 0, 0, 0.17);
+
+        transition: filter $transition;
+    }
+
+    @include tap {
+        .svg {
+            filter: none;
+        }
+    }
+}

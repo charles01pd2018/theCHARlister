@@ -10,21 +10,16 @@ import { Profile } from 'components';
 import { CTALink, ArticleText, SVG } from 'elements';
 // types
 import type { GetStaticProps } from 'next';
-import type { LinkData, IconData } from 'types';
+import type { CTALinkIconContent } from 'types';
 import type { ArticleTextProps } from 'elements/types';
 
 
 /* TYPES */
-interface CtaLink {
-    link: LinkData;
-    icon: IconData;
-}
-
 interface Content {
     pageTitle: string;
     introText: string;
     texts: ArticleTextProps[];
-    ctaLinks: CtaLink[];
+    ctaLinks: CTALinkIconContent[];
 }
 
 interface Props {
@@ -55,8 +50,9 @@ const AboutMe = ( {
                 </section>
                 <section className='cta-links spacing--vXlg text--xlg'>
                     {
-                        ctaLinks.map( ( { link, icon } ) => (
-                            <CTALink key={link.href} href={link.href} type='rainbow-shadow'>
+                        ctaLinks.map( ( { link, icon, borderColor } ) => (
+                            <CTALink key={link.href} href={link.href} type='rainbow-shadow'
+                                borderColor={borderColor}>
                                 <SVG {...icon} width={22} height={22} />
                                 {link.text}
                             </CTALink>
@@ -97,6 +93,7 @@ const content: Content = {
                 data: '/static/icons/career.svg',
                 alt: 'Briefcase Icon',
             },
+            borderColor: 'pink',
         },
         {
             link: {
@@ -107,6 +104,7 @@ const content: Content = {
                 data: '/static/icons/projects.svg',
                 alt: 'Paper Icon',
             },
+            borderColor: 'green',
         },
     ],
 }

@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { HTMLAttributes, ReactNode } from 'react';
 // types
-import type { LinkData } from 'types';
+import type { Colors } from 'types';
 
 
 /* TYPES */
@@ -12,6 +12,7 @@ export interface Props extends HTMLAttributes<HTMLAnchorElement> {
     className?: string;
     href: string;
     type: 'rainbow-shadow';
+    borderColor?: Colors;
     isActive?: boolean;
 }
 
@@ -20,6 +21,7 @@ const CTALink = ( {
     className='',
     href,
     type,
+    borderColor,
     isActive,
     ...rest
 }: Props ) => {
@@ -28,6 +30,7 @@ const CTALink = ( {
         'cta-link',
         type,
         isActive && 'active',
+        borderColor && `border--${borderColor}`,
         className,
     );
 

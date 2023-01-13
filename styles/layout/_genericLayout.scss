@@ -21,11 +21,6 @@
 
                 &:first-child {
                     margin-right: 5rem;
-                    outline-color: map.get( $colors, 'pink', 2 );
-                }
-
-                &:nth-child( 2 ) {
-                    outline-color: map.get( $colors, 'green', 2 );
                 }
             }
         }

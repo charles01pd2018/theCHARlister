@@ -6,10 +6,13 @@ import { ARTICLE_LAYOUT_SLIDER_CONTENT } from 'layout/content';
 // components
 import { DisplayFooter, Parallax, Article, MobileArticleIntro,
     DesktopArticleIntro } from 'components';
+// elements
+import { ProjectLink } from 'elements';
 // types
 import type { ArticleContent, ArticleIntroSliderContent } from 'components/types';
 import type { BreadcrumbsContent, StackedIconsContent, 
-    TagListContent, SliderItem, SliderContent } from 'elements/types';
+    TagListContent, SliderItem, SliderContent,
+    ProjectLinkContent } from 'elements/types';
 
 
 /* UTIL FUNCTIONS */
@@ -26,6 +29,7 @@ const getArticleIntroSliderContent = (
 
 /* TYPES */
 export interface Content {
+    projectLinkContent: ProjectLinkContent;
     productArticleContent: ArticleContent;
     technicalArticleContent: ArticleContent;
     breadcrumbsContent: BreadcrumbsContent;
@@ -44,7 +48,8 @@ const ArticleLayout = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { technicalArticleContent,
+    const { projectLinkContent,
+        technicalArticleContent,
         productArticleContent,
         breadcrumbsContent,
         stackedIconsContent,
@@ -83,12 +88,17 @@ const ArticleLayout = ( {
                     }} content={{
                         breadcrumbsContent,
                     }} />
-                    <Parallax className='spacing--v'
-                        content={{
-                            ...articleContent,
-                            stackedIconsContent,
-                            tagListContent,
-                        }} />
+                    <div className='main-content-wrapper'>
+                        <div className='project-link-wrapper'>
+                            <ProjectLink content={projectLinkContent} />
+                        </div>
+                        <Parallax className='spacing--v'
+                            content={{
+                                ...articleContent,
+                                stackedIconsContent,
+                                tagListContent,
+                            }} />
+                    </div>
                 </section>
                 <section className='mobile-article-wrapper'>
                     <MobileArticleIntro sliderProps={{
@@ -101,8 +111,13 @@ const ArticleLayout = ( {
                             stackedIconsContent,
                         },
                     }} />
-                    <Article className='container--wide spacing--v'
-                        content={articleContent} />
+                    <div className='main-content-wrapper'>
+                        <div className='project-link-wrapper'>
+                            <ProjectLink content={projectLinkContent} />
+                        </div>
+                        <Article className='container--wide spacing--v'
+                            content={articleContent} />
+                    </div>
                 </section>
             </main>
             <DisplayFooter />

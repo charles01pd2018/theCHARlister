@@ -60,6 +60,12 @@
                         opacity $transition;
         }
 
+        @each $color, $color-map in $colors {
+            &.border--#{$color} {
+                outline: 2px solid map.get( $color-map, 2 );
+            }
+        }
+
         @include activeTap {
             outline-width: 2px;
 

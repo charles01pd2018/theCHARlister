@@ -3,8 +3,8 @@ import classNames from 'classnames';
 // elements
 import { Breadcrumbs, TagsIcons, Slider } from 'elements';
 // types
-import type { BreadcrumbsContent, TagsIconsContent } from 'elements/types';
-import type { SliderProps } from 'elements/types';
+import type { BreadcrumbsContent, TagsIconsContent,
+    SliderProps } from 'elements/types';
 
 
 /* TYPES */

@@ -40,6 +40,14 @@ export default Musizi;
 const content: Content = {
     pageTitle: 'Musizi - theCHARlister',
     articleLayoutContent: {
+        projectLinkContent: {
+            logo: {
+                data: '/static/icons/musizi-logo.svg',
+                alt: 'Musizi University Logo',
+            },
+            href: 'https://www.musizi.ac.ug/',
+            ariaLabel: 'Musizi Website',
+        },
         breadcrumbsContent: {
             links: [
                 {

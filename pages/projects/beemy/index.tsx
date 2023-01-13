@@ -43,6 +43,14 @@ export default Beemy;
 const content: Content = {
     pageTitle: 'beemy Project - theCHARlister',
     articleLayoutContent: {
+        projectLinkContent: {
+            logo: {
+                data: '/static/icons/beemy-logo.svg',
+                alt: 'beemy Logo',
+            },
+            href: 'https://www.writebeemy.com/',
+            ariaLabel: 'beemy Website',
+        },
         breadcrumbsContent: {
             links: [
                 {

@@ -40,6 +40,14 @@ export default CryptoBlock;
 const content: Content = {
     pageTitle: 'Crypto Block - theCHARlister',
     articleLayoutContent: {
+        projectLinkContent: {
+            logo: {
+                data: '/static/icons/crypto-block-logo.svg',
+                alt: 'Crypto Block Logo',
+            },
+            href: 'https://charles01pd2018.github.io/crypto-block',
+            ariaLabel: 'Crypto Block Website',
+        },
         breadcrumbsContent: {
             links: [
                 {

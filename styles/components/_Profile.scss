@@ -2,8 +2,6 @@
 @use 'sass:map';
 // constants
 @use '../constants/colors' as *;
-// utils
-@use '../utils/selectors/tap' as *;
 
 
 .profile {
@@ -99,7 +97,7 @@
             @include icon-filter( #3487a8 );
         }
 
-        @include tap {
+        &:hover {
             mix-blend-mode: normal;
             transform: translateY( -4px );
         }
