@@ -55,6 +55,12 @@
 
             transition: color $transition;
         }
+
+        &.offset-less {
+            .input {
+                left: -3px;
+            }
+        }
     }
 
     /* COLORS */

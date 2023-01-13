@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import { useEffect, useState, useRef, useMemo, ReactNode,
     MutableRefObject } from 'react';
 // lib
-import { useClientWidth } from 'lib';
+import { useClientWidth, useIsSafari } from 'lib';
 // types
 import type { Colors } from 'types';
 
@@ -93,6 +93,7 @@ const Slider = ( {
     const [ itemWidths, setItemWidths ] = useState<number[]>();
     const [ activeItemWidth, setActiveItemWidth ] = useState<number>();
     const clientWidth = useClientWidth();
+    const isSafari = useIsSafari();
 
     /* FUNCTIONS */
     const handleChange = ( index: number ) => {
@@ -148,6 +149,7 @@ const Slider = ( {
                     const itemClasses = classNames(
                         'slider-item',
                         id,
+                        isSafari && 'offset-less',
                         checked ? 'active-slider-item' : 
                             'not-active-slider-item',
                     );
