@@ -2,6 +2,8 @@
 import classNames from 'classnames';
 import Link from 'next/link';
 import { HTMLAttributes, ReactNode } from 'react';
+// lib
+import { useIsSafari } from 'lib';
 // types
 import type { Colors } from 'types';
 
@@ -25,12 +27,16 @@ const CTALink = ( {
     isActive,
     ...rest
 }: Props ) => {
+    /* HOOKS */
+    const isSafari = useIsSafari();
+
     /* CLASSNAMES */
     const ctaLinkClasses = classNames(
         'cta-link',
         type,
         isActive && 'active',
         borderColor && `border--${borderColor}`,
+        !isSafari && 'transition-filter',
         className,
     );
 

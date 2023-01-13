@@ -1,7 +1,3 @@
-import useScroll from './useScroll';
-import useClientWidth from './useClientWidth';
-
-export {
-    useScroll,
-    useClientWidth,
-}
+export * from './useScroll';
+export * from './useClientWidth';
+export * from './useIsSafari';

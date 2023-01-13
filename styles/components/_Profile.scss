@@ -37,6 +37,7 @@
         }
     }
 
+    // translateZ safari bug
     .icon-wrapper {
         $transition: 0.21s ease-in-out;
 
@@ -53,7 +54,7 @@
         &:nth-child( 2 ) {
             top: 15%;
             left: 5%;
-            transform: rotate( -15deg );
+            transform: rotate( -15deg ) translateZ( 0 );
             @include icon-filter( #c7b830 );
         }
 
@@ -61,7 +62,7 @@
         &:nth-child( 3 ) {
             top: 50%;
             left: 81%;
-            transform: rotate( 20deg );
+            transform: rotate( 20deg ) translateZ( 0 );
             @include icon-filter( #2e5887 );
         }
 
@@ -69,7 +70,7 @@
         &:nth-child( 4 ) {
             top: 67%;
             left: 13%;
-            transform: rotate( 13deg );
+            transform: rotate( 13deg ) translateZ( 0 );
             @include icon-filter( #a1429c );
         }
 
@@ -77,6 +78,7 @@
         &:nth-child( 5 ) {
             top: 18%;
             left: 90%;
+            transform: translateZ( 0 );
             @include icon-filter( #41752e );
         }
 
@@ -85,7 +87,7 @@
             position: absolute;
             top: 8%;
             left: 55%;
-            transform: rotate( 10deg );
+            transform: rotate( 10deg ) translateZ( 0 );
             @include icon-filter( #593382 );
         }
 
@@ -94,12 +96,13 @@
             position: absolute;
             top: 16%;
             left: 35%;
+            transform: translateZ( 0 );
             @include icon-filter( #3487a8 );
         }
 
         &:hover {
             mix-blend-mode: normal;
-            transform: translateY( -4px );
+            transform: translateY( -4px ) translateZ( 0 );
         }
     }
 }

@@ -7,7 +7,7 @@ import { useDebouncedCallback } from 'use-debounce';
  * Tracks the width of the window.
  * Useful for appling conditional styles or props in JSX
  */
-const useClientWidth = ( debounceTime: number=100 ) => {
+export const useClientWidth = ( debounceTime: number=100 ) => {
     /* HOOKS */
     const [ width, setWidth ] = useState<number>( 0 );
 
@@ -27,5 +27,3 @@ const useClientWidth = ( debounceTime: number=100 ) => {
 
     return width;
 }
-
-export default useClientWidth;

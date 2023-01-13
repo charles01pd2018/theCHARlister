@@ -14,14 +14,14 @@
         $border-radius: 4px;
         $padding-block: 0.6rem;
         $padding-inline: 0.5rem;
+        $border-color: map.get( $colors, 'blue', 1 );
 
         position: relative;
         background: #fff;
         padding: $padding-block $padding-inline;
         border-radius: $border-radius;
-        outline: 1px solid map.get( $colors, 'blue', 1 );
-
-        transition: outline-width $transition;
+        box-shadow: 0 0 0 1px $border-color;
+        transition: box-shadow $transition;
 
         $half-padding-inline: math.div( $padding-inline, 2 );
         $half-padding-block: math.div( $padding-block, 2 );
@@ -55,19 +55,29 @@
             height: $bg-height;    
             filter: blur( 9px );
             opacity: 0.4;
+        }
 
-            transition: filter $transition,
+        &.transition-filter {
+            &:after {
+                transition: filter $transition,
                         opacity $transition;
+            }
         }
 
         @each $color, $color-map in $colors {
             &.border--#{$color} {
-                outline: 2px solid map.get( $color-map, 2 );
+                $new-border-color: map.get( $color-map, 2 );
+
+                box-shadow: 0 0 0 1px $new-border-color;
+
+                @include activeTap {
+                    box-shadow: 0 0 0 2px $new-border-color;
+                }
             }
         }
 
         @include activeTap {
-            outline-width: 2px;
+            box-shadow: 0 0 0 2px $border-color;
 
             &:after {
                 filter: blur( 14px );

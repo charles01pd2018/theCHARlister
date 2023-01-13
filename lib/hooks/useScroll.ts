@@ -5,7 +5,7 @@ import { useThrottledCallback } from 'use-debounce';
 /**
  * Tracks whether the user last scrolled up or down.
  */
-const useScroll = ( throttleTime: number=150 ) => {
+export const useScroll = ( throttleTime: number=150 ) => {
     /* HOOKS */
     const [ scrollPos, setScrollPos ] = useState<number>( 0 );
     const [ scrollDirection, setScrollDirection ] = useState<'up' | 'down' | null>( null );
@@ -33,5 +33,3 @@ const useScroll = ( throttleTime: number=150 ) => {
 
     return scrollDirection;
 }
-
-export default useScroll;
