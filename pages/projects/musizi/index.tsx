@@ -83,10 +83,6 @@ const content: Content = {
                             text: 'I joined the team when the design was completed and ready to be translated into code. Because of this, I had to catch up on the vision and make sure that the website matched the design specs. This included overall theming, <mark class="green">color schemes</mark>, and animating a static design file.',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Collaborating and Translating Design',
@@ -96,13 +92,9 @@ const content: Content = {
                             text: 'There was continuous communication of progress throughout the development cycle consisting of meeting and written updates. To make sure both parties were on the same page, regular preview deployments occurred so that everyone could walkthrough the various checkpoints of the website. Small tweaks and updates were made both during development and after pushing live.',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
+
                 },
-            ],
-        },
+            ],        },
         technicalArticleContent: {
             items: [
                 {
@@ -120,16 +112,12 @@ const content: Content = {
                                 '<li>CI/CD pipelines and regular intervals for preview deployments.</li>',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
+
                 },
                 {
                     title: 'Custom Mailchimp API Implementation',
                     texts: [
-                        {
-                            WrapperTag: 'p',
+                        {                            WrapperTag: 'p',
                             text: 'In order to adhere to the custom design of the website, our email submission form makes a custom call to the Mailchimp API.',
                         },
                         {
@@ -137,10 +125,7 @@ const content: Content = {
                             text: 'A custom mailchimp backend API route + enviroment secrets were configured to make this work.',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
+
                 },
                 {
                     title: 'Responsive Design',
@@ -148,12 +133,8 @@ const content: Content = {
                         {
                             WrapperTag: 'p',
                             text: 'The design included many relatively positioned images of various sizes. Because of this, there was a lot of back and forth between the client in order to make sure the website looked pixel perfect no matter the screen width.',
-                        },
-                    ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
+                        },                    ],
+
                 },
             ],
         },
@@ -164,8 +145,7 @@ const content: Content = {
                     color: 'pink',
                 },
                 {
-                    text: 'FREELANCE',
-                    color: 'pink',
+                    text: 'FREELANCE',                    color: 'pink',
                 },
             ],
         },

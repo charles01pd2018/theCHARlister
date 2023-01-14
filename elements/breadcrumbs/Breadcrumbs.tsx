@@ -31,7 +31,7 @@ const Breadcrumbs = ( {
     return (
         <ul className={breadcrumbsClasses}>
             {
-                links.map(( linkContent, index ) => {
+                links.map( ( linkContent, index ) => {
                     const isLastLink = index === links.length - 1;
 
                     return (

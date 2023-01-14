@@ -107,10 +107,6 @@ const content: Content = {
                                 '<li>Password protect articles.</li>'
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Page Builder',
@@ -130,10 +126,6 @@ const content: Content = {
                                 '<li>Have blog page articles all build under a single page context: <u>/articles</u></li>'
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Out-of-the Box Writer Page',
@@ -147,10 +139,6 @@ const content: Content = {
                             text: 'Add socials to let your audience know where to find you and a description to share what topics you write about!',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Organizing Drafts vs. Published',
@@ -185,10 +173,6 @@ const content: Content = {
                                 '<li><mark class="pink"><u>Delete.</u></mark></li>'
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
             ],
         },
@@ -208,10 +192,6 @@ const content: Content = {
                             text: 'I wrote an article how beemy tackles this',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Server-Side Rendering vs. Incremental Static Generation',
@@ -230,10 +210,6 @@ const content: Content = {
                             text: `Everytime a page or article is published or updated, it gets <b>rebuilt</b> on the backend. Incremental Static Generation is accomplished through Next.JS's <a target="_blank" href='https://nextjs.org/docs/basic-features/data-fetching/incremental-static-regeneration#on-demand-revalidation'>on-demand revalidation feature</a>.`
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Debounce saving',
@@ -256,10 +232,6 @@ const content: Content = {
                             text: `*This is how the <a target="_blank" href="${EXPERIENCE_ENDPOINT}/#Knowt">Knowt</a> editor works!`,
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'GraphQL and Next.JS API Routes',
@@ -275,10 +247,6 @@ const content: Content = {
                             text: 'I wrote a thread on Twitter about my thoughts on the two API structures',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Authentication',
@@ -303,10 +271,6 @@ const content: Content = {
                             text: `More info on securing API routes with JWT’s`,
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Text NoSQL MongoDB Storage + Firebase File Storage',
@@ -325,10 +289,6 @@ const content: Content = {
                             text: 'All file uploading and downloading is offloaded onto the client - meaning that images are uploaded and downloaded from Firebase through the users computer and not the server.',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Pagination',
@@ -353,10 +313,6 @@ const content: Content = {
                             text: 'More details on beemy Pagination',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Recursive Page Updating',
@@ -376,10 +332,6 @@ const content: Content = {
                             text: 'Updated are made through <u>promise queuing</u>',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Search',
@@ -397,10 +349,6 @@ const content: Content = {
                             text: 'Only articles that have a search score above 0 are returned.'
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
                 {
                     title: 'Extra',
@@ -418,10 +366,6 @@ const content: Content = {
                             text: 'Blog page (built with beemy) with 9 articles on lessons learned',
                         },
                     ],
-                    media: {
-                        data: '/static/icons/contact.svg',
-                        alt: '',
-                    },
                 },
             ],
         },

@@ -1,16 +1,14 @@
 // dependencies
 import classNames from 'classnames';
 // elemenets
-import { Media, ArticleText } from 'elements';
+import { ArticleText } from 'elements';
 // types
-import type { MediaData } from 'types';
 import type { ArticleTextProps } from 'elements/types';
 
 
 /* TYPES */
 interface Item {
     title: string;
-    media?: MediaData;
     texts: ArticleTextProps[];
 }
 
@@ -39,7 +37,7 @@ const Article = ( {
     return (
         <article className={articleClasses}>
             {
-                items.map( ( { title, texts, media }, index ) => {
+                items.map( ( { title, texts }, index ) => {
                     return (
                         <div className='text-wrapper' key={index}>
                             <h3 className='title'>{title}</h3>

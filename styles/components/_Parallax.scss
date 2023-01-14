@@ -5,32 +5,16 @@
     min-height: $min-height;
 
     .parallax-wrapper {
-        display: flex;
-        padding: 1rem 5vw;
-        overflow-y: auto;
-    
-        .media-wrapper {
+        .top {
             display: flex;
-            min-height: $min-height;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            width: 100% - $text-width;
+            margin-bottom: 1.5rem;
         }
 
-        .content-wrapper {
-            width: $text-width;
-
-            .top {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 1.5rem;
-            }
-
-            .text-container {
-                .text-wrapper {
-                    margin-bottom: 5rem;
-                }
+        .text-container {
+            .text-wrapper {
+                margin-bottom: 5rem;
             }
         }
     }

@@ -10,7 +10,6 @@ export * from './logo/types';
 export * from './text/types';
 export * from './button/types';
 export * from './link/types';
-export * from './video/types';
 export * from './palette/types';
 export * from './tag/types';
 export * from './tags-icons/types';
