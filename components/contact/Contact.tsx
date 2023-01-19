@@ -1,3 +1,9 @@
+/**
+ * 3D Text - https://codepen.io/zitrusfrisch/pen/kBNEag
+ *  https://codepen.io/shubniggurath/pen/OoYQBJ
+ * Text Highlight - https://github.com/pofoo/react-elements/blob/main/elements/text/TextHighlight.tsx
+ *  https://github.com/pofoo/react-elements/blob/main/styles/elements/text/_TextHighlight.scss
+ */
 // dependencies
 import classNames from 'classnames';
 import { InView } from 'react-intersection-observer';
