@@ -1,5 +1,5 @@
-import PageSEO from './PageSEO';
+import SEO from './SEO';
 
 export {
-    PageSEO,
+    SEO,
 }

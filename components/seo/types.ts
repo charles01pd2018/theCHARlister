@@ -1,5 +1,5 @@
-import type { Props as PageSEOProps } from './PageSEO';
+import type { Props as SEOProps } from './SEO';
 
 export type {
-    PageSEOProps,
+    SEOProps,
 }

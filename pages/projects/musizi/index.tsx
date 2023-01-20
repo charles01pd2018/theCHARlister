@@ -1,5 +1,5 @@
 // components
-import { PageSEO } from 'components';
+import { SEO } from 'components';
 // lib
 import { PROJECTS_ENDPOINT, MUSIZI_PROJECT_ENDPOINT, URL } from 'lib';
 // layout
@@ -27,7 +27,7 @@ const Musizi = ( {
 
     return (
         <>
-            <PageSEO pageTitle={pageTitle} description={description}
+            <SEO pageTitle={pageTitle} description={description}
                 image='/static/images/open-graph.png'
                 url={`${URL}${MUSIZI_PROJECT_ENDPOINT}`} />
             <ArticleLayout className='musizi'

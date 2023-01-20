@@ -3,7 +3,7 @@ import { GenericLayout } from 'layout';
 // lib
 import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT, ABOUT_ME_ENDPOINT, URL } from 'lib';
 // components
-import { Profile, PageSEO } from 'components';
+import { Profile, SEO } from 'components';
 // elements
 import { CTALink, ArticleText, SVG } from 'elements';
 // types
@@ -33,7 +33,7 @@ const AboutMe = ( {
 
     return (
         <>
-            <PageSEO pageTitle={pageTitle} description={description}
+            <SEO pageTitle={pageTitle} description={description}
                 image='/static/images/open-graph.png'
                 url={`${URL}${ABOUT_ME_ENDPOINT}`} />
             <GenericLayout className='about-me-layout' activePage='About Me'>

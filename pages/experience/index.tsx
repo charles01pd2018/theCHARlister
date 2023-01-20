@@ -3,7 +3,7 @@ import { OverviewLayout } from 'layout';
 // lib
 import { EXPERIENCE_ENDPOINT, URL } from 'lib';
 // components
-import { ExperienceList, PageSEO } from 'components';
+import { ExperienceList, SEO } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 import type { OverviewLayoutContent } from 'layout/types';
@@ -27,7 +27,7 @@ const Experience = ( {
 
     return (
         <>
-            <PageSEO pageTitle={pageTitle} description={description}
+            <SEO pageTitle={pageTitle} description={description}
                 image='/static/images/open-graph.png'
                 url={`${URL}${EXPERIENCE_ENDPOINT}`} />
             <OverviewLayout content={overviewLayoutContent}

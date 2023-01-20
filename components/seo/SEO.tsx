@@ -14,7 +14,7 @@ export interface Props {
     image?: string;
 }
 
-const PageSEO = ( {
+const SEO = ( {
     children,
     pageTitle,
     description,
@@ -49,4 +49,4 @@ const PageSEO = ( {
 }
 
 
-export default PageSEO;
+export default SEO;

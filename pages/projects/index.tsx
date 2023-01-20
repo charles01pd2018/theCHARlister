@@ -3,7 +3,7 @@ import { PROJECTS_ENDPOINT, URL } from 'lib';
 // layout
 import { OverviewLayout } from 'layout';
 // components
-import { ProjectList, PageSEO } from 'components';
+import { ProjectList, SEO } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 import type { OverviewLayoutContent } from 'layout/types';
@@ -27,7 +27,7 @@ const Projects = ( {
 
     return (
         <>
-            <PageSEO pageTitle={pageTitle} description={description}
+            <SEO pageTitle={pageTitle} description={description}
                 image='/static/images/open-graph.png'
                 url={`${URL}${PROJECTS_ENDPOINT}`} />
             <OverviewLayout className='projects' activePage='Projects'

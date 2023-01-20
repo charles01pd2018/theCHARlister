@@ -1,5 +1,5 @@
 // components
-import { PageSEO } from 'components';
+import { SEO } from 'components';
 // lib
 import { EXPERIENCE_ENDPOINT } from 'lib';
 // layout
@@ -29,7 +29,7 @@ const Beemy = ( {
 
     return (
         <>
-            <PageSEO pageTitle={pageTitle} description={description}
+            <SEO pageTitle={pageTitle} description={description}
                 image='/static/images/open-graph.png'
                 url={`${URL}${BEEMY_PROJECT_ENDPOINT}`} />
             <ArticleLayout className='beemy'

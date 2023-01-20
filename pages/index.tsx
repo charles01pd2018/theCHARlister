@@ -1,7 +1,7 @@
 // dependencies
 import { useState } from 'react';
 // components
-import { AboutMe, ProjectHighlights, Contact, PageSEO } from 'components';
+import { AboutMe, ProjectHighlights, Contact, SEO } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
 // lib
@@ -43,7 +43,7 @@ const Home = ( {
 
   return (
     <>
-      <PageSEO pageTitle={pageTitle} description={description}
+      <SEO pageTitle={pageTitle} description={description}
         image='/static/images/open-graph.png' url={URL} />
       <DisplayLayout activeIndex={activeIndex} 
         displayHeaderSwitchProps={{
