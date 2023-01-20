@@ -1,11 +1,9 @@
-// dependencies
-import Head from 'next/head';
 // layout
 import { OverviewLayout } from 'layout';
 // lib
-import { EXPERIENCE_ENDPOINT } from 'lib';
+import { EXPERIENCE_ENDPOINT, URL } from 'lib';
 // components
-import { ExperienceList } from 'components';
+import { ExperienceList, PageSEO } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 import type { OverviewLayoutContent } from 'layout/types';
@@ -13,6 +11,7 @@ import type { OverviewLayoutContent } from 'layout/types';
 
 interface Content {
     pageTitle: string;
+    description: string;
     overviewLayoutContent: OverviewLayoutContent;
 }
 
@@ -24,13 +23,13 @@ const Experience = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { pageTitle, overviewLayoutContent } = content;
+    const { pageTitle, description, overviewLayoutContent } = content;
 
     return (
         <>
-            <Head>
-                <title>{pageTitle}</title>
-            </Head>
+            <PageSEO pageTitle={pageTitle} description={description}
+                image='/static/images/open-graph.png'
+                url={`${URL}${EXPERIENCE_ENDPOINT}`} />
             <OverviewLayout content={overviewLayoutContent}
                 activePage='Experience'>
                 <ExperienceList />
@@ -43,6 +42,7 @@ export default Experience;
 
 const content: Content = {
     pageTitle: 'Experience - theCHARlister',
+    description: 'theCHARlister Proffesional Experience',
     overviewLayoutContent: {
         breadcrumbsContent: {
             links: [

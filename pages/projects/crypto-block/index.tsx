@@ -1,7 +1,7 @@
-// dependencies
-import Head from 'next/head';
+// components
+import { PageSEO } from 'components';
 // lib
-import { PROJECTS_ENDPOINT, CRYPTO_BLOCK_PROJECT_ENDPOINT } from 'lib';
+import { PROJECTS_ENDPOINT, CRYPTO_BLOCK_PROJECT_ENDPOINT, URL } from 'lib';
 // layout
 import { ArticleLayout } from 'layout';
 // types
@@ -11,6 +11,7 @@ import type { ArticleLayoutContent } from 'layout/types';
 
 interface Content {
     pageTitle: string;
+    description: string;
     articleLayoutContent: ArticleLayoutContent;
 }
 
@@ -22,13 +23,13 @@ const CryptoBlock = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { pageTitle, articleLayoutContent } = content;
+    const { pageTitle, description, articleLayoutContent } = content;
 
     return (
         <>
-            <Head>
-                <title>{pageTitle}</title>
-            </Head>
+            <PageSEO pageTitle={pageTitle} description={description}
+                image='/static/images/open-graph.png'
+                url={`${URL}${CRYPTO_BLOCK_PROJECT_ENDPOINT}`} />
             <ArticleLayout className='crypto-block'
                 content={articleLayoutContent} />
         </>
@@ -39,6 +40,7 @@ export default CryptoBlock;
 
 const content: Content = {
     pageTitle: 'Crypto Block - theCHARlister',
+    description: 'Crypto Block Personal Project - theCHARlister',
     articleLayoutContent: {
         projectLinkContent: {
             logo: {

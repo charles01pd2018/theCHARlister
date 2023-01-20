@@ -1,10 +1,11 @@
 // dependencies
-import Head from 'next/head';
 import { useState } from 'react';
 // components
-import { AboutMe, ProjectHighlights, Contact } from 'components';
+import { AboutMe, ProjectHighlights, Contact, PageSEO } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
+// lib
+import { URL } from 'lib';
 // types
 import type { GetStaticProps } from 'next';
 
@@ -12,6 +13,7 @@ import type { GetStaticProps } from 'next';
 /* TYPES */
 interface Content {
   pageTitle: string;
+  description: string;
 }
 
 interface Props {
@@ -22,7 +24,7 @@ const Home = ( {
   content,
 }: Props ) => {
   /* CONTENT */
-  const { pageTitle } = content;
+  const { pageTitle, description } = content;
 
   /* HOOKS */
   const [ animate, setAnimate ] = useState<boolean>( false );
@@ -41,9 +43,8 @@ const Home = ( {
 
   return (
     <>
-      <Head>
-        <title>{pageTitle}</title>
-      </Head>
+      <PageSEO pageTitle={pageTitle} description={description}
+        image='/static/images/open-graph.png' url={URL} />
       <DisplayLayout activeIndex={activeIndex} 
         displayHeaderSwitchProps={{
           checked: animate,
@@ -69,6 +70,7 @@ const Home = ( {
 
 const content: Content = {
   pageTitle: 'theCHARlister',
+  description: 'theCHARlister Personal Portfolio',
 };
 
 export const getStaticProps: GetStaticProps = () => {

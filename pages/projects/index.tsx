@@ -1,11 +1,9 @@
-// dependencies
-import Head from 'next/head';
 // lib
-import { PROJECTS_ENDPOINT } from 'lib';
+import { PROJECTS_ENDPOINT, URL } from 'lib';
 // layout
 import { OverviewLayout } from 'layout';
 // components
-import { ProjectList } from 'components';
+import { ProjectList, PageSEO } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 import type { OverviewLayoutContent } from 'layout/types';
@@ -13,6 +11,7 @@ import type { OverviewLayoutContent } from 'layout/types';
 
 interface Content {
     pageTitle: string;
+    description: string;
     overviewLayoutContent: OverviewLayoutContent;
 }
 
@@ -24,13 +23,13 @@ const Projects = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { pageTitle, overviewLayoutContent } = content;
+    const { pageTitle, description, overviewLayoutContent } = content;
 
     return (
         <>
-            <Head>
-                <title>{pageTitle}</title>
-            </Head>
+            <PageSEO pageTitle={pageTitle} description={description}
+                image='/static/images/open-graph.png'
+                url={`${URL}${PROJECTS_ENDPOINT}`} />
             <OverviewLayout className='projects' activePage='Projects'
                 content={overviewLayoutContent}>
                 <ProjectList />
@@ -43,6 +42,7 @@ export default Projects;
 
 const content: Content = {
     pageTitle: 'Projects - theCHARlister',
+    description: 'theCHARlister Personal Projects',
     overviewLayoutContent: {
         breadcrumbsContent: {
             links: [

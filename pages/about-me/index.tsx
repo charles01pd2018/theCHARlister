@@ -1,11 +1,9 @@
-// dependencies
-import Head from 'next/head';
 // layout
 import { GenericLayout } from 'layout';
 // lib
-import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT } from '@lib/constants';
+import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT, ABOUT_ME_ENDPOINT, URL } from 'lib';
 // components
-import { Profile } from 'components';
+import { Profile, PageSEO } from 'components';
 // elements
 import { CTALink, ArticleText, SVG } from 'elements';
 // types
@@ -17,6 +15,7 @@ import type { ArticleTextProps } from 'elements/types';
 /* TYPES */
 interface Content {
     pageTitle: string;
+    description: string
     introText: string;
     texts: ArticleTextProps[];
     ctaLinks: CTALinkIconContent[];
@@ -30,13 +29,13 @@ const AboutMe = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { pageTitle, introText, texts, ctaLinks } = content;
+    const { pageTitle, description, introText, texts, ctaLinks } = content;
 
     return (
         <>
-            <Head>
-                <title>{pageTitle}</title>
-            </Head>
+            <PageSEO pageTitle={pageTitle} description={description}
+                image='/static/images/open-graph.png'
+                url={`${URL}${ABOUT_ME_ENDPOINT}`} />
             <GenericLayout className='about-me-layout' activePage='About Me'>
                 <Profile className='spacing--v' />
                 <section className='container text--lg'>
@@ -68,6 +67,7 @@ export default AboutMe;
 
 const content: Content = {
     pageTitle: 'About Me - theCHARlister',
+    description: 'More about theCHARlister!',
     introText: 'Hello! 👋',
     texts: [
         {

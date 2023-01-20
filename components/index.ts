@@ -9,3 +9,4 @@ export * from './profile';
 export * from './article-intro';
 export * from './contact';
 export * from './progress-bar';
+export * from './seo';

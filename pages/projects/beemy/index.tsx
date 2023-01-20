@@ -1,11 +1,11 @@
-// dependencies
-import Head from 'next/head';
+// components
+import { PageSEO } from 'components';
 // lib
 import { EXPERIENCE_ENDPOINT } from 'lib';
 // layout
 import { ArticleLayout } from 'layout';
 // lib
-import { PROJECTS_ENDPOINT, BEEMY_PROJECT_ENDPOINT } from 'lib';
+import { PROJECTS_ENDPOINT, BEEMY_PROJECT_ENDPOINT, URL } from 'lib';
 // types
 import type { GetStaticProps } from 'next';
 import type { ArticleLayoutContent } from 'layout/types';
@@ -13,6 +13,7 @@ import type { ArticleLayoutContent } from 'layout/types';
 
 interface Content {
     pageTitle: string;
+    description: string;
     articleLayoutContent: ArticleLayoutContent;
 }
 
@@ -24,13 +25,13 @@ const Beemy = ( {
     content,
 }: Props ) => {
     /* CONTENT */
-    const { pageTitle, articleLayoutContent } = content;
+    const { pageTitle, description, articleLayoutContent } = content;
 
     return (
         <>
-            <Head>
-                <title>{pageTitle}</title>
-            </Head>
+            <PageSEO pageTitle={pageTitle} description={description}
+                image='/static/images/open-graph.png'
+                url={`${URL}${BEEMY_PROJECT_ENDPOINT}`} />
             <ArticleLayout className='beemy'
                 content={articleLayoutContent} />
         </>
@@ -42,6 +43,7 @@ export default Beemy;
 
 const content: Content = {
     pageTitle: 'beemy Project - theCHARlister',
+    description: 'beemy Personal Project - theCHARlister',
     articleLayoutContent: {
         projectLinkContent: {
             logo: {
