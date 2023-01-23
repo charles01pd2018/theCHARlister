@@ -49,7 +49,7 @@ const Profile = ( {
             {
                 icons.map( ( { title, ...icon } ) => (
                     <span key={icon.alt} className='icon-wrapper' title={title}>
-                        <SVG key={icon.alt} width={width} height={height}
+                        <SVG width={width} height={height}
                             {...icon} />
                     </span>
                 ) )
