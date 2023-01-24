@@ -44,7 +44,7 @@ const OverviewHeader = ( {
     }
     
     /* HOOKS */
-    const [ ref ] = useClickOutsideRef( closeMobileNav );
+    const [ ref ] = useClickOutsideRef<HTMLHeadingElement>( closeMobileNav );
     const [ isMobileNavActive, setIsMobileNavActive ] = useState<boolean>( false );
 
     /* CLASSNAMES */
@@ -60,11 +60,11 @@ const OverviewHeader = ( {
     );
 
     return (
-        <header className={overviewHeaderClasses}>
+        <header ref={ref} className={overviewHeaderClasses}>
             <IconLogoLink />
             <HamburgerToggleButton onClick={toggleMobileNav}
                  isActive={isMobileNavActive} ariaControls={NAV_ID} />
-            <nav ref={ref} id={NAV_ID} className='nav'>
+            <nav id={NAV_ID} className='nav'>
                 <ul className={linksClasses}>
                     {
                         links.map( ( linkContent ) => (
