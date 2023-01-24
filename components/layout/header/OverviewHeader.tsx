@@ -1,6 +1,8 @@
 // dependencies
 import classNames from 'classnames';
 import { useState } from 'react';
+// lib
+import { useClickOutsideRef } from 'lib';
 // elements
 import { IconLogoLink, IconTextLink, HamburgerToggleButton } from 'elements';
 // content
@@ -32,9 +34,6 @@ const OverviewHeader = ( {
     /* CONTENT */
     const { links } = content;
 
-    /* HOOKS */
-    const [ isMobileNavActive, setIsMobileNavActive ] = useState<boolean>( false );
-
     /* FUNCTIONS */
     const closeMobileNav = () => {
         setIsMobileNavActive( false );
@@ -43,6 +42,10 @@ const OverviewHeader = ( {
     const toggleMobileNav = () => {
         setIsMobileNavActive( state => !state );
     }
+    
+    /* HOOKS */
+    const [ ref ] = useClickOutsideRef( closeMobileNav );
+    const [ isMobileNavActive, setIsMobileNavActive ] = useState<boolean>( false );
 
     /* CLASSNAMES */
     const overviewHeaderClasses = classNames(
@@ -61,7 +64,7 @@ const OverviewHeader = ( {
             <IconLogoLink />
             <HamburgerToggleButton onClick={toggleMobileNav}
                  isActive={isMobileNavActive} ariaControls={NAV_ID} />
-            <nav id={NAV_ID} className='nav'>
+            <nav ref={ref} id={NAV_ID} className='nav'>
                 <ul className={linksClasses}>
                     {
                         links.map( ( linkContent ) => (
