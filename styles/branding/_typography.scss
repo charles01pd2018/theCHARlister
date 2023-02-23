@@ -9,22 +9,22 @@
 # Font Family
 --------------------------------------------------------------*/
 @font-face {
-    font-family: "PaytoneOne";
-    src: url("/static/fonts/paytone-one/PaytoneOne-Regular.ttf");
+    font-family: PaytoneOne;
+    src: url( '/static/fonts/paytone-one/PaytoneOne-Regular.ttf' );
     font-style: normal;
     font-display: swap;
 }
   
 @font-face {
-    font-family: "VarelaRound";
-    src: url("/static/fonts/valera-round/VarelaRound-Regular.ttf");
+    font-family: VarelaRound;
+    src: url( '/static/fonts/valera-round/VarelaRound-Regular.ttf' );
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "Questrial";
-    src: url("/static/fonts/questrial/Questrial-Regular.ttf");
+    font-family: Questrial;
+    src: url( '/static/fonts/questrial/Questrial-Regular.ttf' );
     font-style: normal;
     font-display: swap;
 }
