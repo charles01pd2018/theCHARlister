@@ -1,8 +1,9 @@
 // dependencies
 import { useEffect, useRef, RefObject } from 'react';
 
+
 /* TYPES */
-export type Options = {
+interface Options {
     enableEscape?: boolean;
     numRefs?: number;
     deps?: any[];
