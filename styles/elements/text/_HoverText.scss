@@ -1,0 +1,46 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../../constants/colors' as *;
+// utils
+@use '../../utils/selectors/tap' as *;
+
+
+.hover-text {
+    > * {    
+        position: relative;
+        width: max-content;
+
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            border-radius: 3px;
+            top: 0; 
+            left: 0;
+            inset: 0 0 0 0;
+            z-index: -1;
+            transform: scaleX( 0 );
+            transform-origin: bottom right;
+
+            transition: transform  0.3s ease;
+        }
+
+        @include tap {
+            &:before {
+                transform: scaleX( 1 );
+                transform-origin: bottom left;
+            }
+        }
+    }
+
+    @each $color, $color-map in $colors {
+        &.#{$color} {
+            > * {
+                &:before {
+                    background: map.get( $color-map, 1 );
+                }
+            }
+        }
+    }
+}

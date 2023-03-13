@@ -148,6 +148,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
             ref.current?.addEventListener( 'pointerleave', handlePointerLeave );
             ref.current?.addEventListener( 'focus', handlePointerOver );
             ref.current?.addEventListener( 'focusout', handlePointerLeave );
+            window.addEventListener( 'blur', handlePointerLeave );
 
             setTooltipStyles( getTooltipStyles( {
                 ref,
@@ -161,6 +162,7 @@ const Tooltip = forwardRef<HTMLElement, Props>( ( {
                 ref.current?.removeEventListener( 'pointerleave', handlePointerLeave );
                 ref.current?.removeEventListener( 'focus', handlePointerOver );
                 ref.current?.removeEventListener( 'focusout', handlePointerLeave );
+                window.removeEventListener( 'blur', handlePointerLeave );
             }
         }
     }, [ position, ref, tooltipPadding, children ] );

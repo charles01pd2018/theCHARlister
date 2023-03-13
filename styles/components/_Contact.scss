@@ -1,3 +1,27 @@
+// dependencies
+@use 'sass:map';
+// constants
+@use '../constants/colors' as *;
+
+
 .contact {
-    
+    text-align: center;
+    min-height: 50vh;
+
+    .title {
+        letter-spacing: 1px;
+        font-family: PaytoneOne;
+        font-size: 300%;
+        color: #454754;  
+    }
+
+    .email-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+
+        .email {
+            line-height: 150%;
+        }
+    }
 }

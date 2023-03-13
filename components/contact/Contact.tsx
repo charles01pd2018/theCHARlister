@@ -1,21 +1,19 @@
-/**
- * 3D Text - https://codepen.io/zitrusfrisch/pen/kBNEag
- *  https://codepen.io/shubniggurath/pen/OoYQBJ
- * Text Highlight - https://github.com/pofoo/react-elements/blob/main/elements/text/TextHighlight.tsx
- *  https://github.com/pofoo/react-elements/blob/main/styles/elements/text/_TextHighlight.scss
- */
 // dependencies
 import classNames from 'classnames';
 import { InView } from 'react-intersection-observer';
+import Link from 'next/link';
 // content
 import { CONTACT_CONTENT } from 'components/content';
+// elements
+import { HoverText } from 'elements';
 // types
 import type { InViewProps } from 'types';
 
 
 /* TYPES */
 export interface Content {
-
+    title: string;
+    email: string;
 }
 
 export interface Props {
@@ -28,18 +26,27 @@ export interface Props {
 const Contact = ( {
     id='Contact',
     className='',
-    content,
+    content=CONTACT_CONTENT,
     inViewProps,
 }: Props ) => {
+    /* CONTENT */
+    const { title, email } = content;
+
     /* CLASSNAMES */
     const contactClasses = classNames(
         'contact',
+        'container',
         className,
     );
 
     return (
         <InView id={id} className={contactClasses} as='section' {...inViewProps}>
-
+            <h3 className='title'>{title}</h3>
+            <HoverText className='email-wrapper'>
+                <Link className='email text--norm' href={`mailto:${email}`}>
+                    {email}
+                </Link>
+            </HoverText>
         </InView>
     );
 }
