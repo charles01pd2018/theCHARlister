@@ -2,6 +2,7 @@
 import { BEEMY_PROJECT_ENDPOINT, MUSIZI_PROJECT_ENDPOINT, CRYPTO_BLOCK_PROJECT_ENDPOINT } from 'lib';
 // types
 import type { ProjectListContent } from 'components/types';
+import type { StarredProjectListContent } from 'components/types';
 
 export const PROJECT_LIST_CONTENT: ProjectListContent = {
     items: [
@@ -149,5 +150,11 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
                 ],
             },
         },
+    ],
+}
+
+export const STARRED_PROJECT_LIST_CONTENT: StarredProjectListContent = {
+    items: [
+
     ],
 }

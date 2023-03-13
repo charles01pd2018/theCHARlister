@@ -3,7 +3,7 @@ import { PROJECTS_ENDPOINT, URL } from 'lib';
 // layout
 import { OverviewLayout } from 'layout';
 // components
-import { ProjectList, SEO } from 'components';
+import { ProjectList, StarredProjectList, SEO } from 'components';
 // types
 import type { GetStaticProps } from 'next';
 import type { OverviewLayoutContent } from 'layout/types';
@@ -32,6 +32,7 @@ const Projects = ( {
                 url={`${URL}${PROJECTS_ENDPOINT}`} />
             <OverviewLayout className='projects' activePage='Projects'
                 content={overviewLayoutContent}>
+                <StarredProjectList />
                 <ProjectList />
             </OverviewLayout>
         </>
