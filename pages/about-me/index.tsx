@@ -1,7 +1,7 @@
 // layout
 import { GenericLayout } from 'layout';
 // lib
-import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT, ABOUT_ME_ENDPOINT, URL } from 'lib';
+import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT, ABOUT_ME_ENDPOINT } from 'lib';
 // components
 import { Profile, SEO } from 'components';
 // elements
@@ -34,8 +34,7 @@ const AboutMe = ( {
     return (
         <>
             <SEO pageTitle={pageTitle} description={description}
-                image='/static/images/open-graph.png'
-                url={`${URL}${ABOUT_ME_ENDPOINT}`} />
+                url={`${process.env.NEXT_PUBLIC_URI}${ABOUT_ME_ENDPOINT}`} />
             <GenericLayout className='about-me-layout' activePage='About Me'>
                 <Profile className='spacing--v' />
                 <section className='container text--lg'>

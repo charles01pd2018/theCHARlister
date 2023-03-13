@@ -1,7 +1,7 @@
 // components
 import { SEO } from 'components';
 // lib
-import { PROJECTS_ENDPOINT, MUSIZI_PROJECT_ENDPOINT, URL } from 'lib';
+import { PROJECTS_ENDPOINT, MUSIZI_PROJECT_ENDPOINT } from 'lib';
 // layout
 import { ArticleLayout } from 'layout';
 // types
@@ -28,8 +28,7 @@ const Musizi = ( {
     return (
         <>
             <SEO pageTitle={pageTitle} description={description}
-                image='/static/images/open-graph.png'
-                url={`${URL}${MUSIZI_PROJECT_ENDPOINT}`} />
+                url={`${process.env.NEXT_PUBLIC_URI}${MUSIZI_PROJECT_ENDPOINT}`} />
             <ArticleLayout className='musizi'
                 content={articleLayoutContent} />
         </>

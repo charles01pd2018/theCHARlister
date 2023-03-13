@@ -1,5 +1,5 @@
 // lib
-import { PROJECTS_ENDPOINT, URL } from 'lib';
+import { PROJECTS_ENDPOINT } from 'lib';
 // layout
 import { OverviewLayout } from 'layout';
 // components
@@ -28,8 +28,7 @@ const Projects = ( {
     return (
         <>
             <SEO pageTitle={pageTitle} description={description}
-                image='/static/images/open-graph.png'
-                url={`${URL}${PROJECTS_ENDPOINT}`} />
+                url={`${process.env.NEXT_PUBLIC_URI}${PROJECTS_ENDPOINT}`} />
             <OverviewLayout className='projects' activePage='Projects'
                 content={overviewLayoutContent}>
                 <StarredProjectList />

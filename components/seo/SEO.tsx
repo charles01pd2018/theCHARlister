@@ -21,7 +21,7 @@ const SEO = ( {
     keywords,
     title,
     url,
-    image,
+    image='/static/images/open-graph.png',
 }: Props ) => {
     return (
         <Head>
@@ -37,11 +37,7 @@ const SEO = ( {
             <meta property='og:description' content={description} />
             <meta property='og:url' content={url} />
             <meta property='og:site_name' content='theCHARlister' />
-            {
-                image ? (
-                    <meta property="og:image" content={image} />
-                ) : ''
-            }
+            <meta property="og:image" content={image} />
             <meta name='twitter:card' content={image ? 'summary_large_image' : 'summary'} />
             {children ? children : ''}
         </Head>

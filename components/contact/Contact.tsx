@@ -41,7 +41,7 @@ const Contact = ( {
 
     return (
         <InView id={id} className={contactClasses} as='section' {...inViewProps}>
-            <h3 className='title'>{title}</h3>
+            <h3 className='title h1'>{title}</h3>
             <HoverText className='email-wrapper'>
                 <Link className='email text--norm' href={`mailto:${email}`}>
                     {email}

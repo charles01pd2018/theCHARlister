@@ -1,7 +1,7 @@
 // layout
 import { OverviewLayout } from 'layout';
 // lib
-import { EXPERIENCE_ENDPOINT, URL } from 'lib';
+import { EXPERIENCE_ENDPOINT } from 'lib';
 // components
 import { ExperienceList, SEO } from 'components';
 // types
@@ -28,8 +28,7 @@ const Experience = ( {
     return (
         <>
             <SEO pageTitle={pageTitle} description={description}
-                image='/static/images/open-graph.png'
-                url={`${URL}${EXPERIENCE_ENDPOINT}`} />
+                url={`${process.env.NEXT_PUBLIC_URI}${EXPERIENCE_ENDPOINT}`} />
             <OverviewLayout content={overviewLayoutContent}
                 activePage='Experience'>
                 <ExperienceList />

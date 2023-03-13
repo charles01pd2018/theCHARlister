@@ -4,8 +4,6 @@ import { useState } from 'react';
 import { AboutMe, ProjectHighlights, Contact, SEO } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
-// lib
-import { URL } from 'lib';
 // types
 import type { GetStaticProps } from 'next';
 
@@ -43,8 +41,7 @@ const Home = ( {
 
   return (
     <>
-      <SEO pageTitle={pageTitle} description={description}
-        image='/static/images/open-graph.png' url={URL} />
+      <SEO pageTitle={pageTitle} description={description} url={process.env.NEXT_PUBLIC_URI} />
       <DisplayLayout activeIndex={activeIndex} 
         displayHeaderSwitchProps={{
           checked: animate,

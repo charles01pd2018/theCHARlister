@@ -5,7 +5,7 @@ import { EXPERIENCE_ENDPOINT } from 'lib';
 // layout
 import { ArticleLayout } from 'layout';
 // lib
-import { PROJECTS_ENDPOINT, BEEMY_PROJECT_ENDPOINT, URL } from 'lib';
+import { PROJECTS_ENDPOINT, BEEMY_PROJECT_ENDPOINT } from 'lib';
 // types
 import type { GetStaticProps } from 'next';
 import type { ArticleLayoutContent } from 'layout/types';
@@ -30,8 +30,7 @@ const Beemy = ( {
     return (
         <>
             <SEO pageTitle={pageTitle} description={description}
-                image='/static/images/open-graph.png'
-                url={`${URL}${BEEMY_PROJECT_ENDPOINT}`} />
+                url={`${process.env.NEXT_PUBLIC_URI}${BEEMY_PROJECT_ENDPOINT}`} />
             <ArticleLayout className='beemy'
                 content={articleLayoutContent} />
         </>
