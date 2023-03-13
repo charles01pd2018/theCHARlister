@@ -1,5 +1,9 @@
 .overview-layout {
     &.projects {
+        .starred-project-list {
+            margin-block: 2rem 4rem;
+        }
+
         .project-list {
             margin-block: 1.5rem;
         }

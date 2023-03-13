@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import { ProjectPreview, TagList, StackedIcons } from 'elements';
 // constants
 import { PROJECT_LIST_CONTENT } from 'components/content';
+// types
 import type { ProjectPreviewContent, TagListContent, 
     StackedIconsContent } from 'elements/types';
 

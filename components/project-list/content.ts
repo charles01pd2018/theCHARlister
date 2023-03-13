@@ -155,6 +155,14 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
 
 export const STARRED_PROJECT_LIST_CONTENT: StarredProjectListContent = {
     items: [
-
+        {
+            image: {
+                src: '/static/icons/css-gen-preview.svg',
+                alt: 'CSS Gen Shadow Page Preview Icon',
+            },
+            title: 'Shadow CSS Generator',
+            description: 'Generate CSS for colorful box and text shadows that matches your content',
+            href: 'https://css-gen-eight.vercel.app/',
+        },
     ],
 }

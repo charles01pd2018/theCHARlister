@@ -2,6 +2,8 @@
 import classNames from 'classnames';
 import Image from 'next/image';
 import Link from 'next/link';
+// constants
+import { STARRED_PROJECT_LIST_CONTENT } from 'components/content';
 // types
 import type { ImageData } from 'types';
 
@@ -20,12 +22,12 @@ export interface Content {
 
 export interface Props {
     className?: string;
-    content: Content;
+    content?: Content;
 }
 
 const StarredProjectList = ( {
     className='',
-    content,
+    content=STARRED_PROJECT_LIST_CONTENT,
 }: Props ) => {
     /* CONTENT */
     const { items } = content;
@@ -42,12 +44,19 @@ const StarredProjectList = ( {
                 {
                     items.map( ( { image, href, title, description } ) => (
                         <li key={href} className='item-wrapper'>
-                            <Link href={href} target='_bank'>
+                            <Link className='starred-project' href={href} target='_bank'>
                                 <div className='starred-project'>
-                                    <Image src={image.src} alt={image.alt || ''}
-                                        width={100} height={100} />
-                                        <h3 className='title'>{title}</h3>
+                                    <div className='image-wrapper'>
+                                        <Image src={image.src} alt={image.alt || ''}
+                                            width={100} height={100} />
+                                    </div>
+                                    <div className='text-wrapper'>
+                                        <div className='title-wrapper'>
+                                            <h3 className='title text--xlg'>{title}</h3>
+                                            <span className='star-wrapper'>💫</span>
+                                        </div>
                                         <p className='description'>{description}</p>
+                                    </div>
                                 </div>
                             </Link>
                         </li>
