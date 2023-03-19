@@ -6,7 +6,7 @@ import { HTMLAttributes } from 'react';
 /* TYPES */
 export interface Props extends HTMLAttributes<HTMLElement> {
     className?: string;
-    WrapperTag: 'p' | 'ul' | 'ol' | 'a';
+    WrapperTag: 'p' | 'ul' | 'ol' | 'li' | 'a';
     text: string;
     // other HTML properties
     href?: string;

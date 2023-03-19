@@ -3,7 +3,7 @@ import classNames from 'classnames';
 // lib
 import { titleCase } from 'lib';
 // elements
-import { SVG, StackedIcons, HeadingLink } from 'elements';
+import { SVG, StackedIcons, HeadingLink, ArticleText } from 'elements';
 // types
 import type { IconData, LinkData } from 'types';
 import type { StackedIconsContent } from 'elements/types';
@@ -65,8 +65,8 @@ const Experience = ( {
                 {
                     bullets.map( ( point, index ) => {
                         return (
-                            <li className='point' key={index}
-                                dangerouslySetInnerHTML={{ __html: point }} />
+                            <ArticleText className='point text--norm' key={index}
+                                WrapperTag='li' text={point} />
                         )
                     } )
                 }

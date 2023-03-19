@@ -47,9 +47,11 @@
    
     .bullets {
         list-style: inside;
+        padding-inline: 1rem 4rem;
 
         .point {
             margin-block: 1.5rem;
+            line-height: 140%;
         }
     }
 
