@@ -1,8 +1,7 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
-// elements
-import { SVG } from 'elements';
+import Image from 'next/image';
 
 
 /* TYPES */
@@ -23,7 +22,7 @@ const GithubLink = ( {
     return (
         <Link className={githubLinkClasses}
             target='_blank' href='https://github.com/charles01pd2018/theCHARlister'>
-            <SVG data='/static/icons/white-github-logo.svg' alt='Github Logo'
+            <Image src='/static/icons/white-github-logo.svg' alt='Github Logo'
                 width={20} height={20} />
             Code
         </Link>

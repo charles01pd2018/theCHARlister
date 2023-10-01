@@ -2,8 +2,7 @@
 import classNames from 'classnames';
 import { HTMLAttributes } from 'react';
 import Link from 'next/link';
-// elements
-import { SVG } from 'elements';
+import Image from 'next/image';
 // types
 import type { IconData, Size } from 'types';
 
@@ -45,7 +44,7 @@ const ProjectLink = ( {
     return (
         <Link className={projectLinkClasses} href={href} 
             target={target} aria-label={ariaLabel} title={ariaLabel} {...rest}>
-            <SVG data={data} alt={alt} 
+            <Image src={data} alt={alt} 
                 width={width} height={height} />
         </Link>
     );

@@ -1,8 +1,9 @@
 // dependencies
 import classNames from 'classnames';
 import { useState } from 'react';
+import Image from 'next/image';
 // elements
-import { IconLink, ToggleButton, SVG, XIcon } from 'elements';
+import { IconLink, ToggleButton, XIcon } from 'elements';
 // content
 import { ICONS_NAV_CONTENT } from 'components/content';
 // types
@@ -69,7 +70,8 @@ const IconsNavFooter = ( {
                         );
 
                         return (
-                            <SVG key={icon.alt} className={iconClasses} {...icon}
+                            <Image key={icon.alt} className={iconClasses}
+                                src={icon.data} alt={icon.alt}
                                 width={width} height={height} />
                         );
                     } )

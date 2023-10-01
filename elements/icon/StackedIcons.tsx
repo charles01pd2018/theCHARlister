@@ -1,7 +1,6 @@
 // dependencies
 import classNames from 'classnames';
-// elements
-import { SVG } from 'elements';
+import Image from 'next/image';
 // types
 import type { IconTitleData, Size } from 'types';
 
@@ -37,7 +36,8 @@ const StackedIcons = ( {
             {
                 icons.map( ( { title, ...iconContent } ) => (
                     <li className='icon-wrapper' title={title} key={iconContent.alt}>
-                        <SVG width={width} height={height} {...iconContent} />
+                        <Image width={width} height={height} 
+                            src={iconContent.data} alt={iconContent.alt} />
                     </li>
                 ) )
             }

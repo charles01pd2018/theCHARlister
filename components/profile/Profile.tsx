@@ -1,11 +1,10 @@
 // dependencies
 import classNames from 'classnames';
+import Image from 'next/image';
 // content
 import { PROFILE_CONTENT } from 'components/content';
 // lib
 import { useClientWidth, BREAKPOINT_SMALL } from 'lib';
-// elements
-import { SVG } from 'elements';
 // types
 import type { ImageData, IconTitleData } from 'types';
 
@@ -49,8 +48,8 @@ const Profile = ( {
             {
                 icons.map( ( { title, ...icon } ) => (
                     <span key={icon.alt} className='icon-wrapper' title={title}>
-                        <SVG width={width} height={height}
-                            {...icon} />
+                        <Image width={width} height={height}
+                            src={icon.data} alt={icon.alt} />
                     </span>
                 ) )
             }

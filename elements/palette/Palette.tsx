@@ -1,7 +1,6 @@
 // dependencies
 import classNames from 'classnames';
-// elements
-import { SVG } from 'elements';
+import Image from 'next/image';
 // types
 import type { Colors, IconTitleData, Size } from 'types';
 
@@ -41,7 +40,8 @@ const Palette = ( {
                 icons.map( ( { title, ...iconContent } ) => {
                     return (
                         <div key={iconContent.alt} className='icon-wrapper' title={title}>
-                            <SVG {...iconContent} width={width} height={height} />
+                            <Image src={iconContent.data} alt={iconContent.alt} 
+                                width={width} height={height} />
                         </div>
                     )
                 } )

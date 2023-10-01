@@ -1,7 +1,6 @@
 // dependencies
 import classNames from 'classnames';
-// elements
-import { SVG } from 'elements';
+import Image from 'next/image';
 // types
 import type { Size } from 'types';
 
@@ -28,8 +27,8 @@ const IconLogo = ( {
     );
 
     return (
-        <SVG className={iconLogoClasses}
-            data={`/static/icons/${type === 'backgrond' ? 'background-' : ''}logo.svg`}
+        <Image className={iconLogoClasses}
+            src={`/static/icons/${type === 'backgrond' ? 'background-' : ''}logo.svg`}
             alt='theCHARlister pofo logo'
             width={width} height={height} />
     );

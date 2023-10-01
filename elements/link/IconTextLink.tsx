@@ -1,9 +1,8 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HTMLAttributes } from 'react';
-// elements
-import { SVG } from 'elements';
 // types
 import type { IconTextLinkData, Size, Colors } from 'types';
 
@@ -48,7 +47,8 @@ const IconTextLink = ( {
         <Link className={iconTextLinkClasses} href={href}
             {...rest}>
             <div className={iconWrapperClasses}>
-                <SVG {...icon} width={width} height={height} />
+                <Image src={icon.data} alt={icon.alt} 
+                    width={width} height={height} />
             </div>
             <span className='text text--norm'>{text}</span>
         </Link>

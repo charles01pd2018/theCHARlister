@@ -1,7 +1,6 @@
 // dependencies
 import classNames from 'classnames';
-// elements
-import { SVG } from 'elements';
+import Image from 'next/image';
 // types
 import type { BaseIconProps } from './types';
 
@@ -20,8 +19,8 @@ const XIcon = ( {
     );
 
     return (
-        <SVG className={xIconClasses}
-            data='/static/icons/x.svg' alt='X icon'
+        <Image className={xIconClasses}
+            src='/static/icons/x.svg' alt='X icon'
             width={width} height={height} />
     )
 }

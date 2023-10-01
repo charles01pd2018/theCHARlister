@@ -1,9 +1,8 @@
 // dependencies
 import classNames from 'classnames';
 import Link from 'next/link';
+import Image from 'next/image';
 import { HTMLAttributes, forwardRef } from 'react';
-// elements
-import { SVG } from 'elements';
 // types
 import type { Size, Colors, IconLinkData } from 'types';
 
@@ -49,7 +48,7 @@ const IconLink = forwardRef<HTMLAnchorElement, Props>( ( {
     return (
         <Link ref={ref} className={iconLinkClasses} href={href}
             title={title} aria-label={title} {...rest}>
-            <SVG data={data} alt={alt}
+            <Image src={data} alt={alt}
                 width={width} height={height} />
         </Link>
     );

@@ -1,3 +1,5 @@
+// dependencies
+import Image from 'next/image';
 // layout
 import { GenericLayout } from 'layout';
 // lib
@@ -5,7 +7,7 @@ import { EXPERIENCE_ENDPOINT, PROJECTS_ENDPOINT, ABOUT_ME_ENDPOINT } from 'lib';
 // components
 import { Profile, SEO } from 'components';
 // elements
-import { CTALink, ArticleText, SVG } from 'elements';
+import { CTALink, ArticleText } from 'elements';
 // types
 import type { GetStaticProps } from 'next';
 import type { CTALinkIconContent } from 'types';
@@ -51,7 +53,8 @@ const AboutMe = ( {
                         ctaLinks.map( ( { link, icon, borderColor } ) => (
                             <CTALink key={link.href} href={link.href} type='rainbow-shadow'
                                 borderColor={borderColor}>
-                                <SVG {...icon} width={22} height={22} />
+                                <Image src={icon.data} alt={icon.alt} 
+                                    width={22} height={22} />
                                 {link.text}
                             </CTALink>
                         ) )

@@ -1,9 +1,10 @@
 // dependencies
 import classNames from 'classnames';
+import Image from 'next/image';
 // lib
 import { titleCase } from 'lib';
 // elements
-import { SVG, StackedIcons, HeadingLink, ArticleText } from 'elements';
+import { StackedIcons, HeadingLink, ArticleText } from 'elements';
 // types
 import type { IconData, LinkData } from 'types';
 import type { StackedIconsContent } from 'elements/types';
@@ -50,8 +51,8 @@ const Experience = ( {
             <div className='title-wrapper'>
                 <HeadingLink className='company' HeadingTag='h3'
                     content={company} />
-                <SVG className='company-logo'
-                    data={data} alt={alt}
+                <Image className='company-logo'
+                    src={data} alt={alt}
                     width={100} height={100} />
             </div>
             <div className='role-info'>
