@@ -5,7 +5,7 @@ import Image from 'next/image';
 // elements
 import { IconLink, ToggleButton, XIcon } from 'elements';
 // content
-import { ICONS_NAV_CONTENT } from 'components/content';
+import { MOBILE_ICONS_NAV_CONTENT } from 'components/content';
 // types
 import type { IconsNavProps } from 'components/types';
 
@@ -15,7 +15,7 @@ const ARIA_CONTROLS = 'icons-nav';
 
 const IconsNavFooter = ( {
     className='',
-    content=ICONS_NAV_CONTENT,
+    content=MOBILE_ICONS_NAV_CONTENT,
     activeIndex,
     iconSize=[ 33, 33 ],
 }: IconsNavProps ) => {

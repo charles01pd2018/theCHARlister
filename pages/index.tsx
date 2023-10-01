@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { AboutMe, ProjectHighlights, Contact, SEO } from 'components';
 // layout
 import { DisplayLayout } from 'layout';
+// lib
+import { useClientWidth, BREAKPOINT_MEDIUM } from 'lib';
 // types
 import type { GetStaticProps } from 'next';
 
@@ -27,6 +29,7 @@ const Home = ( {
   /* HOOKS */
   const [ animate, setAnimate ] = useState<boolean>( false );
   const [ activeIndex, setActiveIndex ] = useState<number>( 0 );
+  const width = useClientWidth();
 
   /* FUNCTIONS */
   const handleInView = ( inView: boolean, index: number ) => {
@@ -38,6 +41,8 @@ const Home = ( {
   const toggleAnimate = () => {
       setAnimate( state => !state );
   }
+
+  const isDesktop = width > BREAKPOINT_MEDIUM;
 
   return (
     <>
@@ -51,12 +56,14 @@ const Home = ( {
           onChange: (inView) => handleInView( inView, 0 ),
           threshold: 0.8,
         }} />
-        <ProjectHighlights animate={animate} inViewProps={{
-          onChange: (inView) => handleInView( inView, 1 ),
-          threshold: 0.2,
-        }} />
+        { isDesktop ? (
+          <ProjectHighlights animate={animate} inViewProps={{
+            onChange: (inView) => handleInView( inView, 1 ),
+            threshold: 0.2,
+          }} />
+        ): '' }
         <Contact inViewProps={{
-          onChange: (inView) => handleInView( inView, 2 ),
+          onChange: (inView) => handleInView( inView, isDesktop ? 2 : 1 ),
           threshold: 0.5,
         }} />
       </DisplayLayout>

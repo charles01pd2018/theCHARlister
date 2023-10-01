@@ -3,6 +3,8 @@ import { ReactNode, useEffect } from 'react';
 // components
 import { DisplayHeader, DisplayFooter, 
     IconsNavFooter, IconsNavSidebar, ProgressBar } from 'components';
+// lib
+import { useClientWidth, BREAKPOINT_MEDIUM } from 'lib';
 // types
 import type { DisplayHeaderSwitchProps } from 'components/types';
 
@@ -19,6 +21,8 @@ const DisplayLayout = ( {
     activeIndex,
     displayHeaderSwitchProps,
 }: Props ) => {
+    const width = useClientWidth();
+
     useEffect( () => {
         document.body.classList.add( 'hide-scrollbar' );
     }, [] );
@@ -31,7 +35,9 @@ const DisplayLayout = ( {
                 {children}
             </main>
             <IconsNavSidebar activeIndex={activeIndex} />
-            <IconsNavFooter activeIndex={activeIndex} />
+            { width < BREAKPOINT_MEDIUM ? (
+                <IconsNavFooter activeIndex={activeIndex} />
+            ) : '' }
             <DisplayFooter />
         </div>
     );
