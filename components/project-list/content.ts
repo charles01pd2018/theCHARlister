@@ -56,7 +56,7 @@ export const PROJECT_LIST_CONTENT: ProjectListContent = {
         },
         {
             title: 'Musizi University',
-            description: 'An upcoming Uganda University aiming to foster independent thinkers driven by empathy',
+            description: 'Upcoming Uganda University fostering independent thinkers driven by empathy',
             projectPreviewContent: {
                 color: 'pink',
                 imageLink: {

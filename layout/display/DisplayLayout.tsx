@@ -2,7 +2,7 @@
 import { ReactNode, useEffect } from 'react';
 // components
 import { DisplayHeader, DisplayFooter, 
-    IconsNavFooter, IconsNavSidebar, ProgressBar } from 'components';
+    IconsNavFooter, IconsNavSidebar } from 'components';
 // lib
 import { useClientWidth, BREAKPOINT_MEDIUM } from 'lib';
 // types
@@ -29,7 +29,6 @@ const DisplayLayout = ( {
 
     return (
         <div className='display-layout-wrapper'>
-            <ProgressBar />
             <DisplayHeader switchProps={displayHeaderSwitchProps} />
             <main className='display-layout'>
                 {children}
