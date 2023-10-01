@@ -1,5 +1,5 @@
 // lib
-import { ABOUT_ME_ENDPOINT } from 'lib';
+import { EXPERIENCE_ENDPOINT } from 'lib';
 // types
 import type { AboutMeContent } from 'components/types';
 
@@ -7,8 +7,8 @@ export const ABOUT_ME_CONTENT: AboutMeContent = {
     title: 'About Me',
     description: `<u>Fullstack Product Engineer</u> specialized in React and design!`,
     link: {
-        text: 'Learn More About Me',
-        href: ABOUT_ME_ENDPOINT,
+        text: 'Career Experience',
+        href: EXPERIENCE_ENDPOINT,
     },
     paletteContent: {
         icons: [
