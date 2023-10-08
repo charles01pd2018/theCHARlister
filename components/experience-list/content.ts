@@ -95,7 +95,7 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                 ],
             },
             bullets: [
-                'Ideated and implemented product flows for <b><u>Knowt AI</u></b> assistant to create flashcards and notes with <b><u>generative AI<u/></b> through custom prompts, resulting in hundreds of paid user signups over 3 months',
+                'Ideated and implemented product flows for <b><u>Knowt AI</u></b> assistant to create flashcards and notes with <b><u>generative AI</u></b> through custom prompts, resulting in hundreds of paid user signups over 3 months',
                 'Led one of the first revenue sources through <b><u>Google Adsense</b></u> and Amazon Associates display advertisements - configuring ads in both a testing and production environment',
                 'Launched several key note-editor features including a new <b><u>toolbar</b></u> look with shortcut tooltips, <mark class="pink">background marks</mark>, and a resizable navigation panel - creating a 30% lift in new notes created over the course of 2 months after launch',
                 'Repurposed existing note-editor to launch the new <b><u>flashcard editor</u></b> with custom ✨ markdown parsing',
