@@ -22,37 +22,44 @@
         }
     }
 
-    .role-info {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 2rem;
-
-        .role {
-            font-weight: bold;
+    .role-wrapper {
+        &:not(:last-of-type) {
+            margin-bottom: 3rem;
+        }
+        
+        .role-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+    
+            .role {
+                font-weight: bold;
+            }
+    
+            .right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                margin-right: $margin-right;
+    
+                .date-range {
+                    color: #2e2e2e;
+                }
+            }
         }
 
-        .right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            margin-right: $margin-right;
-
-            .date-range {
-                color: #2e2e2e;
+        .bullets {
+            list-style: inside;
+            padding-inline: 1rem 4rem;
+    
+            .point {
+                margin-block: 1.5rem;
+                line-height: 140%;
             }
         }
     }
    
-    .bullets {
-        list-style: inside;
-        padding-inline: 1rem 4rem;
-
-        .point {
-            margin-block: 1.5rem;
-            line-height: 140%;
-        }
-    }
 
     @media ( max-width: $breakpoint--large ) {
         .title-wrapper {
@@ -61,26 +68,30 @@
             }
         }
 
-        .role-info {
-            .right {
-                margin-right: 0;
+        .role-wrapper {
+            .role-info {
+                .right {
+                    margin-right: 0;
+                }
             }
-        }
-
-        .bullets {
-            padding-right: 0;
+    
+            .bullets {
+                padding-right: 0;
+            }
         }
     }
 
     @media ( max-width: $breakpoint--small ) {
-        .role-info {
-            flex-direction: column;
-
-            .right {
-                align-items: center;
-
-                .stacked-icons {
-                    justify-content: center;
+        .role-wrapper {
+            .role-info {
+                flex-direction: column;
+    
+                .right {
+                    align-items: center;
+    
+                    .stacked-icons {
+                        justify-content: center;
+                    }
                 }
             }
         }

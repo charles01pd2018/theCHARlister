@@ -11,13 +11,17 @@ import type { StackedIconsContent } from 'elements/types';
 
 
 /* TYPES */
+interface Role {
+    title: string;
+    dateRange: string;
+    technologies?: StackedIconsContent;
+    bullets: string[];
+}
+
 export interface Content {
     logo: IconData;
     company: LinkData;
-    role: string;
-    dateRange: string;
-    technologies: StackedIconsContent;
-    bullets: string[];
+    roles: Role[];
 }
 
 export interface Props {
@@ -34,10 +38,7 @@ const Experience = ( {
     /* CONTENT */
     const { logo, 
         company,
-        role,
-        dateRange,
-        technologies,
-        bullets } = content;
+        roles } = content;
     const { data, alt } = logo;
 
     /* CLASSNAMES */
@@ -55,23 +56,39 @@ const Experience = ( {
                     src={data} alt={alt}
                     width={100} height={100} />
             </div>
-            <div className='role-info'>
-                <p className='text--xs role'>{role}</p>
-                <div className='right'>
-                    <p className='text--xxxs date-range'>{dateRange}</p>
-                    <StackedIcons content={technologies} />
-                </div>
-            </div>
-            <ul className='bullets'>
-                {
-                    bullets.map( ( point, index ) => {
-                        return (
-                            <ArticleText className='point text--norm' key={index}
-                                WrapperTag='li' text={point} />
-                        )
-                    } )
-                }
-            </ul>
+            {
+                roles.map(({
+                    title,
+                    dateRange,
+                    technologies,
+                    bullets,
+                }) => (
+                    <div className='role-wrapper'>
+                        <div className='role-info'>
+                            <p className='text--xs role'>{title}</p>
+                            <div className='right'>
+                                <p className='text--xxxs date-range'>{dateRange}</p>
+                                {
+                                    technologies ? (
+                                        <StackedIcons content={technologies} />
+                                    ) : ''
+                                }
+                            </div>
+                        </div>
+                        <ul className='bullets'>
+                            {
+                                bullets.map( ( point, index ) => {
+                                    return (
+                                        <ArticleText className='point text--norm' key={index}
+                                            WrapperTag='li' text={point} />
+                                    )
+                                } )
+                            }
+                        </ul>
+                    </div>
+                ))
+            }
+          
         </div>
     );
 }
