@@ -113,7 +113,7 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                         'Repurposed existing note-editor to launch the new <b><u>flashcard editor</u></b> with custom ✨ markdown parsing',
                         'Fixed multiple note-editor bugs consisting of ✨ markdown parsing, saving, custom key inputs, paste parsing, image resizing + rendering + reordering, list conversions for nested lists, node popup selections, and google drive imports',
                         'Created a better saving experience by enabling <b><u>manual shortcut saving</u></b> (command+S) in combination with debounce saving for both the note and flashcard editor',
-                        'Contributed to the migration of Python backend to Typescript and increased server speed from 🧑‍💻 O(n2) → O(n) through code optimization'
+                        'Contributed to the migration of Python backend to Typescript and optimized server speed through batch operations 🧑‍💻, increasing server speed and leading to a better user experience',
                     ],
                 }
             ]
