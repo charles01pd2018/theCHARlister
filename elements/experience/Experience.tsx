@@ -63,7 +63,7 @@ const Experience = ( {
                     technologies,
                     bullets,
                 }) => (
-                    <div className='role-wrapper'>
+                    <div key={logo.alt.split('')[0]} className='role-wrapper'>
                         <div className='role-info'>
                             <p className='text--xs role'>{title}</p>
                             <div className='right'>
