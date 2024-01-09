@@ -145,14 +145,19 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                                 title: 'NextJS',
                             },
                             {
-                                data: '/static/icons/mailchimp-bg-logo.svg',
-                                alt: 'Mailchimp Logo',
-                                title: 'Mailchimp',
+                                data: '/static/icons/typescript-bg-logo.svg',
+                                alt: 'Typescript Logo',
+                                title: 'Typescript',
                             },
                             {
                                 data: '/static/icons/sass-bg-logo.svg',
                                 alt: 'Sass Logo',
                                 title: 'Sass',
+                            },
+                            {
+                                data: '/static/icons/mailchimp-bg-logo.svg',
+                                alt: 'Mailchimp Logo',
+                                title: 'Mailchimp',
                             },
                         ],
                     },
