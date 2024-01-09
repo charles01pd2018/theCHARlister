@@ -39,7 +39,7 @@ const Experience = ( {
     const { logo, 
         company,
         roles } = content;
-    const { data, alt } = logo;
+    const { data, alt, width, height } = logo;
 
     /* CLASSNAMES */
     const experienceClasses = classNames(
@@ -54,7 +54,7 @@ const Experience = ( {
                     content={company} />
                 <Image className='company-logo'
                     src={data} alt={alt}
-                    width={100} height={100} />
+                    width={width || 100} height={height || 100} />
             </div>
             {
                 roles.map(({

@@ -1,3 +1,4 @@
+import { MUSIZI_PROJECT_ENDPOINT } from 'lib/constants';
 import type { ExperienceListContent } from 'components/types';
 
 export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
@@ -116,6 +117,46 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                         'Contributed to the migration of Python backend to Typescript and optimized server speed through batch operations 🧑‍💻, increasing server speed and leading to a better user experience',
                     ],
                 }
+            ]
+        },
+        {
+            logo: {
+                data: '/static/images/musizi-logo.png',
+                alt: 'Musizi University Logo',
+                width: 140,
+                height: 34.2,
+            },
+            company: {
+                text: 'Musizi',
+                href: 'https://www.musizi.ac.ug/',
+            },
+            roles: [
+                {
+                    title: 'Lead Developer (Freelance)',
+                    dateRange: 'Mar 2022 - Aug 2022',
+                    bullets: [
+                        `Led a team of 2 developers to build out website from scratch based on Figma design using best accessibility practices - <a class="article-text" href=${MUSIZI_PROJECT_ENDPOINT}>Project Writeup</a>`,
+                    ],
+                    technologies: {
+                        icons: [
+                            {
+                                data: '/static/icons/nextjs-bg-logo.svg',
+                                alt: 'NextJS Logo',
+                                title: 'NextJS',
+                            },
+                            {
+                                data: '/static/icons/mailchimp-bg-logo.svg',
+                                alt: 'Mailchimp Logo',
+                                title: 'Mailchimp',
+                            },
+                            {
+                                data: '/static/icons/sass-bg-logo.svg',
+                                alt: 'Sass Logo',
+                                title: 'Sass',
+                            },
+                        ],
+                    },
+                },
             ]
         },
     ],

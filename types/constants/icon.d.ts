@@ -1,6 +1,8 @@
 export interface IconData {
     data: string;
     alt: string;
+    width?: number;
+    height?: number;
 }
 
 export interface IconTitleData extends IconData {
