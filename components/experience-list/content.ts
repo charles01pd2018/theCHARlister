@@ -135,7 +135,7 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                     title: 'Lead Developer (Freelance)',
                     dateRange: 'Mar 2022 - Aug 2022',
                     bullets: [
-                        `Led a team of 2 developers to build out website from scratch based on Figma design using best accessibility practices - <a class="article-text" href=${MUSIZI_PROJECT_ENDPOINT}>Project Writeup</a>`,
+                        `Led a team of 2 developers to build out website from scratch based on Figma design using best accessibility practices - <a class="article-text text--norm" href=${MUSIZI_PROJECT_ENDPOINT}>Project Writeup</a>`,
                     ],
                     technologies: {
                         icons: [
