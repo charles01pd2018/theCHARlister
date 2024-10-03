@@ -5,6 +5,25 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
     items: [
         {
             logo: {
+                data: '/static/images/centric-software-logo.jpg',
+                alt: 'Centric Software Logo',
+                width: 120,
+                height: 60,
+            },
+            company: {
+                text: 'Centric Software',
+                href: 'https://www.centricsoftware.com/',
+            },
+            roles: [
+                {
+                    title: 'Software Engineer 2',
+                    dateRange: 'Sep 2024 - Present',
+                    bullets: [],
+                },
+            ],
+        },
+        {
+            logo: {
                 data: '/static/icons/avery-logo.svg',
                 alt: 'Avery Logo',
             },
@@ -15,7 +34,7 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
             roles: [
                 {
                     title: 'Software Developement Engineer 2',
-                    dateRange: 'Jan 2024 - Present',
+                    dateRange: 'Jan 2024 - Sep 2024',
                     bullets: [
                         'Leading the migration to Google Analytics 4, communicating with key stakeholders and 3rd party vendor to ensure optimal data transfer of 50+ hard-coded events',
                     ],

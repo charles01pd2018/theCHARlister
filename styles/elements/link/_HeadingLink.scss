@@ -1,3 +1,6 @@
+// constants
+@use '../../constants/breakpoints' as *;
+
 .heading-link {
     $transition: 0.21s ease;
 
@@ -29,6 +32,12 @@
         &:after {
             opacity: 1;
             transform: translateX( 3px ) rotate( 3deg );
+        }
+    }
+
+    @media( max-width: $breakpoint--medium ) {
+        &:after {
+            display: none;
         }
     }
 }
