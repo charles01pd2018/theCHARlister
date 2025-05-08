@@ -162,7 +162,7 @@ export const STARRED_PROJECT_LIST_CONTENT: StarredProjectListContent = {
             },
             title: 'Shadow CSS Generator',
             description: 'Generate CSS for colorful box and text shadows that matches your content',
-            href: 'https://css-gen-eight.vercel.app/',
+            href: 'https://www.css-gen.com/',
         },
     ],
 }

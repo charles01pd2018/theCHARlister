@@ -18,7 +18,9 @@ export const EXPERIENCE_LIST_CONTENT: ExperienceListContent = {
                 {
                     title: 'Software Engineer 2',
                     dateRange: 'Sep 2024 - Present',
-                    bullets: [],
+                    bullets: [
+                        'Contributed to major release 7.10 through the migration to React forms (connected to legacy Dojo framework), implementation of form validation for custom view dialogs, and addressed critical defects across the application',
+                    ],
                 },
             ],
         },
